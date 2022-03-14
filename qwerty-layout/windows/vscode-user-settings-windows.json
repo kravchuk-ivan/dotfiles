@@ -1,0 +1,49 @@
+{
+ "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
+  "terminal.integrated.cwd": "/home/ivankravchuk",
+  "editor.fontSize": 16,
+  "editor.wordWrap": "on",
+  "explorer.confirmDelete": false,
+  "workbench.settings.editor": "json",
+  "workbench.settings.openDefaultSettings": true,
+  "files.autoSave": "afterDelay",
+  "terminal.integrated.fontSize": 15,
+  "editor.formatOnSave": false,
+  "search.useIgnoreFiles": true,
+  "editor.smoothScrolling": true,
+  "explorer.confirmDragAndDrop": false,
+  "better-comments.highlightPlainText": true,
+  "editor.linkedEditing": true,
+  "terminal.integrated.copyOnSelection": true,
+
+  "editor.largeFileOptimizations": true,
+  "liveServer.settings.CustomBrowser": "chrome",
+  "editor.cursorStyle": "block",
+  "editor.cursorBlinking": "solid",
+  "workbench.colorCustomizations": {
+    "editorCursor.background": "#ffffff",
+    "editorCursor.foreground": "#c130ce"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.bracketPairColorization.enabled": true,
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.factorypath": true
+  },
+  "testMyCode.downloadOldSubmission": true,
+  "testMyCode.hideMetaFiles": true,
+  "testMyCode.updateExercisesAutomatically": true,
+  "testMyCode.insiderVersion": false,
+  "testMyCode.logLevel": "errors",
+  "workbench.colorTheme": "Default Dark+",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 1
+} 
