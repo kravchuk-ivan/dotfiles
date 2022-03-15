@@ -26,6 +26,8 @@ alias cd4="cd ../../../.."
 alias cd5="cd ../../../../.."
 
 alias l='ls -la'
+alias /='cd /'
+alias ~='cd ~'
 
 alias logs='cd /opt/opennms/logs'
 alias share='cd /opt/opennms/share'
