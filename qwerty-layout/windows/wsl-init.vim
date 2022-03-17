@@ -63,16 +63,12 @@ filetype plugin on
 set ttyfast
 
 set laststatus=2 statusline=%F
-set history=1000
+set history=500
 
 "show the file title
 set title
 
 " Keybindings
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
 
 
 " Plugins
@@ -91,7 +87,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
 Plug 'airblade/vim-gitgutter'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
 "Initialize plugin system
