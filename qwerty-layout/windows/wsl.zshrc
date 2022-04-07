@@ -106,12 +106,38 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias jk="nvim"
-alias kj="nvim"
+
+
+
+alias jk='nvim'
+alias kj='cd'
+alias ..="cd .."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+alias ..5="cd ../../../../.."
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+alias kj1="cd .."
+alias kj2="cd ../.."
+alias kj3="cd ../../.."
+alias kj4="cd ../../../.."
+alias kj5="cd ../../../../.."
+
+
+
+alias l='ls -la'
+alias ~='cd ~'
+
 alias tms6="ssh root@172.29.19.80"
 alias tms7="ssh root@172.29.19.90"
+alias benchmarks="ssh root@172.29.29.85"
 # Microsoft Windows specific aliases
 alias cpwd="pwd | clip.exe"
+alias s="fzf"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
