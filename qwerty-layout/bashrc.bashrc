@@ -4,9 +4,6 @@
 
 # User specific aliases and functions
 
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
 alias jk='vim'
 alias kj='vim'
 alias ..="cd .."
@@ -26,15 +23,4 @@ alias cd4="cd ../../../.."
 alias cd5="cd ../../../../.."
 
 alias l='ls -la'
-alias /='cd /'
 alias ~='cd ~'
-
-alias logs='cd /opt/opennms/logs'
-alias share='cd /opt/opennms/share'
-
-alias loglevel='vi /opt/opennms/etc/log4j2.xml'
-
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-        . /etc/bashrc
-fi
