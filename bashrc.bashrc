@@ -10,11 +10,20 @@ jj() {
 jjj() {
     cd ../.. && ls -Althr; 
 }
+jjjj() {
+    cd ../../.. && ls -Althr; 
+}
 jj3() {
     cd ../../.. && ls -Althr; 
 }
+jjjjj() {
+    cd ../../../.. && ls -Althr; 
+}
 jj4() {
     cd ../../../.. && ls -Althr; 
+}
+jjjjjj() {
+    cd ../../../../.. && ls -Althr; 
 }
 jj5() {
     cd ../../../../.. && ls -Althr; 
