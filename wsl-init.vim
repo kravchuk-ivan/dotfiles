@@ -30,11 +30,20 @@ set showmode showcmd
 set showmatch
 
 " case sensitive if it contains an uppercase 
+" when 'ignorecase' and 'smartcase' are both on, if a pattern contains an
+" uppercase letter, it is case sensitive, otherwise, it is not. For example,
+" '/The' would find only 'The', while '/the'/the would find 'the' or 'The', etc
 set ignorecase
 set smartcase
 
 " number of columns occupied by a tab
-set tabstop=4
+set tabstop=4 softtabstop=4
+
+" convert tab character to whitespaces
+set expandtab
+
+" try to smartly indent
+set smartindent
 
 " width for autoindents
 set shiftwidth=4
@@ -68,7 +77,7 @@ set history=500
 "show the file title
 set title
 
-" Keybindings
+" Keybindings and remappings
 
 
 " Plugins
