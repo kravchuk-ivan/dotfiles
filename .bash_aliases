@@ -34,8 +34,8 @@ alias k='vim' # or `nvim`
 alias l='ls -Althr'
 alias ~='cd ~'
 alias s='fzf'
+alias ghist='history | grep'
 alias apt-update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
-
 
 # Microsoft OS specific aliases for WSL
 alias cpwd="pwd | clip.exe"
