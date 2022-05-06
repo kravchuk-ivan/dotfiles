@@ -76,25 +76,31 @@ set title
 
 " Keybindings and remappings
 
-
 " Plugins
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 " The default plugin directory will be as follows:
 "   - Vim (Linux/macOS): '~/.vim/plugged'
 "   - Vim (Windows): '~/vimfiles/plugged'
 "   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+"   - ivankravchuk (path): '~/.vim/plugged'
 " You can specify a custom plugin directory by passing it as the argument
 "   - e.g. `call plug#begin('~/.vim/plugged')`
 "   - Avoid using standard Vim directory names like 'plugin'
-
 " Make sure you use single quotes
 
-
+Plug 'junegunn/vim-easy-align'
 Plug 'jiangmiao/auto-pairs'
-Plug 'preservim/nerdtree'
 Plug 'airblade/vim-gitgutter'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Any valid git URL is allowed
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+Plug 'preservim/nerdtree'
 
-"Initialize plugin system
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+" Plugin outside ~/.vim/plugged with post-update hook
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Initialize plugin system
 call plug#end()
