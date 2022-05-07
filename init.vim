@@ -77,7 +77,7 @@ set title
 " Keybindings and remappings
 
 " Plugins
-call plug#begin()
+call plug#begin('~/.vim/plugged')
 " The default plugin directory will be as follows:
 "   - Vim (Linux/macOS): '~/.vim/plugged'
 "   - Vim (Windows): '~/vimfiles/plugged'
