@@ -1,5 +1,14 @@
 # .bashrc
 
+# # The following conditional script should be included into bashrc or zshrc or alike file to source the aliases that this file contains.
+
+# if [ -f ~/softergonomics/bash_aliases ]
+# then
+#     source ~/softergonomics/bash_aliases
+# else
+#     echo "'~/softergonomics/bash_aliases' was not found. The aliases could not be updated."
+# fi
+
 # Functions to enhance `cd` with `ls -Altr` aliased as `j`
 j() {
     cd "$@" && ls -Althr;
@@ -30,9 +39,10 @@ jj5() {
 }
 
 # User specific aliases and functions
-alias k='vim' # or `nvim`
+alias k='nvim'
 alias l='ls -Althr'
 alias s='fzf'
+alias d='vifm . .'
 alias ghist='history | grep'
 
 # Linux Ubuntu specific aliases
