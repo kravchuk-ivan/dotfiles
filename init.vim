@@ -7,9 +7,6 @@ set cursorline
 "use Unicode
 set encoding=utf-8
 
-"make Backspace work like Delete
-set backspace=indent,eol,start
-
 "line numbers and distances
 set relativenumber 
 set number
@@ -29,7 +26,7 @@ set showmatch
 " case sensitive if it contains an uppercase 
 " when 'ignorecase' and 'smartcase' are both on, if a pattern contains an
 " uppercase letter, it is case sensitive, otherwise, it is not. For example,
-" '/The' would find only 'The', while '/the'/the would find 'the' or 'The', etc
+" '/The' would find only 'The', while '/the' would find 'the' or 'The', etc
 set ignorecase
 set smartcase
 
@@ -62,7 +59,6 @@ syntax on
 
 " enable mouse click
 set mouse=a
-
 filetype plugin on
 
 " speed up scrolling in Vim
@@ -75,6 +71,30 @@ set history=500
 set title
 
 " Keybindings and remappings
+" Backspace and space are to be remapped to something useful
+
+" If you frequently use split windows, you might want to use the Ctrl-W family of commands to switch between windows.
+" nnoremap <C-Tab> <C-w>w
+" nnoremap <C-S-Tab> <C-w>W
+
+" If you prefer one tab for one buffer, you can map the :tabn and :tabp commands (tab next, and tab previous).
+nnoremap <Space> :tabn<CR>
+
+" Important to make backspace work typically
+set backspace=indent,eol,start
+
+" Remap backspace to Esc (use <C-h> and <C-w> instead (standard))
+nnoremap <BS> <Esc>
+vnoremap <BS> <Esc>gV
+onoremap <BS> <Esc>
+cnoremap <BS> <C-C><Esc>
+inoremap jj <Esc>
+
+" In normal mode, you can press prefix keys before a command (for example, 12 for a count). The nnoremap causes Tab to cancel any prefix keys.
+" The vnoremap causes Tab to cancel any selection (gV is required to prevent automatic reselection).
+" The onoremap causes Tab to cancel any operator-pending command (for example, y).
+" The cnoremap causes Tab to cancel any command that was entered.
+" The first inoremap causes Tab to exit insert mode, and the `^ restores the cursor position so exiting insert does not move the cursor left.
 
 " Plugins
 call plug#begin('~/.vim/plugged')
