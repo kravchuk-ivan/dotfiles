@@ -70,6 +70,8 @@ set history=500
 "show the file title
 set title
 
+" set clipboard=unnamedplus,unnamed
+
 " Keybindings and remappings
 " Backspace and space are to be remapped to something useful
 
@@ -95,6 +97,9 @@ inoremap jj <Esc>
 " The onoremap causes Tab to cancel any operator-pending command (for example, y).
 " The cnoremap causes Tab to cancel any command that was entered.
 " The first inoremap causes Tab to exit insert mode, and the `^ restores the cursor position so exiting insert does not move the cursor left.
+
+" Copy the current buffer's path to the clipboard
+" nnoremap cp :let @+ = expand("%")<CR>
 
 " Plugins
 call plug#begin('~/.vim/plugged')
