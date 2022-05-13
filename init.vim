@@ -86,10 +86,10 @@ nnoremap <Space> :tabn<CR>
 set backspace=indent,eol,start
 
 " Remap backspace to Esc (use <C-h> and <C-w> instead (standard))
-nnoremap <BS> <Esc>
-vnoremap <BS> <Esc>gV
-onoremap <BS> <Esc>
-cnoremap <BS> <C-C><Esc>
+" nnoremap <BS> <Esc>
+" vnoremap <BS> <Esc>gV
+" onoremap <BS> <Esc>
+" cnoremap <BS> <C-C><Esc>
 inoremap jj <Esc>
 
 " In normal mode, you can press prefix keys before a command (for example, 12 for a count). The nnoremap causes Tab to cancel any prefix keys.
@@ -129,3 +129,4 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Initialize plugin system
 call plug#end()
+
