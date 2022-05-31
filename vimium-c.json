@@ -1,7 +1,7 @@
 {
 	"name": "Vimium C",
-	"@time": "5/29/2022, 7:44:15 PM",
-	"time": 1653846255563,
+	"@time": "5/31/2022, 9:47:06 AM",
+	"time": 1653983226561,
 	"environment": {
 		"extension": "1.98.0",
 		"platform": "win",
@@ -21,6 +21,9 @@
 		"map yo Vomnibar.activate keyword=\"yo\"",
 		"map m Marks.activateCreate",
 		"map ' Marks.activate",
+		"map $ lastTab",
+		"map ^ firstTab",
+		"map <c-o> visitPreviousTab",
 		""
 	],
 	"mapModifier": 2,
