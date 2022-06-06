@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "5/31/2022, 9:47:06 AM",
-	"time": 1653983226561,
+	"@time": "6/6/2022, 12:21:54 PM",
+	"time": 1654510914601,
 	"environment": {
 		"extension": "1.98.0",
 		"platform": "win",
-		"chrome": "101"
+		"chrome": "102"
 	},
 	"allBrowserUrls": true,
 	"exclusionRules": [],
@@ -23,7 +23,7 @@
 		"map ' Marks.activate",
 		"map $ lastTab",
 		"map ^ firstTab",
-		"map <c-o> visitPreviousTab",
+		"map <c-o> visitPreviousTab acrossWindows",
 		""
 	],
 	"mapModifier": 2,
