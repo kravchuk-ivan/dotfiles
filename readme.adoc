@@ -53,12 +53,11 @@ NOTE: The following summary does not contain self-explanatory information that y
 
 === Bookmarks
 
-==== Folders
-
-[horizontal]
-'softdoc':: comprehensive software documentation
-'read-later':: topics that could be read later
-'organizational'
+.Folders
+[%hardbreaks]
+softdoc:: comprehensive software documentation
+read-later:: topics that could be read later
+organizational:: administrative, etc.
 
 == Terminal
 
