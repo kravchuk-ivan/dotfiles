@@ -90,7 +90,7 @@ set backspace=indent,eol,start
 " vnoremap <BS> <Esc>gV
 " onoremap <BS> <Esc>
 " cnoremap <BS> <C-C><Esc>
-" inoremap jj <Esc>
+inoremap jj <Esc>
 
 " In normal mode, you can press prefix keys before a command (for example, 12 for a count). The nnoremap causes Tab to cancel any prefix keys.
 " The vnoremap causes Tab to cancel any selection (gV is required to prevent automatic reselection).
