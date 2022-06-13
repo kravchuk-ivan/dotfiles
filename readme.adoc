@@ -2,7 +2,7 @@
 
 NOTE: The following summary does not contain self-explanatory information that you can get from other files in `~/softergonomics` directory.
 
-== Keyboard remappings
+== Keyboard remappings and shortcuts
 
 === Global (any OS)
 
@@ -30,6 +30,10 @@ NOTE: The following summary does not contain self-explanatory information that y
 * right_shift + e to right_alt + 3 (British English Magic Keyboard remap)
 * left_alt + q to left_alt + f4 (to quit an application)
 * left_alt + right_shift + f to left_alt + tab
+
+==== Shortcuts
+
+right_shift + left_alt + home row for some super useful programs, maybe even windows key plus number row?
 
 === MacOS
 

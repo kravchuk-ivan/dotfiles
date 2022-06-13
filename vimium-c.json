@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "6/6/2022, 12:21:54 PM",
-	"time": 1654510914601,
+	"@time": "6/13/2022, 1:30:26 PM",
+	"time": 1655119826169,
 	"environment": {
-		"extension": "1.98.0",
+		"extension": "1.98.2",
 		"platform": "win",
-		"chrome": "102"
+		"chromium": "102"
 	},
 	"allBrowserUrls": true,
 	"exclusionRules": [],
@@ -19,8 +19,8 @@
 		"map gh Vomnibar.activate keyword=\"gh\"",
 		"map gm Vomnibar.activate keyword=\"gm\"",
 		"map yo Vomnibar.activate keyword=\"yo\"",
-		"map m Marks.activateCreate",
-		"map ' Marks.activate",
+		"map m Marks.activateCreate swap",
+		"map ' Marks.activate swap",
 		"map $ lastTab",
 		"map ^ firstTab",
 		"map <c-o> visitPreviousTab acrossWindows",
