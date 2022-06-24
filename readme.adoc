@@ -1,6 +1,7 @@
 = Software productivity and ergonomics
 
-NOTE: The following summary does not contain self-explanatory information that you can get from other files in `~/softergonomics` directory.
+NOTE: The following summary does not contain self-explanatory information that you can get from other files in the directory.
+NOTE: OS-agnostic files are in the root directory, OS-specific files are in either mac, win or dir.
 
 == Keyboard remappings and shortcuts
 
