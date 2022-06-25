@@ -1,10 +1,10 @@
 {
 	"name": "Vimium C",
-	"@time": "6/13/2022, 1:30:26 PM",
-	"time": 1655119826169,
+	"@time": "25/06/2022, 21:07:58",
+	"time": 1656184078449,
 	"environment": {
-		"extension": "1.98.2",
-		"platform": "win",
+		"extension": "1.98.3",
+		"platform": "mac",
 		"chromium": "102"
 	},
 	"allBrowserUrls": true,
@@ -24,6 +24,8 @@
 		"map $ lastTab",
 		"map ^ firstTab",
 		"map <c-o> visitPreviousTab acrossWindows",
+		"map i focusInput",
+		"map gi enterInsertMode",
 		""
 	],
 	"mapModifier": 2,
