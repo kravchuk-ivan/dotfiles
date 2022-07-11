@@ -1,12 +1,13 @@
 # .bashrc
 
-# # The following conditional script should be included into bashrc or zshrc or alike file to source the aliases that this file contains.
+# # The following conditional script should be included into .bashrc or .zshrc or similar file to source the aliases that this file contains.
+# Use $HOME instead of ~ (cross-platform)
 
-# if [ -f ~/softergonomics/bash_aliases ]
+# if [[ -f $HOME/sf/bash_aliases ]]
 # then
-#     source ~/softergonomics/bash_aliases
+#     source $HOME/sf/bash_aliases
 # else
-#     echo "'~/softergonomics/bash_aliases' was not found. The aliases could not be updated."
+#     echo "[ERROR]:'$HOME/sf/bash_aliases' was not found."
 # fi
 
 # Functions to enhance `cd` with `ls -Altr` aliased as `j`
@@ -38,14 +39,17 @@ jj5() {
     cd ../../../../.. && ls -Althr; 
 }
 
-# User specific aliases and functions
+# OS-agnostic aliases and functions
 alias k='nvim'
 alias l='ls -Althr'
 alias s='fzf'
 alias d='vifm . .'
 
-# Linux Ubuntu specific aliases
-alias apt-update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
+# OS-specific aliases (commented out and are directly inserted into the respective .bashrc)
 
-# WSL2 Ubuntu specific aliases
-alias cpwd="pwd | clip.exe"
+## WSL2 Ubuntu specific aliases
+# alias apt-update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
+# alias cpwd="pwd | clip.exe"
+# alias winhome="j /mnt/c/Users/ivan.kravchuk/"
+# alias winroot="j /mnt/c/"
+# alias wingit="j /mnt/c/git/cnms-3.1/"
