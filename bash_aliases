@@ -53,3 +53,5 @@ alias d='vifm . .'
 # alias winhome="j /mnt/c/Users/ivan.kravchuk/"
 # alias winroot="j /mnt/c/"
 # alias wingit="j /mnt/c/git/cnms-3.1/"
+# alias jsf="j $HOME/sf"
+# alias jsd="j $HOME/sd"
