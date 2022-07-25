@@ -1,4 +1,4 @@
-# .bashrc
+#!/bin/bash
 
 # # The following conditional script should be included into .bashrc or .zshrc or similar file to source the aliases that this file contains.
 # Use $HOME instead of ~ (cross-platform)
@@ -39,19 +39,50 @@ jj5() {
     cd ../../../../.. && ls -Althr; 
 }
 
-# OS-agnostic aliases and functions
+# OS-agnostic aliases
 alias k='nvim'
 alias l='ls -Althr'
 alias s='fzf'
 alias d='vifm . .'
+alias j-='j -'
 
-# OS-specific aliases (commented out and are directly inserted into the respective .bashrc)
+# OS-specific aliases
 
-## WSL2 Ubuntu specific aliases
-# alias apt-update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
-# alias cpwd="pwd | clip.exe"
-# alias winhome="j /mnt/c/Users/ivan.kravchuk/"
-# alias winroot="j /mnt/c/"
-# alias wingit="j /mnt/c/git/cnms-3.1/"
-# alias jsf="j $HOME/sf"
-# alias jsd="j $HOME/sd"
+case "$OSTYPE" in
+    linux-gnu*)
+        alias apt-update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade' ;
+        # The problem with echoing the path is that it invokes a new subshell every time you call the command and therefore you always have the home path
+        alias cpwd="pwd | clip.exe && echo \"COPIED '$(pwd)' to Windows system clipboard!\" || echo \"ERROR: Could not copy the absolute path!\"" ;
+        alias whp="/mnt/c/Users/ivan.kravchuk" ;
+        alias jwh="j /mnt/c/Users/ivan.kravchuk/" ;
+        alias jwr="j /mnt/c/" ;
+        alias jwg="j /mnt/c/git/cnms-3.1/" ;
+        alias jsd="j $HOME/sd" ;
+        alias jsf="j $HOME/sf" ;
+        echo "SUCCESS: loaded the aliases for $(echo $OSTYPE)!"
+    ;;
+    darwin*) 
+        echo "SUCCESS: loaded the aliases for $(echo $OSTYPE)!"
+    ;;
+    msys*) 
+        alias wingit="j /c/git/cnms-3.1/" ;
+        alias winhome="j /c/Users/ivan.kravchuk/" ;
+        alias winroot="j /c/" ;
+        alias whp="/c/Users/ivan.kravchuk" ;
+        alias jwh="j /c/Users/ivan.kravchuk/" ;
+        alias jwr="j /c/" ;
+        alias jwg="j /c/git/cnms-3.1/" ;
+        echo "Successfully loaded the aliases for $(echo $OSTYPE)" ;
+        echo "$(echo $OSTYPE) is a lightweight shell and GNU utilities compiled for Windows (part of MinGW)"
+    ;;
+    bsd*)
+        echo "SUCCESS: loaded the aliases for $(echo $OSTYPE)!"
+    ;;
+    cygwin*)
+        echo "SUCCESS: loaded the aliases for $(echo $OSTYPE)!"
+        echo "$(echo $OSTYPE) is POSIX compatibility layer and Linux environment emulation for Windows" ;
+    ;;
+    *)
+        echo "WARNING: there are no aliases specified for $(echo $OSTYPE)!"
+    ;;
+esac
