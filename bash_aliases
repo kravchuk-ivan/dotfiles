@@ -59,10 +59,12 @@ case "$OSTYPE" in
         alias jwg="j /mnt/c/git/cnms-3.1/" ;
         alias jsd="j $HOME/sd" ;
         alias jsf="j $HOME/sf" ;
-        echo "SUCCESS: loaded the aliases for $(echo $OSTYPE)!"
+        echo "SUCCESS: updated configurations for $(echo $OSTYPE)!"
     ;;
     darwin*) 
-        echo "SUCCESS: loaded the aliases for $(echo $OSTYPE)!"
+        alias jsd="j $HOME/sd" ;
+        alias jsf="j $HOME/sf" ;
+        echo "SUCCESS: updated configurations for $(echo $OSTYPE)!"
     ;;
     msys*) 
         alias wingit="j /c/git/cnms-3.1/" ;
@@ -72,17 +74,17 @@ case "$OSTYPE" in
         alias jwh="j /c/Users/ivan.kravchuk/" ;
         alias jwr="j /c/" ;
         alias jwg="j /c/git/cnms-3.1/" ;
-        echo "Successfully loaded the aliases for $(echo $OSTYPE)" ;
-        echo "$(echo $OSTYPE) is a lightweight shell and GNU utilities compiled for Windows (part of MinGW)"
+        alias jsd="j $HOME/sd" ;
+        alias jsf="j $HOME/sf" ;
+        echo "SUCCESS: updated configurations for $(echo $OSTYPE)!"
     ;;
     bsd*)
-        echo "SUCCESS: loaded the aliases for $(echo $OSTYPE)!"
+        echo "SUCCESS: updated configurations for $(echo $OSTYPE)!"
     ;;
     cygwin*)
-        echo "SUCCESS: loaded the aliases for $(echo $OSTYPE)!"
-        echo "$(echo $OSTYPE) is POSIX compatibility layer and Linux environment emulation for Windows" ;
+        echo "SUCCESS: updated configurations for $(echo $OSTYPE)!"
     ;;
     *)
-        echo "WARNING: there are no aliases specified for $(echo $OSTYPE)!"
+        echo "WARNING: there are no configurations specified for $(echo $OSTYPE)!"
     ;;
 esac
