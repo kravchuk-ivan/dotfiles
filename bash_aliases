@@ -12,42 +12,41 @@
 
 # Functions to enhance `cd` with `ls -Altr` aliased as `j`
 j() {
-    cd "$@" && ls -Althr;
+    cd "$@" && ls -Alh;
 }
 jj() {
-    cd .. && ls -Althr; 
+    cd .. && ls -Alh; 
 }
 jjj() {
-    cd ../.. && ls -Althr; 
+    cd ../.. && ls -Alh; 
 }
 jjjj() {
-    cd ../../.. && ls -Althr; 
+    cd ../../.. && ls -Alh; 
 }
 jj3() {
-    cd ../../.. && ls -Althr; 
+    cd ../../.. && ls -Alh; 
 }
 jjjjj() {
-    cd ../../../.. && ls -Althr; 
+    cd ../../../.. && ls -Alh; 
 }
 jj4() {
-    cd ../../../.. && ls -Althr; 
+    cd ../../../.. && ls -Alh; 
 }
 jjjjjj() {
-    cd ../../../../.. && ls -Althr; 
+    cd ../../../../.. && ls -Alh; 
 }
 jj5() {
-    cd ../../../../.. && ls -Althr; 
+    cd ../../../../.. && ls -Alh; 
 }
 
 # OS-agnostic aliases
 alias k='nvim'
-alias l='ls -Althr'
+alias l='ls -Alh'
 alias s='fzf'
 alias d='vifm . .'
-alias j-='j -'
+alias jb='j -'
 
 # OS-specific aliases
-
 case "$OSTYPE" in
     linux-gnu*)
         alias apt-update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade' ;
