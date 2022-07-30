@@ -58,12 +58,10 @@ case "$OSTYPE" in
         alias jwr="j /mnt/c/" ;
 
         alias jwg="j /mnt/c/git/cnms-3.1/" ;
-        echo "SUCCESS: updated configurations for $(echo $OSTYPE)!"
     ;;
     darwin*) 
         alias jsd="j $HOME/sd" ;
         alias jsf="j $HOME/sf" ;
-        echo "SUCCESS: updated configurations for $(echo $OSTYPE)!"
     ;;
     msys*) 
         alias jsd="j $HOME/sd" ;
@@ -72,13 +70,10 @@ case "$OSTYPE" in
         alias jwr="j /c/" ;
 
         alias jwg="j /c/git/cnms-3.1/" ;
-        echo "SUCCESS: updated configurations for $(echo $OSTYPE)!"
     ;;
     bsd*)
-        echo "SUCCESS: updated configurations for $(echo $OSTYPE)!"
     ;;
     cygwin*)
-        echo "SUCCESS: updated configurations for $(echo $OSTYPE)!"
     ;;
     *)
         echo "WARNING: there are no configurations specified for $(echo $OSTYPE)!"
