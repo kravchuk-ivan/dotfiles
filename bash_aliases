@@ -52,12 +52,12 @@ case "$OSTYPE" in
         alias apt-update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade' ;
         # The problem with echoing the path is that it invokes a new subshell every time you call the command and therefore you always have the home path
         alias cpwd="pwd | clip.exe && echo \"COPIED '$(pwd)' to Windows system clipboard!\" || echo \"ERROR: Could not copy the absolute path!\"" ;
-        alias whp="/mnt/c/Users/ivan.kravchuk" ;
-        alias jwh="j /mnt/c/Users/ivan.kravchuk/" ;
-        alias jwr="j /mnt/c/" ;
-        alias jwg="j /mnt/c/git/cnms-3.1/" ;
         alias jsd="j $HOME/sd" ;
         alias jsf="j $HOME/sf" ;
+        alias jwh="j /mnt/c/Users/ivan.kravchuk/" ;
+        alias jwr="j /mnt/c/" ;
+
+        alias jwg="j /mnt/c/git/cnms-3.1/" ;
         echo "SUCCESS: updated configurations for $(echo $OSTYPE)!"
     ;;
     darwin*) 
@@ -66,15 +66,12 @@ case "$OSTYPE" in
         echo "SUCCESS: updated configurations for $(echo $OSTYPE)!"
     ;;
     msys*) 
-        alias wingit="j /c/git/cnms-3.1/" ;
-        alias winhome="j /c/Users/ivan.kravchuk/" ;
-        alias winroot="j /c/" ;
-        alias whp="/c/Users/ivan.kravchuk" ;
-        alias jwh="j /c/Users/ivan.kravchuk/" ;
-        alias jwr="j /c/" ;
-        alias jwg="j /c/git/cnms-3.1/" ;
         alias jsd="j $HOME/sd" ;
         alias jsf="j $HOME/sf" ;
+        alias jwh="j /c/Users/ivan.kravchuk/" ;
+        alias jwr="j /c/" ;
+
+        alias jwg="j /c/git/cnms-3.1/" ;
         echo "SUCCESS: updated configurations for $(echo $OSTYPE)!"
     ;;
     bsd*)
