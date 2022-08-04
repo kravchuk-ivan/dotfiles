@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "25/06/2022, 21:07:58",
-	"time": 1656184078449,
+	"@time": "04/08/2022, 14:52:42",
+	"time": 1659617562415,
 	"environment": {
 		"extension": "1.98.3",
 		"platform": "mac",
-		"chromium": "102"
+		"chromium": "103"
 	},
 	"allBrowserUrls": true,
 	"exclusionRules": [],
@@ -23,7 +23,7 @@
 		"map ' Marks.activate swap",
 		"map $ lastTab",
 		"map ^ firstTab",
-		"map <c-o> visitPreviousTab acrossWindows",
+		"map o visitPreviousTab acrossWindows",
 		"map i focusInput",
 		"map gi enterInsertMode",
 		""
