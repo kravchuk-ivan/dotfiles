@@ -1,6 +1,5 @@
 = Software productivity and ergonomics
 
-NOTE: The following summary does not contain self-explanatory information that you can get from other files in the directory.
 NOTE: OS-agnostic files are in directory, OS-specific files are located in the designated directories. 
 
 == Keyboard remappings and shortcuts
@@ -85,13 +84,17 @@ tldr pages
 * AutoHotKey
 * Windows Terminal
 
-=== Settings
+=== Operating system settings
 
-* Multiple clipboards (1000 items history)
+* Enable multiple clipboards (1000 items history).
+* Set taskbar location on screen to left.
+* Show taskbar on all displays.
+* Never combine taskbar items.
+* Show taskbar items on taskbar where window is open.
 
 == macOS
 
-=== Settings
+=== Operating system settings
 
 Enhance the performance of your mac keyboard::
   Enable repeating keys:::
@@ -111,7 +114,7 @@ Apple shortcuts (preferences->shortcuts)::
 
 === Applications
 
-* Karabiner Elements (Pro/Guest keyboard configurations).
+* Karabiner Elements (keyboard remapping).
 * hammerspoon (macOS automation tool).
 * amphetamine (keep-awake software).
 * WhichSpace (to see the current screen in the menubar).
