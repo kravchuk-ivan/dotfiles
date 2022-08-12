@@ -48,9 +48,12 @@ case "$OSTYPE" in
     linux-gnu*)
         alias apt-update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade' ;
         # The problem with echoing the path is that it invokes a new subshell every time you call the command and therefore you always have the home path
-        alias cpwd='pwd | clip.exe && echo \"COPIED \" ; echo $PWD ; echo \" to Windows system clipboard!\" || echo \"ERROR: Could not copy the absolute path!\"' ;
+
+        # WSL2 Ubuntu
+        alias cpwd='pwd | clip.exe && echo "COPIED " ; echo $PWD ; echo " to Windows system clipboard!" || echo \"ERROR: Could not copy the absolute path!\"' ;
         alias jwr="j /mnt/c/" ;
         alias jwh="j /mnt/c/Users/ivan.kravchuk/" ;
+        alias jwd="j /mnt/c/Users/ivan.kravchuk/Downloads" ;
 
         # Kontron-specific aliases
         alias jwg="j /mnt/c/git/cnms-3.1/" ;
