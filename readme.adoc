@@ -46,14 +46,15 @@ NOTE: To make Apple Magic keyboard work with Windows download 'Magic Keyboard Ut
 
 [%hardbreaks]
 * Vimium C Chrome:
+    ** Import the configuration file 'sf/vimium-c.json' to the extension.
+    ** In the Vimium C Options in the section "Optional permissions" enabling the `#extensions-on-chrome-urls` is not necessary to be able to use Vimium C to view PDF files in Google Chrome browser.
     ** Global marks:
-        *** outlook to O
-        *** microsoft to do to T
-        *** whatsapp to W
-        *** google translate to G
-        *** cambridge dictionary to C
+        *** outlook to o
+        *** microsoft to do to t
+        *** whatsapp to w
+        *** cambridge dictionary to c
 * PDF Viewer for Vimium C
-* uBlock Origin (adblocker)
+* uBlock Origin (adblocker). Don't forget to import the `whitelist-adblocker.txt`.
 * 1Password
 * Google dictionary (by Google)
 * Eye Dropper (color picker)
