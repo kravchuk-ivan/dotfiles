@@ -1,16 +1,17 @@
 {
 	"name": "Vimium C",
-	"@time": "04/08/2022, 14:52:42",
-	"time": 1659617562415,
+	"@time": "8/12/2022, 3:38:57 PM",
+	"time": 1660311537857,
 	"environment": {
-		"extension": "1.98.3",
-		"platform": "mac",
-		"chromium": "103"
+		"extension": "1.99.0",
+		"platform": "win",
+		"chromium": "104"
 	},
 	"allBrowserUrls": true,
+	"autoDarkMode": 0,
 	"exclusionRules": [],
 	"grabBackFocus": true,
-	"ignoreKeyboardLayout": 2,
+	"keyLayout": 132,
 	"keyMappings": [
 		"#!no-check",
 		"# Insert your preferred key mappings here.",
@@ -28,7 +29,6 @@
 		"map gi enterInsertMode",
 		""
 	],
-	"mapModifier": 2,
 	"regexFindMode": true,
 	"searchEngines": [
 		"bi: https://cn.bing.com/search?q=$s",
@@ -71,5 +71,8 @@
 		"  blank=https://gitee.com/ Gitee 仓库",
 		"js\\:|Js: javascript:\\ $S; JavaScript",
 		""
-	]
+	],
+	"showActionIcon": false,
+	"vimSync": true,
+	"mapModifier": 2
 }
