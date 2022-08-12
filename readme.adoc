@@ -1,40 +1,42 @@
 = Software productivity and ergonomics
 
 NOTE: The following summary does not contain self-explanatory information that you can get from other files in the directory.
-NOTE: OS-agnostic files are in the root directory, OS-specific files are in either mac, win or dir.
+NOTE: OS-agnostic files are in directory, OS-specific files are located in the designated directories. 
 
 == Keyboard remappings and shortcuts
 
-=== Global (any OS)
+=== OS-agnostic
 
 [%hardbreaks]
-* Tab <=> left_shift
+* Tab to left_shift
+* left_shift to Tab
 * CapsLock to Backspace
 * § to Escape
 * right_alt/right_command to right_shift
 * right_shift + backspace to delete
+* right_shift + m to Enter
 * right_shift + a to - (hyphen)
 * right_shift + s to = (equal_sign)
 * right_shift + d to Escape
 * right_shift + f to Tab 
-* right_shift + c to _ (underscore)
-* right_shift + v to + (plus)
+* right_shift + c to shift_left + - (underscore)
+* right_shift + v to shift_left + = (plus)
 * right_shift + hjkl to arrow keys
-* right_shift + qwertyuiop to ++!@#$%^&*()++
+* right_shift + qwertyuiop to shift_left + 1/2/3/4/5/6/7/8/9/0
+* right_shift + z to left_shift + `
+* left_alt/left_command + right_shift + f to left_alt/left_command + tab
 
-=== Windows
+=== Microsoft Windows
+
+NOTE: To make Apple Magic keyboard work with Windows download 'Magic Keyboard Utilities' software (it is important to remap right_alt to right_shift using this software).
 
 [%hardbreaks]
-* right_shift + 1234567890 to windows key + 1234567890
+* right_shift + 1234567890 to windows key + 1234567890 (switch to the application from the taskbar)
 * right_shift + spacebar to windows key + spacebar (to invoke PowerToys Run)
-* left_shift + 3 to right_alt + 3 (British English Magic Keyboard remap)
-* right_shift + e to right_alt + 3 (British English Magic Keyboard remap)
-* left_alt + q to left_alt + f4 (to quit an application)
-* left_alt + right_shift + f to left_alt + tab
+* right_shift + e to right_alt + 3 (British English Magic Keyboard remap to type #)
+* left_alt + q to left_alt + F4 (to quit the focused application)
 
 ==== Shortcuts
-
-right_shift + left_alt + home row for some super useful programs, maybe even windows key plus number row?
 
 === MacOS
 
