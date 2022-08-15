@@ -37,11 +37,10 @@ alias k='nvim'
 alias l='ls -Alh'
 alias s='fzf'
 alias d='vifm . .'
-alias jb='j -'
+alias j-='j -'
 alias jsd="j $HOME/sd" ;
 alias jsf="j $HOME/sf" ;
 alias jt="j $HOME/tmp" ;
-alias jd="j $HOME/Desktop" ;
 
 # OS-specific aliases
 case "$OSTYPE" in
@@ -53,17 +52,22 @@ case "$OSTYPE" in
         alias cpwd='pwd | clip.exe && echo "COPIED " ; echo $PWD ; echo " to Windows system clipboard!" || echo \"ERROR: Could not copy the absolute path!\"' ;
         alias jwr="j /mnt/c/" ;
         alias jwh="j /mnt/c/Users/ivan.kravchuk/" ;
-        alias jwd="j /mnt/c/Users/ivan.kravchuk/Downloads" ;
+        alias jwdl="j /mnt/c/Users/ivan.kravchuk/Downloads" ;
+        alias jwdt="j /mnt/c/Users/ivan.kravchuk/Desktop" ;
 
         # Kontron-specific aliases
         alias jwg="j /mnt/c/git/cnms-3.1/" ;
     ;;
     darwin*)
         alias brew-update="brew update && brew upgrade" ;
+        alias jdl="j $HOME/Downloads" ;
+        alias jdt="j $HOME/Desktop" ;
     ;;
     msys*)
         alias jwr="j /c/" ;
         alias jwh="j /c/Users/ivan.kravchuk/" ;
+        alias jwdl="j /c/Users/ivan.kravchuk/Downloads" ;
+        alias jwdt="j /c/Users/ivan.kravchuk/Desktop" ;
         
         # Kontron-specific aliases
         alias jwg="j /c/git/cnms-3.1/" ;
