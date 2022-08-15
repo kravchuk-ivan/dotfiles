@@ -1,7 +1,7 @@
 {
 	"name": "Vimium C",
-	"@time": "8/12/2022, 3:38:57 PM",
-	"time": 1660311537857,
+	"@time": "8/15/2022, 8:19:07 PM",
+	"time": 1660587547112,
 	"environment": {
 		"extension": "1.99.0",
 		"platform": "win",
@@ -11,7 +11,7 @@
 	"autoDarkMode": 0,
 	"exclusionRules": [],
 	"grabBackFocus": true,
-	"keyLayout": 132,
+	"keyLayout": 4,
 	"keyMappings": [
 		"#!no-check",
 		"# Insert your preferred key mappings here.",
@@ -27,6 +27,7 @@
 		"map o visitPreviousTab acrossWindows",
 		"map i focusInput",
 		"map gi enterInsertMode",
+		"map gp togglePinTab",
 		""
 	],
 	"regexFindMode": true,
@@ -73,6 +74,5 @@
 		""
 	],
 	"showActionIcon": false,
-	"vimSync": true,
-	"mapModifier": 2
+	"vimSync": true
 }

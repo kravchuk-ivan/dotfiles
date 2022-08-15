@@ -82,7 +82,9 @@ tldr pages
 * voidtools: Everything (better search)
 * PowerToys
 * AutoHotKey
-* Windows Terminal
+* Windows Terminal. Appearance configurations: One Half Light; Download font face 'Monoid', set cursor to non-blinking purple block)
+* IntelliJ IDEA
+* VS Code
 
 === Operating system settings
 
@@ -90,7 +92,7 @@ tldr pages
 * Set taskbar location on screen to left.
 * Show taskbar on all displays.
 * Never combine taskbar items.
-* Show taskbar items on taskbar where window is open.
+* Show taskbar items on main taskbar and taskbar where window is open.
 
 == macOS
 
