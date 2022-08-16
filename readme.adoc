@@ -1,10 +1,10 @@
 = Software productivity and ergonomics
 
-NOTE: OS-agnostic files are in directory, OS-specific files are located in the designated directories. 
+NOTE: OS-agnostic files are located in the root directory, OS-specific files are located in the designated directories.
 
-== Keyboard remappings and shortcuts
+== OS-agnostic
 
-=== OS-agnostic
+=== Keyboard remappings and shortcuts
 
 [%hardbreaks]
 * Tab to left_shift
@@ -25,23 +25,11 @@ NOTE: OS-agnostic files are in directory, OS-specific files are located in the d
 * right_shift + z to left_shift + `
 * left_alt/left_command + right_shift + f to left_alt/left_command + tab
 
-=== Microsoft Windows
+=== Applications
 
-NOTE: To make Apple Magic keyboard work with Windows download 'Magic Keyboard Utilities' software (it is important to remap right_alt to right_shift using this software).
+==== Google Chrome browser
 
-[%hardbreaks]
-* right_shift + 1234567890 to windows key + 1234567890 (switch to the application from the taskbar)
-* right_shift + spacebar to windows key + spacebar (to invoke PowerToys Run)
-* right_shift + e to right_alt + 3 (British English Magic Keyboard remap to type #)
-* left_alt + q to left_alt + F4 (to quit the focused application)
-
-==== Shortcuts
-
-=== MacOS
-
-== Google Chrome browser
-
-=== Extensions
+===== Extensions
 
 [%hardbreaks]
 * Vimium C Chrome:
@@ -58,7 +46,7 @@ NOTE: To make Apple Magic keyboard work with Windows download 'Magic Keyboard Ut
 * Google dictionary (by Google)
 * Eye Dropper (color picker)
 
-=== Bookmarks
+===== Bookmarks
 
 .Folders
 [%hardbreaks]
@@ -66,25 +54,40 @@ softdoc:: comprehensive software documentation
 read-later:: topics that could be read later
 organizational:: administrative, etc.
 
-== Terminal
+==== IntelliJ IDEA
+
+==== VS Code
+
+==== 1Password
+
+==== Office Suite
+
+== Microsoft Windows OS
+
+=== Keyboard remappings and shortcuts
+
+NOTE: To make Apple Magic keyboard work with Windows download 'Magic Keyboard Utilities' software (it is important to remap right_alt to right_shift in the application before using PowerToys keyboard manager).
+
+NOTE: Download and use United Kingdom (Magic Utilities) layout. Neither the US International (unhandy quotes autocompletion), nor the standard US layout (I like keyboards with the vertical Enter key, not the horizontal one like in the US standard keyboard).
 
 [%hardbreaks]
-ohmyzsh
-tldr pages
+* right_shift + 1234567890 to windows key + 1234567890 (switch to the application from the taskbar)
+* right_shift + spacebar to windows key + spacebar (to invoke PowerToys Run)
+* right_shift + e to right_alt + 3 (British English Magic Keyboard remap to be able to type #)
+* left_alt + q to left_alt + F4 (to quit the focused application)
 
-== Linux
-
-== Windows
+==== Shortcuts
 
 === Applications
 
 [%hardbreaks]
+* PowerToys (Fancy Zones, Powertoys Run, Keyboard manager). Set to run PowerToys as administrator.
+* Windows Terminal. Appearance configurations: One Half Light theme; Download font face 'Monoid', set cursor to non-blinking purple block)
+* Notepad++
 * voidtools: Everything (better search)
-* PowerToys
+* Git for Windows (with the option of implementing bash functionality into command prompt)
+* Magic Keyboard Utilities (to use Apple Magic Keyboard with Windows)
 * AutoHotKey
-* Windows Terminal. Appearance configurations: One Half Light; Download font face 'Monoid', set cursor to non-blinking purple block)
-* IntelliJ IDEA
-* VS Code
 
 === Operating system settings
 
