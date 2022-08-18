@@ -1,17 +1,17 @@
 {
 	"name": "Vimium C",
-	"@time": "8/15/2022, 8:19:07 PM",
-	"time": 1660587547112,
+	"@time": "18/08/2022, 21:40:59",
+	"time": 1660851659512,
 	"environment": {
-		"extension": "1.99.0",
-		"platform": "win",
+		"extension": "1.99.2",
+		"platform": "mac",
 		"chromium": "104"
 	},
 	"allBrowserUrls": true,
 	"autoDarkMode": 0,
 	"exclusionRules": [],
 	"grabBackFocus": true,
-	"keyLayout": 4,
+	"keyLayout": 129,
 	"keyMappings": [
 		"#!no-check",
 		"# Insert your preferred key mappings here.",
@@ -28,6 +28,8 @@
 		"map i focusInput",
 		"map gi enterInsertMode",
 		"map gp togglePinTab",
+		"map , moveTabLeft",
+		"map . moveTabRight",
 		""
 	],
 	"regexFindMode": true,
@@ -74,5 +76,7 @@
 		""
 	],
 	"showActionIcon": false,
-	"vimSync": true
+	"vimSync": true,
+	"ignoreKeyboardLayout": 2,
+	"mapModifier": 2
 }
