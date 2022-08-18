@@ -38,9 +38,10 @@ alias l='ls -Alh'
 alias s='fzf'
 alias d='vifm . .'
 alias j-='j -'
+alias j/='j /'
 alias jsd="j $HOME/sd" ;
 alias jsf="j $HOME/sf" ;
-alias jt="j $HOME/tmp" ;
+alias jtmp="j $HOME/tmp" ;
 
 # OS-specific aliases
 case "$OSTYPE" in
