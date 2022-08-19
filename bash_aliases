@@ -46,29 +46,26 @@ alias jtmp="j $HOME/tmp" ;
 # OS-specific aliases
 case "$OSTYPE" in
     linux-gnu*)
-        alias apt-update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade' ;
-        # The problem with echoing the path is that it invokes a new subshell every time you call the command and therefore you always have the home path
-
         # WSL2 Ubuntu
+        alias apt-update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade' ;
         alias cpwd='pwd | clip.exe && echo "COPIED " ; echo $PWD ; echo " to Windows system clipboard!" || echo \"ERROR: Could not copy the absolute path!\"' ;
         alias jwr="j /mnt/c/" ;
         alias jwh="j /mnt/c/Users/ivan.kravchuk/" ;
-        alias jwdl="j /mnt/c/Users/ivan.kravchuk/Downloads" ;
-        alias jwdt="j /mnt/c/Users/ivan.kravchuk/Desktop" ;
+        alias jdl="cd /mnt/c/Users/ivan.kravchuk/Downloads && ls -Alhtr" ;
+        alias jdt="j /mnt/c/Users/ivan.kravchuk/Desktop" ;
 
         # Kontron-specific aliases
         alias jwg="j /mnt/c/git/cnms-3.1/" ;
     ;;
     darwin*)
         alias brew-update="brew update && brew upgrade" ;
-        alias jdl="j $HOME/Downloads" ;
+        alias jdl="cd $HOME/Downloads && ls -Alhtr" ;
         alias jdt="j $HOME/Desktop" ;
     ;;
     msys*)
         alias jwr="j /c/" ;
-        alias jwh="j /c/Users/ivan.kravchuk/" ;
-        alias jwdl="j /c/Users/ivan.kravchuk/Downloads" ;
-        alias jwdt="j /c/Users/ivan.kravchuk/Desktop" ;
+        alias jdl="cd /c/Users/ivan.kravchuk/Downloads && ls -Alhtr" ;
+        alias jdt="j /c/Users/ivan.kravchuk/Desktop" ;
         
         # Kontron-specific aliases
         alias jwg="j /c/git/cnms-3.1/" ;
