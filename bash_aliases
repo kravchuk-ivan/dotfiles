@@ -47,7 +47,7 @@ alias jtmp="j $HOME/tmp" ;
 case "$OSTYPE" in
     linux-gnu*)
         # WSL2 Ubuntu
-        alias apt-update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade' ;
+        alias apt-update='sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y dist-upgrade' ;
         alias cpwd='pwd | clip.exe && echo "COPIED " ; echo $PWD ; echo " to Windows system clipboard!" || echo \"ERROR: Could not copy the absolute path!\"' ;
         alias jwr="j /mnt/c/" ;
         alias jwh="j /mnt/c/Users/ivan.kravchuk/" ;
