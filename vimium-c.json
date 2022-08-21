@@ -1,10 +1,10 @@
 {
 	"name": "Vimium C",
-	"@time": "19/08/2022, 22:50:48",
-	"time": 1660942248528,
+	"@time": "8/21/2022, 3:36:31 PM",
+	"time": 1661088991935,
 	"environment": {
-		"extension": "1.99.2",
-		"platform": "mac",
+		"extension": "1.99.3",
+		"platform": "win",
 		"chromium": "104"
 	},
 	"allBrowserUrls": true,
@@ -16,7 +16,6 @@
 		"#!no-check",
 		"# Insert your preferred key mappings here.",
 		"map go Vomnibar.activate keyword=\"go\"",
-		"map wi Vomnibar.activate keyword=\"wi\"",
 		"map gh Vomnibar.activate keyword=\"gh\"",
 		"map gm Vomnibar.activate keyword=\"gm\"",
 		"map yo Vomnibar.activate keyword=\"yo\"",
@@ -34,6 +33,7 @@
 		"map s nextTab",
 		"map q firstTab",
 		"map e lastTab",
+		"map w firstTab count=3",
 		""
 	],
 	"regexFindMode": true,
