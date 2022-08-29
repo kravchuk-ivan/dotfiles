@@ -1,10 +1,10 @@
 {
 	"name": "Vimium C",
-	"@time": "8/21/2022, 3:36:31 PM",
-	"time": 1661088991935,
+	"@time": "29/08/2022, 22:28:27",
+	"time": 1661804907874,
 	"environment": {
 		"extension": "1.99.3",
-		"platform": "win",
+		"platform": "mac",
 		"chromium": "104"
 	},
 	"allBrowserUrls": true,
@@ -34,6 +34,7 @@
 		"map q firstTab",
 		"map e lastTab",
 		"map w firstTab count=3",
+		"map gf LinkHints.activateWithQueue",
 		""
 	],
 	"regexFindMode": true,
