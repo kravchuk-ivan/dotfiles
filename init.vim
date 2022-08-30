@@ -1,74 +1,52 @@
 set nocompatible
 set cursorline
-
 "Use Unicode
 set encoding=utf-8
-
 "Line numbers and distances
 set number relativenumber
-
 "Number of lines offset when jumping
 set scrolloff=5
-
 "Indent new line the same as the preceding line
 set autoindent
-
 "Statusline indicates insert or normal mode
 set showmode showcmd
-
 "Highlight matching parentheses, braces, brackets, etc
 set showmatch
-
 "Case sensitive if it contains an uppercase
 "When 'ignorecase' and 'smartcase' are both on, if a pattern contains an uppercase letter, it is case sensitive, otherwise, it is not.
 "For example, '/The' would find only 'The', while '/the' would find 'the' or 'The', etc
 set ignorecase smartcase
-
 "Number of columns occupied by a tab
 set tabstop=4 softtabstop=4
-
 "Convert tab character to whitespaces
 set expandtab
-
 "Try to smartly indent
 set smartindent
-
 "Width for autoindents
 set shiftwidth=4
-
 "Highlight search
 set hlsearch
-
 "Working directory is always the same as the file you are editing
 set autochdir
-
 "Get bash-like tab completions
 set wildmenu wildmode=list:longest,full
-
 "Allow auto-indenting depending on file type
 filetype plugin indent on
-
 "Syntax highlighting
 syntax on
-
 "Enable mouse click
 set mouse=a
 filetype plugin on
-
 "Speed up scrolling in Vim
 set ttyfast
-
 set laststatus=2 statusline=%F
 set history=500
-
 "Show the file title
 set title
-
 "Set clipboard=unnamedplus,unnamed
 
 "Keybindings and remappings
 "Backspace and space are to be remapped to something useful
-
 "If you frequently use split windows, you might want to use the Ctrl-W family of commands to switch between windows.
 "nnoremap <C-Tab> <C-w>w
 "nnoremap <C-S-Tab> <C-w>W
@@ -109,9 +87,8 @@ call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'junegunn/vim-easy-align'
 Plug 'jiangmiao/auto-pairs'
-Plug 'airblade/vim-gitgutter' "Don't use vim-signify if you are using gitgutter
+Plug 'airblade/vim-gitgutter' "Don't use 'vim-signify' if you are using 'vim-gitgutter'
 "Any valid git URL is allowed
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'preservim/nerdtree'
 "On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -135,6 +112,7 @@ Plug 'tpope/vim-surround' " Adds surrounding text object.
 Plug 'tpope/vim-vinegar' " Improve netrw.
 Plug 'w0rp/ale' " Lint engine and LSP client.
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' } " Highly extendable fuzzy finder over lists
+Plug 'dstein64/vim-startuptime' "Different performance metrics for vim
 
 "Initialize plugin system
 call plug#end()
