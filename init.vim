@@ -6,7 +6,7 @@ set cursorline
 set encoding=utf-8
 
 "line numbers and distances
-set relativenumber 
+set relativenumber
 set number
 
 "number of lines offset when jumping
@@ -21,7 +21,7 @@ set showmode showcmd
 "highlight matching parentheses, braces, brackets, etc
 set showmatch
 
-" case sensitive if it contains an uppercase 
+" case sensitive if it contains an uppercase
 " when 'ignorecase' and 'smartcase' are both on, if a pattern contains an
 " uppercase letter, it is case sensitive, otherwise, it is not. For example,
 " '/The' would find only 'The', while '/the' would find 'the' or 'The', etc
@@ -112,7 +112,7 @@ call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'junegunn/vim-easy-align'
 Plug 'jiangmiao/auto-pairs'
-Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter' " Don't use vim-signify if you are using gitgutter
 " Any valid git URL is allowed
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'preservim/nerdtree'
@@ -122,14 +122,14 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " Preferred for dark backgrounds: gruvbox, desert, PaperColor
 " Preferred for light backgrounds: PaperColor
 " Everything else that I tried was 'meh' in terms of readability and contrast
-Plug 'sonph/onehalf' "Colorscheme
+" Plug 'sonph/onehalf' "Colorscheme
 Plug 'wuelnerdotexe/vim-enfocado' "Colorscheme
 " For the 'vim-gruvbox8' plug-in there are several options: colorscheme gruvbox8_soft/gruvbox8_hard/gruvbox8
 Plug 'lifepillar/vim-gruvbox8' "Colorscheme
 Plug 'morhetz/gruvbox' "Colorscheme
 Plug 'NLKNguyen/papercolor-theme' "Colorscheme
-Plug 'rakr/vim-one' "Colorscheme
-Plug 'arzg/vim-colors-xcode' "Colorscheme
+" Plug 'rakr/vim-one' "Colorscheme
+" Plug 'arzg/vim-colors-xcode' "Colorscheme
 
 Plug 'ap/vim-buftabline' " Show buffers in the tab line.
 Plug 'farmergreg/vim-lastplace' " Reopen files at last edit position.
@@ -137,10 +137,8 @@ Plug 'junegunn/fzf.vim' " Fuzzy finder commands using fzf.
 Plug 'liuchengxu/vim-which-key' " Show possible leader completions.
 Plug 'majutsushi/tagbar' " Sidebar ctag browser.
 Plug 'mbbill/undotree' " Sidebar undo branch browser.
-Plug 'mhinz/vim-signify' " Show VCS markings in the sign column.
 Plug 'mhinz/vim-startify' " Extendable start screen.
 Plug 'ntpeters/vim-better-whitespace' " Highlight trailing white space.
-Plug 'plasticboy/vim-markdown' " Extended markdown support.
 Plug 'tpope/vim-fugitive' " Vim git porcelain.
 Plug 'tpope/vim-surround' " Adds surrounding text object.
 Plug 'tpope/vim-vinegar' " Improve netrw.
