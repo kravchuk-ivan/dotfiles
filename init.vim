@@ -113,29 +113,39 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'junegunn/vim-easy-align'
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
-
 " Any valid git URL is allowed
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'preservim/nerdtree'
-
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-" Plugin outside ~/.vim/plugged with post-update hook
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-" Colorschemes
 " Preferred for dark backgrounds: gruvbox, desert, PaperColor
 " Preferred for light backgrounds: PaperColor
 " Everything else that I tried was 'meh' in terms of readability and contrast
-Plug 'sonph/onehalf'
-Plug 'wuelnerdotexe/vim-enfocado'
+Plug 'sonph/onehalf' "Colorscheme
+Plug 'wuelnerdotexe/vim-enfocado' "Colorscheme
 " For the 'vim-gruvbox8' plug-in there are several options: colorscheme gruvbox8_soft/gruvbox8_hard/gruvbox8
-Plug 'lifepillar/vim-gruvbox8'
-Plug 'morhetz/gruvbox'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'rakr/vim-one'
-Plug 'arzg/vim-colors-xcode'
+Plug 'lifepillar/vim-gruvbox8' "Colorscheme
+Plug 'morhetz/gruvbox' "Colorscheme
+Plug 'NLKNguyen/papercolor-theme' "Colorscheme
+Plug 'rakr/vim-one' "Colorscheme
+Plug 'arzg/vim-colors-xcode' "Colorscheme
+
+Plug 'ap/vim-buftabline' " Show buffers in the tab line.
+Plug 'farmergreg/vim-lastplace' " Reopen files at last edit position.
+Plug 'junegunn/fzf.vim' " Fuzzy finder commands using fzf.
+Plug 'liuchengxu/vim-which-key' " Show possible leader completions.
+Plug 'majutsushi/tagbar' " Sidebar ctag browser.
+Plug 'mbbill/undotree' " Sidebar undo branch browser.
+Plug 'mhinz/vim-signify' " Show VCS markings in the sign column.
+Plug 'mhinz/vim-startify' " Extendable start screen.
+Plug 'ntpeters/vim-better-whitespace' " Highlight trailing white space.
+Plug 'plasticboy/vim-markdown' " Extended markdown support.
+Plug 'tpope/vim-fugitive' " Vim git porcelain.
+Plug 'tpope/vim-surround' " Adds surrounding text object.
+Plug 'tpope/vim-vinegar' " Improve netrw.
+Plug 'vim-utils/vim-man' " Open man pages in Vim.
+Plug 'w0rp/ale' " Lint engine and LSP client.
 
 " Initialize plugin system
 call plug#end()
