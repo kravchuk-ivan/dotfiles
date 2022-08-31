@@ -1,10 +1,10 @@
 {
 	"name": "Vimium C",
-	"@time": "29/08/2022, 22:28:27",
-	"time": 1661804907874,
+	"@time": "8/31/2022, 11:51:58 AM",
+	"time": 1661939518661,
 	"environment": {
 		"extension": "1.99.3",
-		"platform": "mac",
+		"platform": "win",
 		"chromium": "104"
 	},
 	"allBrowserUrls": true,
@@ -17,7 +17,7 @@
 		"# Insert your preferred key mappings here.",
 		"map go Vomnibar.activate keyword=\"go\"",
 		"map gh Vomnibar.activate keyword=\"gh\"",
-		"map gm Vomnibar.activate keyword=\"gm\"",
+		"map ga Vomnibar.activate keyword=\"gmaps\"",
 		"map yo Vomnibar.activate keyword=\"yo\"",
 		"map m Marks.activateCreate swap",
 		"map ' Marks.activate swap",
@@ -34,7 +34,7 @@
 		"map q firstTab",
 		"map e lastTab",
 		"map w firstTab count=3",
-		"map gf LinkHints.activateWithQueue",
+		"map gm LinkHints.activateWithQueue",
 		""
 	],
 	"regexFindMode": true,
@@ -54,7 +54,7 @@
 		"ya|yd|yandex: https://yandex.com/search/?text=%s Yandex",
 		"yh|yahoo: https://search.yahoo.com/search?p=%s Yahoo",
 		"",
-		"gm: https://www.google.com/maps?q=%s \\",
+		"gmaps: https://www.google.com/maps?q=%s \\",
 		"  blank=https://www.google.com/maps Google Maps",
 		"b.m|bm|map|b.map|bmap|百度地图: \\",
 		"  https://api.map.baidu.com/geocoder?output=html&address=%s&src=vimium-c",
