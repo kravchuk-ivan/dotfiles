@@ -137,4 +137,6 @@ call plug#end()
 
 "It is important to define the colorscheme after the Plugins section
 set background=light
+hi Visual cterm=none ctermbg=DarkBlue ctermfg=White
+hi CursorLine cterm=none ctermbg=LightGray ctermfg=none
 
