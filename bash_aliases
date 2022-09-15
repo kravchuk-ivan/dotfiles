@@ -17,19 +17,19 @@ j() {
     cd "$@" && ls -Alh;
 }
 jj() {
-    cd .. && ls -Alh; 
+    cd .. && ls -Alh;
 }
 jjj() {
-    cd ../.. && ls -Alh; 
+    cd ../.. && ls -Alh;
 }
 jjjj() {
-    cd ../../.. && ls -Alh; 
+    cd ../../.. && ls -Alh;
 }
 jjjjj() {
-    cd ../../../.. && ls -Alh; 
+    cd ../../../.. && ls -Alh;
 }
 jjjjjj() {
-    cd ../../../../.. && ls -Alh; 
+    cd ../../../../.. && ls -Alh;
 }
 
 # General aliases
@@ -66,7 +66,7 @@ case "$OSTYPE" in
         alias jwr="j /c/" ;
         alias jdl="cd /c/Users/ivan.kravchuk/Downloads && ls -Alhtr" ;
         alias jdt="j /c/Users/ivan.kravchuk/Desktop" ;
-        
+
         # Kontron-specific aliases
         alias jwg="j /c/git/cnms-3.1/" ;
     ;;

@@ -17,7 +17,7 @@ NOTE: OS-agnostic files are located in the root directory, OS-specific files are
 * right_shift + a to - (hyphen)
 * right_shift + s to = (equal_sign)
 * right_shift + d to Escape
-* right_shift + f to Tab 
+* right_shift + f to Tab
 * right_shift + c to shift_left + - (underscore)
 * right_shift + v to shift_left + = (plus)
 * right_shift + hjkl to arrow keys
