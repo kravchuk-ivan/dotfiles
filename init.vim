@@ -111,7 +111,6 @@ Plug 'tpope/vim-fugitive' " Vim git porcelain.
 Plug 'tpope/vim-surround' " Adds surrounding text object.
 Plug 'tpope/vim-vinegar' " Improve netrw.
 Plug 'w0rp/ale' " Lint engine and LSP client.
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' } " Highly extendable fuzzy finder over lists
 Plug 'dstein64/vim-startuptime' "Different performance metrics for vim
 
 "Initialize plugin system
