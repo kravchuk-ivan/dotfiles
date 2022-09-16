@@ -1,7 +1,7 @@
 {
 	"name": "Vimium C",
-	"@time": "9/16/2022, 6:07:10 PM",
-	"time": 1663344430863,
+	"@time": "9/16/2022, 9:55:05 PM",
+	"time": 1663358105737,
 	"environment": {
 		"extension": "1.99.3",
 		"platform": "win",
@@ -44,8 +44,8 @@
 		"map s nextTab",
 		"map q firstTab",
 		"map e lastTab",
-		"map w firstTab count=3",
 		"map gm LinkHints.activateWithQueue",
+		"map w moveTabToNewWindow",
 		""
 	],
 	"linkHintCharacters": "sadjklewcmpghquior",
@@ -55,7 +55,7 @@
 		"  www.google.com re=/^(?:\\.[a-z]{2,4})?\\/search\\b.*?[#&?]q=([^#&]*)/i\\",
 		"  blank=https://www.google.com/ Google",
 		"oracle\\u0020java: https://www.google.com/search?q=oracle+java+%s",
-		"java: https://www.google.com/search?q=oracle+java+%s",
+		"java: https://www.google.com/search?q=java+%s",
 		"define: https://www.google.com/search?q=define+%s",
 		"cambridge: https://dictionary.cambridge.org/search/direct/?datasetsearch=english&q=%s",
 		"  blank=https://dictionary.cambridge.org/dictionary/english/",
