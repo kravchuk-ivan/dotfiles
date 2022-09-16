@@ -1,7 +1,7 @@
 {
 	"name": "Vimium C",
-	"@time": "9/16/2022, 5:30:19 PM",
-	"time": 1663342219202,
+	"@time": "9/16/2022, 6:07:10 PM",
+	"time": 1663344430863,
 	"environment": {
 		"extension": "1.99.3",
 		"platform": "win",
@@ -28,6 +28,8 @@
 		"map go Vomnibar.activateInNewTab keyword=\"oracle\\u0020java\"",
 		"map gj Vomnibar.activateInNewTab keyword=\"java\"",
 		"map gd Vomnibar.activateInNewTab keyword=\"define\"",
+		"map gc Vomnibar.activateInNewTab keyword=\"cambridge\"",
+		"",
 		"map m Marks.activateCreate swap",
 		"map ' Marks.activate swap",
 		"map $ lastTab",
@@ -55,6 +57,8 @@
 		"oracle\\u0020java: https://www.google.com/search?q=oracle+java+%s",
 		"java: https://www.google.com/search?q=oracle+java+%s",
 		"define: https://www.google.com/search?q=define+%s",
+		"cambridge: https://dictionary.cambridge.org/search/direct/?datasetsearch=english&q=%s",
+		"  blank=https://dictionary.cambridge.org/dictionary/english/",
 		"gmaps: https://www.google.com/maps?q=%s \\",
 		"  blank=https://www.google.com/maps Google Maps",
 		"youtube: https://www.youtube.com/results?search_query=%s \\",
