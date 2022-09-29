@@ -32,16 +32,22 @@ jjjjjj() {
     cd ../../../../.. && ls -Alh;
 }
 
+# Make a directory and cd to it
+mcd() {
+    test -d "$1" || mkdir "$1" && cd "$1"
+}
+
+
 # General aliases
-alias k='nvim'
-alias l='ls -Alh'
-alias s='fzf'
-alias d='vifm . .'
 alias j-='j -'
 alias j/='j /'
 alias jsd="j $HOME/sd" ;
 alias jsf="j $HOME/sf" ;
 alias jtmp="j $HOME/tmp" ;
+alias k='nvim'
+alias l='ls -Alh'
+alias s='fzf'
+alias d='vifm . .'
 
 # OS-specific aliases
 case "$OSTYPE" in
