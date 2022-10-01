@@ -67,6 +67,7 @@ case "$OSTYPE" in
         alias brew-update="brew update && brew upgrade" ;
         alias jdl="cd $HOME/Downloads && ls -Alhtr" ;
         alias jdt="j $HOME/Desktop" ;
+        alias cpwd='pwd | pbcopy && echo "COPIED " ; echo $PWD ; echo " to macOS clipboard!" || echo \"ERROR: Could not copy the absolute path!\"' ;
     ;;
     msys*)
         alias jwr="j /c/" ;
