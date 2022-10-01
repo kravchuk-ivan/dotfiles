@@ -4,6 +4,8 @@ NOTE: OS-agnostic files are located in the root directory, OS-specific files are
 
 == OS-agnostic
 
+General colorscheme guide: background is white (255,255,255), foreground is black (0,0,0) to ensure the best readability on the fundamental level. Various display modes (neutral, warm, truetone, etc) come as the wrappers.
+
 === Keyboard remappings and shortcuts
 
 [%hardbreaks]
