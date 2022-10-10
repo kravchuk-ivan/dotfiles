@@ -40,7 +40,7 @@ mcd() {
 
 # General aliases
 alias j-='j -'
-alias j/='j /'
+alias j\/='j /'
 alias jsd="j $HOME/sd" ;
 alias jsf="j $HOME/sf" ;
 alias jtmp="j $HOME/tmp" ;
@@ -59,6 +59,7 @@ case "$OSTYPE" in
         alias jwh="j /mnt/c/Users/ivan.kravchuk/" ;
         alias jdl="cd /mnt/c/Users/ivan.kravchuk/Downloads && ls -Alhtr" ;
         alias jdt="j /mnt/c/Users/ivan.kravchuk/Desktop" ;
+        alias jod="j /mnt/c/Users/ivan.kravchuk/Desktop/OneDrive\ -\ SNT\ Group" ;
 
         # Kontron-specific aliases
         alias jwg="j /mnt/c/git/cnms-3.1/" ;
@@ -67,6 +68,7 @@ case "$OSTYPE" in
         alias brew-update="brew update && brew upgrade" ;
         alias jdl="cd $HOME/Downloads && ls -Alhtr" ;
         alias jdt="j $HOME/Desktop" ;
+        alias jod="j $HOME/Desktop/OneDrive\ -\ SNT\ Group"
         alias cpwd='pwd | pbcopy && echo "COPIED " ; echo $PWD ; echo " to macOS clipboard!" || echo \"ERROR: Could not copy the absolute path!\"' ;
     ;;
     msys*)
