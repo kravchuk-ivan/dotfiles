@@ -1,0 +1,6 @@
+[includeIf "gitdir:$HOME/kontron/"]
+    path = $HOME/sf/gitconfig-work.conf
+[includeIf "gitdir:$HOME/sf/"]
+    path = $HOME/sf/gitconfig-personal.conf
+[includeIf "gitdir:$HOME/sd/"]
+    path = $HOME/sf/gitconfig-personal.conf
