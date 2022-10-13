@@ -60,6 +60,9 @@ case "$OSTYPE" in
         alias jdl="cd /mnt/c/Users/ivan.kravchuk/Downloads && ls -Alhtr" ;
         alias jdt="j /mnt/c/Users/ivan.kravchuk/Desktop" ;
         alias jod="j /mnt/c/Users/ivan.kravchuk/Desktop/OneDrive\ -\ SNT\ Group" ;
+        cpcat() {
+            test -f "$1" && cat "$1" | clip.exe
+        }
 
         # Kontron-specific aliases
         alias jwg="j /mnt/c/git/cnms-3.1/" ;
