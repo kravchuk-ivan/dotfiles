@@ -38,6 +38,7 @@ mcd() {
 }
 
 
+
 # General aliases
 alias j-='j -'
 alias j\/='j /'
@@ -81,6 +82,9 @@ case "$OSTYPE" in
 
         # Kontron-specific aliases
         alias jwg="j /c/git/cnms-3.1/" ;
+        gall() {
+            cd "/c/git/cnms-3.1/root" && gitall "$1"
+        }
     ;;
     bsd*)
     ;;
