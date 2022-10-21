@@ -41,7 +41,6 @@ mcd() {
 
 # General aliases
 alias j-='j -'
-alias j\/='j /'
 alias jsd="j $HOME/sd" ;
 alias jsf="j $HOME/sf" ;
 alias jtmp="j $HOME/tmp" ;
@@ -61,6 +60,7 @@ case "$OSTYPE" in
         alias jdl="cd /mnt/c/Users/ivan.kravchuk/Downloads && ls -Alhtr" ;
         alias jdt="j /mnt/c/Users/ivan.kravchuk/Desktop" ;
         alias jod="j /mnt/c/Users/ivan.kravchuk/Desktop/OneDrive\ -\ SNT\ Group" ;
+        alias jgd="j /mnt/c/Users/ivan.kravchuk/Google\ Drive/"
         cpcat() {
             test -f "$1" && cat "$1" | clip.exe
         }
@@ -74,6 +74,7 @@ case "$OSTYPE" in
         alias jdt="j $HOME/Desktop" ;
         alias jod="j $HOME/Desktop/OneDrive\ -\ SNT\ Group"
         alias cpwd='pwd | pbcopy && echo "COPIED " ; echo $PWD ; echo " to macOS clipboard!" || echo \"ERROR: Could not copy the absolute path!\"' ;
+        alias jgd="j $HOME/Desktop/p.drive"
     ;;
     msys*)
         alias jwr="j /c/" ;
@@ -250,7 +251,6 @@ then
     alias gswc='git switch -c'
     alias gswd='git switch $(git_develop_branch)'
     alias gswm='git switch $(git_main_branch)'
-    alias gtl='gtl(){ git tag --sort=-v:refname -n -l "${1}*" }; noglob gtl'
     alias gts='git tag -s'
     alias gtv='git tag | sort -V'
     alias gunignore='git update-index --no-assume-unchanged'
