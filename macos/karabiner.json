@@ -583,13 +583,13 @@
             ]
           },
           {
-            "description": "right_shift + left_command + f to left_command + tab",
+            "description": "right_shift + g to left_command + tab",
             "manipulators": [
               {
                 "from": {
-                  "key_code": "f",
+                  "key_code": "g",
                   "modifiers": {
-                    "mandatory": ["right_shift", "left_command"]
+                    "mandatory": ["right_shift"]
                   }
                 },
                 "to": [
