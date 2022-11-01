@@ -9,23 +9,33 @@ General colorscheme guide: background is white (255,255,255), foreground is blac
 === Keyboard remappings and shortcuts
 
 [%hardbreaks]
-* Tab to left_shift
-* left_shift to Tab
-* CapsLock to Backspace
-* § to Escape
-* right_alt/right_command to right_shift
-* right_shift + backspace to delete
-* right_shift + m to Enter
-* right_shift + a to - (hyphen)
-* right_shift + s to = (equal_sign)
-* right_shift + d to Escape
-* right_shift + f to Tab
-* right_shift + c to shift_left + - (underscore)
-* right_shift + v to shift_left + = (plus)
-* right_shift + hjkl to arrow keys
-* right_shift + qwertyuiop to shift_left + 1/2/3/4/5/6/7/8/9/0
-* right_shift + z to left_shift + `
-* left_alt/left_command + right_shift + f to left_alt/left_command + tab
+* 'Tab' TO 'left_shift'
+* 'left_shift' TO 'Tab'
+* 'CapsLock' TO 'Backspace'
+* '§' TO 'Escape'
+* 'right_alt/right_command' TO 'right_shift'
+* 'right_shift' + 'backspace' TO 'delete'
+* 'right_shift' + 'm' TO 'Enter'
+* 'right_shift' + 'a' TO '-' (hyphen)
+* 'right_shift' + 's' TO '=' (equal_sign)
+* 'right_shift' + 'd' TO 'Escape'
+* 'right_shift' + 'f' TO 'Tab'
+* 'right_shift' + 'c' TO 'left_shift' + '-' (underscore)
+* 'right_shift' + 'v' TO 'left_shift' + '=' (plus)
+* 'right_shift' + 'hjkl' TO 'arrow keys'
+* 'right_shift' + 'q/w/e/r/t/y/u/i/o/p' TO 'left_shift' + '1/2/3/4/5/6/7/8/9/0'
+* 'right_shift' + 'z' TO 'left_shift' + '`'
+* 'left_alt/left_command' + 'right_shift' + 'f' TO 'left_alt/left_command' + 'tab'
+* 'right_shift' + '0' TO 'Launch Firefox'
+* 'right_shift' + '1' TO 'Launch Reminders'
+* 'right_shift' + '2' TO 'Launch Notes'
+* 'right_shift' + '3' TO 'Launch Google Chrome'
+* 'right_shift' + '4' TO 'Launch Finder/Explorer'
+* 'right_shift' + '5' TO 'Launch Eclipse'
+* 'right_shift' + '6' TO 'Launch Visual Studio Code'
+* 'right_shift' + '7' TO 'Launch Microsoft Teams'
+* 'right_shift' + '8' TO 'Launch Terminal'
+* 'right_shift' + '9' TO 'Launch Outlook'
 
 === Applications
 
