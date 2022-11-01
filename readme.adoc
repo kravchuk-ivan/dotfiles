@@ -20,12 +20,12 @@ General colorscheme guide: background is white (255,255,255), foreground is blac
 * 'right_shift' + 's' TO '=' (equal_sign)
 * 'right_shift' + 'd' TO 'Escape'
 * 'right_shift' + 'f' TO 'Tab'
+* 'right_shift' + 'g' TO 'left_command/left_alt' + 'Tab'
 * 'right_shift' + 'c' TO 'left_shift' + '-' (underscore)
 * 'right_shift' + 'v' TO 'left_shift' + '=' (plus)
 * 'right_shift' + 'hjkl' TO 'arrow keys'
 * 'right_shift' + 'q/w/e/r/t/y/u/i/o/p' TO 'left_shift' + '1/2/3/4/5/6/7/8/9/0'
 * 'right_shift' + 'z' TO 'left_shift' + '`'
-* 'left_alt/left_command' + 'right_shift' + 'f' TO 'left_alt/left_command' + 'tab'
 * 'right_shift' + '0' TO 'Launch Firefox'
 * 'right_shift' + '1' TO 'Launch Reminders'
 * 'right_shift' + '2' TO 'Launch Notes'
