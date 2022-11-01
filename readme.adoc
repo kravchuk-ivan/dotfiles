@@ -29,12 +29,12 @@ General colorscheme guide: background is white (255,255,255), foreground is blac
 * 'right_shift' + '0' TO 'Launch Firefox'
 * 'right_shift' + '1' TO 'Launch Reminders'
 * 'right_shift' + '2' TO 'Launch Notes'
-* 'right_shift' + '3' TO 'Launch Google Chrome'
-* 'right_shift' + '4' TO 'Launch Finder/Explorer'
+* 'right_shift' + '3' TO 'Launch Finder'
+* 'right_shift' + '4' TO 'Launch Terminal'
 * 'right_shift' + '5' TO 'Launch Eclipse'
 * 'right_shift' + '6' TO 'Launch Visual Studio Code'
 * 'right_shift' + '7' TO 'Launch Microsoft Teams'
-* 'right_shift' + '8' TO 'Launch Terminal'
+* 'right_shift' + '8' TO 'Launch Google Chrome'
 * 'right_shift' + '9' TO 'Launch Outlook'
 
 === Applications
