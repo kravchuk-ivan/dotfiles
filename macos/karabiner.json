@@ -73,7 +73,7 @@
             ]
           },
           {
-            "description": "right_shift + 3 to 'Launch Google Chrome",
+            "description": "right_shift + 3 to 'Launch Finder",
             "manipulators": [
               {
                 "from": {
@@ -84,7 +84,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'Google Chrome'"
+                    "shell_command": "open -a 'Finder'"
                   }
                 ],
                 "type": "basic"
@@ -92,7 +92,7 @@
             ]
           },
           {
-            "description": "right_shift + 4 to 'Launch Finder",
+            "description": "right_shift + 4 to 'Launch Terminal",
             "manipulators": [
               {
                 "from": {
@@ -103,7 +103,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'Finder'"
+                    "shell_command": "open -a 'Terminal'"
                   }
                 ],
                 "type": "basic"
@@ -168,7 +168,7 @@
             ]
           },
           {
-            "description": "right_shift + 8 to 'Launch Terminal'",
+            "description": "right_shift + 8 to 'Launch Google Chrome'",
             "manipulators": [
               {
                 "from": {
@@ -179,7 +179,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'Terminal'"
+                    "shell_command": "open -a 'Google Chrome'"
                   }
                 ],
                 "type": "basic"
