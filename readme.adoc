@@ -26,16 +26,16 @@ General colorscheme guide: background is white (255,255,255), foreground is blac
 * 'right_shift' + 'hjkl' TO 'arrow keys'
 * 'right_shift' + 'q/w/e/r/t/y/u/i/o/p' TO 'left_shift' + '1/2/3/4/5/6/7/8/9/0'
 * 'right_shift' + 'z' TO 'left_shift' + '`'
-* 'right_shift' + '0' TO 'Launch Firefox'
-* 'right_shift' + '1' TO 'Launch Reminders'
-* 'right_shift' + '2' TO 'Launch Notes'
-* 'right_shift' + '3' TO 'Launch Finder'
+* 'right_shift' + '1' TO 'Launch Firefox'
+* 'right_shift' + '2' TO 'Launch Eclipse'
+* 'right_shift' + '3' TO 'Launch Finder/File Explorer'
 * 'right_shift' + '4' TO 'Launch Terminal'
-* 'right_shift' + '5' TO 'Launch Eclipse'
-* 'right_shift' + '6' TO 'Launch Visual Studio Code'
+* 'right_shift' + '5' TO 'Launch Visual Studio Code'
+* 'right_shift' + '6' TO 'Launch placeholder'
 * 'right_shift' + '7' TO 'Launch Microsoft Teams'
 * 'right_shift' + '8' TO 'Launch Google Chrome'
 * 'right_shift' + '9' TO 'Launch Outlook'
+* 'right_shift' + '0' TO 'Launch something/git bash'
 
 === Applications
 
