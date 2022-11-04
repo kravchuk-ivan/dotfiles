@@ -74,7 +74,7 @@ case "$OSTYPE" in
         alias jdt="j $HOME/Desktop" ;
         alias jod="j $HOME/Desktop/OneDrive\ -\ SNT\ Group"
         alias cpwd='pwd | pbcopy && echo "COPIED " ; echo $PWD ; echo " to macOS clipboard!" || echo \"ERROR: Could not copy the absolute path!\"' ;
-        alias jgd="j $HOME/Desktop/p.drive"
+        alias jpd="j $HOME/Desktop/pdrive"
     ;;
     msys*)
         alias jwr="j /c/" ;

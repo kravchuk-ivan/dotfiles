@@ -16,30 +16,11 @@
         },
         "rules": [
           {
-            "description": "right_shift + 0 to 'Launch Firefox'",
+            "description": "right_shift + 0 to 'Launch Reminders'",
             "manipulators": [
               {
                 "from": {
                   "key_code": "0",
-                  "modifiers": {
-                    "mandatory": ["right_shift"]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "open -a 'Firefox'"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "right_shift + 1 to 'Launch Reminders'",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "1",
                   "modifiers": {
                     "mandatory": ["right_shift"]
                   }
@@ -54,7 +35,26 @@
             ]
           },
           {
-            "description": "right_shift + 2 to 'Launch Notes",
+            "description": "right_shift + 1 to 'Launch Firefox'",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "1",
+                  "modifiers": {
+                    "mandatory": ["right_shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Firefox'"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "right_shift + 2 to 'Launch Eclipse",
             "manipulators": [
               {
                 "from": {
@@ -65,7 +65,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'Notes'"
+                    "shell_command": "open -a 'Eclipse'"
                   }
                 ],
                 "type": "basic"
@@ -111,7 +111,7 @@
             ]
           },
           {
-            "description": "right_shift + 5 to 'Launch Eclipse",
+            "description": "right_shift + 5 to 'Launch Visual Studio Code",
             "manipulators": [
               {
                 "from": {
@@ -122,7 +122,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'Eclipse'"
+                    "shell_command": "open -a 'Visual Studio Code'"
                   }
                 ],
                 "type": "basic"
@@ -130,7 +130,7 @@
             ]
           },
           {
-            "description": "right_shift + 6 to 'Launch Visual Studio Code",
+            "description": "right_shift + 6 to 'Notes'",
             "manipulators": [
               {
                 "from": {
@@ -141,7 +141,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'Visual Studio Code'"
+                    "shell_command": "open -a 'Notes'"
                   }
                 ],
                 "type": "basic"
