@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "9/16/2022, 9:55:05 PM",
-	"time": 1663358105737,
+	"@time": "11/7/2022, 3:22:13 PM",
+	"time": 1667830933179,
 	"environment": {
-		"extension": "1.99.3",
+		"extension": "1.99.5",
 		"platform": "win",
-		"chromium": "105"
+		"chromium": "107"
 	},
 	"allBrowserUrls": true,
 	"autoDarkMode": 0,
@@ -35,7 +35,9 @@
 		"map $ lastTab",
 		"map ^ firstTab",
 		"map o visitPreviousTab acrossWindows",
+		"unmap i",
 		"map i focusInput",
+		"unmap gi",
 		"map gi enterInsertMode",
 		"map gp togglePinTab",
 		"map , moveTabLeft",
