@@ -37,6 +37,7 @@ General colorscheme guide: background is white (255,255,255), foreground is blac
 * 'right_shift' + '9' TO 'Launch Outlook'
 * 'right_shift' + '0' TO 'Launch Reminders/Microsoft To Do'
 * 'right_shift' + 'ctrl' + '4' TO 'Open New Terminal Tab at Folder'
+* 'right_shift' + 'n' TO 'Launch Notes'
 
 === Applications
 
