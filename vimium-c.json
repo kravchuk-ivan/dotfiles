@@ -1,10 +1,10 @@
 {
 	"name": "Vimium C",
-	"@time": "11/9/2022, 9:51:39 AM",
-	"time": 1667983899945,
+	"@time": "20/11/2022, 20:22:34",
+	"time": 1668972154923,
 	"environment": {
 		"extension": "1.99.5",
-		"platform": "win",
+		"platform": "mac",
 		"chromium": "107"
 	},
 	"allBrowserUrls": true,
@@ -20,6 +20,8 @@
 	"keyMappings": [
 		"#!no-check",
 		"# Insert your preferred key mappings here.",
+		"# No initial unmap necessary.",
+		"",
 		"map gh Vomnibar.activateInNewTab keyword=\"github\"",
 		"map ga Vomnibar.activateInNewTab keyword=\"gmaps\"",
 		"map gy Vomnibar.activateInNewTab keyword=\"youtube\"",
@@ -29,8 +31,7 @@
 		"map gj Vomnibar.activateInNewTab keyword=\"java\"",
 		"map gd Vomnibar.activateInNewTab keyword=\"define\"",
 		"map gc Vomnibar.activateInNewTab keyword=\"cambridge\"",
-		"",
-		"# No initial unmap necessary",
+		"map gv Vomnibar.activateInNewTab keyword=\"how\\u0020to\\u0020pronounce\\u0020\"",
 		"map m Marks.activateCreate swap",
 		"map ' Marks.activate swap",
 		"map gp togglePinTab",
