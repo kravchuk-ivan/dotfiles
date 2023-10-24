@@ -1,9 +1,9 @@
 #!/bin/bash
 
 ###
-# Put the following script into '.bashrc' or alike
-# Use $HOME instead of '~' sign (cross-platform)
+# Put the following snippet into your shell configuration file ('.bashrc', '.zshrc', etc)
 
+# Use $HOME instead of '~' sign (cross-platform)
 # if [[ -f $HOME/sf/bash_aliases ]]
 # then
 #     source $HOME/sf/bash_aliases
@@ -54,38 +54,30 @@ case "$OSTYPE" in
     linux-gnu*)
         # WSL2 Ubuntu
         alias apt-update='sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y dist-upgrade' ;
-        alias cpwd='pwd | clip.exe && echo "COPIED " ; echo $PWD ; echo " to Windows system clipboard!" || echo \"ERROR: Could not copy the absolute path!\"' ;
         alias jwr="j /mnt/c/" ;
         alias jwh="j /mnt/c/Users/ivan.kravchuk/" ;
         alias jdl="cd /mnt/c/Users/ivan.kravchuk/Downloads && ls -Alhtr" ;
         alias jdt="j /mnt/c/Users/ivan.kravchuk/Desktop" ;
-        alias jod="j /mnt/c/Users/ivan.kravchuk/Desktop/OneDrive\ -\ SNT\ Group" ;
-        alias jgd="j /mnt/c/Users/ivan.kravchuk/Google\ Drive/"
+        alias jpd="j /mnt/c/Users/ivan.kravchuk/Google\ Drive/" ;
+        alias cpwd='pwd | clip.exe && echo "COPIED " ; echo $PWD ; echo " to Windows system clipboard!" || echo \"[ERROR]: Could not copy the absolute path!\"' ;
         cpcat() {
             test -f "$1" && cat "$1" | clip.exe
         }
-
-        # Kontron-specific aliases
-        alias jwg="j /mnt/c/git/cnms-3.1/" ;
     ;;
     darwin*)
         alias brew-update="brew update && brew upgrade" ;
         alias jdl="cd $HOME/Downloads && ls -Alhtr" ;
         alias jdt="j $HOME/Desktop" ;
-        alias jod="j $HOME/Desktop/OneDrive\ -\ SNT\ Group"
-        alias cpwd='pwd | pbcopy && echo "COPIED " ; echo $PWD ; echo " to macOS clipboard!" || echo \"ERROR: Could not copy the absolute path!\"' ;
-        alias jpd="j $HOME/Desktop/pdrive"
+        alias jpd="j $HOME/Desktop/pdrive" ;
+        alias cpwd='pwd | pbcopy && echo "COPIED " ; echo $PWD ; echo " to macOS clipboard!" || echo \"[ERROR]: Could not copy the absolute path!\"' ;
+        cpcat() {
+            test -f "$1" && pbcopy < "$1" && cat "$1"
+        }
     ;;
     msys*)
         alias jwr="j /c/" ;
         alias jdl="cd /c/Users/ivan.kravchuk/Downloads && ls -Alhtr" ;
         alias jdt="j /c/Users/ivan.kravchuk/Desktop" ;
-
-        # Kontron-specific aliases
-        alias jwg="j /c/git/cnms-3.1/" ;
-        gall() {
-            cd "/c/git/cnms-3.1/root" && gitall "$1"
-        }
     ;;
     bsd*)
     ;;
@@ -264,4 +256,3 @@ then
     alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
     alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"'
 fi
-
