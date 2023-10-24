@@ -1,6 +1,0 @@
-[includeIf "gitdir:/home/kravchukivan/kontron/"]
-    path = /home/kravchukivan/sf/gitconfig-work.conf
-[includeIf "gitdir:/home/kravchukivan/sf/"]
-    path = /home/kravchukivan/sf/gitconfig-personal.conf
-[includeIf "gitdir:/home/kravchukivan/sd/"]
-    path = /home/kravchukivan/sf/gitconfig-personal.conf

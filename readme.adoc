@@ -123,7 +123,6 @@ Enhance the performance of your mac keyboard::
   Change initial key repeat rate from **15** (standard minimum) to **10** (lower than 10 is too fast, error prone and laggy):::
      `defaults write -g InitialKeyRepeat -int 10`
 
-Change trackpad speed to maximum:: `defaults write -g com.apple.mouse.scaling -float 5.0`
 Use column view in all Finder windows by default::
   open a finder window -> view options -> always column view, also browse in column view
 Show only active apps in dock::
