@@ -1,7 +1,7 @@
 {
 	"name": "Vimium C",
-	"@time": "24/10/2023, 12:52:48",
-	"time": 1698166368057,
+	"@time": "24/10/2023, 14:38:01",
+	"time": 1698172681581,
 	"environment": {
 		"extension": "1.99.994",
 		"platform": "mac",
@@ -27,6 +27,7 @@
 		"map gy Vomnibar.activateInNewTab keyword=\"youtube\"",
 		"map gs Vomnibar.activateInNewTab keyword=\"gscholar\"",
 		"map gj Vomnibar.activateInNewTab keyword=\"java\"",
+		"map ga Vomnibar.activateInNewTab keyword=\"python\"",
 		"map gd Vomnibar.activateInNewTab keyword=\"define\"",
 		"map gc Vomnibar.activateInNewTab keyword=\"cambridge\"",
 		"map gv Vomnibar.activateInNewTab",
@@ -58,7 +59,7 @@
 		"google: https://www.google.com/search?q=%s \\",
 		"  www.google.com re=/^(?:\\.[a-z]{2,4})?\\/search\\b.*?[#&?]q=([^#&]*)/i\\",
 		"  blank=https://www.google.com/ Google",
-		"oracle\\u0020java: https://www.google.com/search?q=oracle+java+%s",
+		"python: https://www.google.com/search?q=python+%s",
 		"java: https://www.google.com/search?q=java+%s",
 		"define: https://www.google.com/search?q=define+%s",
 		"cambridge: https://dictionary.cambridge.org/search/direct/?datasetsearch=english&q=%s",
