@@ -55,12 +55,12 @@ case "$OSTYPE" in
         # WSL2 Ubuntu
         alias apt-update='sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y dist-upgrade' ;
         alias jwr="j /mnt/c/" ;
-        alias jwh="j /mnt/c/Users/ivan.kravchuk/" ;
-        alias jdl="cd /mnt/c/Users/ivan.kravchuk/Downloads && ls -Alhtr" ;
-        alias jdt="j /mnt/c/Users/ivan.kravchuk/Desktop" ;
-        alias jpd="j /mnt/c/Users/ivan.kravchuk/Google\ Drive/" ;
+        alias jwh="j /mnt/c/Users/ivankravchuk99/" ;
+        alias jdl="cd /mnt/c/Users/ivankravchuk99/Downloads && ls -Alhtr" ;
+        alias jdt="j /mnt/c/Users/ivankravchuk99/Desktop" ;
+        alias jpd="j /mnt/c/Users/ivankravchuk99/Google\ Drive/" ;
         alias cpwd='pwd | clip.exe && echo "COPIED " ; echo $PWD ; echo " to Windows system clipboard!" || echo \"[ERROR]: Could not copy the absolute path!\"' ;
-        cpcat() {
+        catcp() {
             test -f "$1" && cat "$1" | clip.exe
         }
     ;;
@@ -70,14 +70,14 @@ case "$OSTYPE" in
         alias jdt="j $HOME/Desktop" ;
         alias jpd="j $HOME/Desktop/pdrive" ;
         alias cpwd='pwd | pbcopy && echo "COPIED " ; echo $PWD ; echo " to macOS clipboard!" || echo \"[ERROR]: Could not copy the absolute path!\"' ;
-        cpcat() {
+        catcp() {
             test -f "$1" && pbcopy < "$1" && cat "$1"
         }
     ;;
     msys*)
         alias jwr="j /c/" ;
-        alias jdl="cd /c/Users/ivan.kravchuk/Downloads && ls -Alhtr" ;
-        alias jdt="j /c/Users/ivan.kravchuk/Desktop" ;
+        alias jdl="cd /c/Users/ivankravchuk99/Downloads && ls -Alhtr" ;
+        alias jdt="j /c/Users/ivankravchuk99/Desktop" ;
     ;;
     bsd*)
     ;;
