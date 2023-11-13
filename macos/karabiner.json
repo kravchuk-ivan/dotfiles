@@ -56,7 +56,7 @@
             ]
           },
           {
-            "description": "right_shift + x  to 'Launch Notion'",
+            "description": "right_shift + x  to 'Launch 1Password'",
             "manipulators": [
               {
                 "from": {
@@ -67,7 +67,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'Notion'"
+                    "shell_command": "open -a '1Password'"
                   }
                 ],
                 "type": "basic"
@@ -113,7 +113,7 @@
             ]
           },
           {
-            "description": "right_shift + 2 to 'Launch Outlook'",
+            "description": "right_shift + 2 to 'Launch Microsoft Outlook'",
             "manipulators": [
               {
                 "from": {
@@ -124,7 +124,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'Outlook'"
+                    "shell_command": "open -a 'Microsoft Outlook'"
                   }
                 ],
                 "type": "basic"
@@ -170,7 +170,7 @@
             ]
           },
           {
-            "description": "right_shift + 5 to 'Launch Visual Studio Code",
+            "description": "right_shift + 5 to 'Launch Microsoft Teams classic",
             "manipulators": [
               {
                 "from": {
@@ -181,7 +181,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'Visual Studio Code'"
+                    "shell_command": "open -a 'Microsoft Teams classic'"
                   }
                 ],
                 "type": "basic"
@@ -189,7 +189,7 @@
             ]
           },
           {
-            "description": "right_shift + 6 to 'Launch Visual Studio Code'",
+            "description": "right_shift + 6 to 'Launch Notion'",
             "manipulators": [
               {
                 "from": {
@@ -200,7 +200,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'Visual Studio Code'"
+                    "shell_command": "open -a 'Notion'"
                   }
                 ],
                 "type": "basic"
@@ -208,7 +208,7 @@
             ]
           },
           {
-            "description": "right_shift + 7 to 'Launch Microsoft Teams",
+            "description": "right_shift + 7 to 'Launch Notion",
             "manipulators": [
               {
                 "from": {
@@ -219,7 +219,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'Microsoft Teams'"
+                    "shell_command": "open -a 'Notion'"
                   }
                 ],
                 "type": "basic"
@@ -227,7 +227,7 @@
             ]
           },
           {
-            "description": "right_shift + 8 to 'Launch Google Chrome Canary'",
+            "description": "right_shift + 8 to 'Launch Google Chrome'",
             "manipulators": [
               {
                 "from": {
@@ -238,7 +238,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'Google Chrome Canary'"
+                    "shell_command": "open -a 'Google Chrome'"
                   }
                 ],
                 "type": "basic"
@@ -246,7 +246,7 @@
             ]
           },
           {
-            "description": "right_shift + 9 to 'Launch Google Chrome",
+            "description": "right_shift + 9 to 'Launch Google Chrome Canary",
             "manipulators": [
               {
                 "from": {
@@ -257,7 +257,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'Google Chrome'"
+                    "shell_command": "open -a 'Google Chrome Canary'"
                   }
                 ],
                 "type": "basic"
@@ -1219,3 +1219,4 @@
     }
   ]
 }
+
