@@ -37,7 +37,7 @@ mcd() {
     test -d "$1" || mkdir "$1" && cd "$1"
 }
 
-
+set -o vi
 
 # General aliases
 alias j-='j -'
