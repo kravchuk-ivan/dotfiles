@@ -189,7 +189,7 @@
             ]
           },
           {
-            "description": "right_shift + 6 to 'Launch Notion'",
+            "description": "right_shift + 6 to 'Launch Notion (placeholder)'",
             "manipulators": [
               {
                 "from": {
@@ -208,7 +208,7 @@
             ]
           },
           {
-            "description": "right_shift + 7 to 'Launch Notion",
+            "description": "right_shift + 7 to 'Launch Notion (placeholder)",
             "manipulators": [
               {
                 "from": {
@@ -1042,16 +1042,6 @@
           "to": [
             {
               "apple_vendor_top_case_key_code": "keyboard_fn"
-            }
-          ]
-        },
-        {
-          "from": {
-            "key_code": "left_shift"
-          },
-          "to": [
-            {
-              "key_code": "tab"
             }
           ]
         },
