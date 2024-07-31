@@ -1,0 +1,43 @@
+{
+  "editor.fontSize": 13,
+  "editor.wordWrap": "on",
+  "explorer.confirmDelete": false,
+  "workbench.settings.editor": "json",
+  "workbench.settings.openDefaultSettings": true,
+  "files.autoSave": "afterDelay",
+  "editor.formatOnSave": true,
+  "search.useIgnoreFiles": true,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "workbench.panel.defaultLocation": "right",
+  "files.associations": {
+    "*.rmd": "markdown",
+    "*.json": "jsonc"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "better-comments.highlightPlainText": true,
+  "editor.linkedEditing": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.largeFileOptimizations": true,
+  "editor.cursorStyle": "block",
+  "vim.cursorStylePerMode.insert": "line-thin",
+  "editor.cursorBlinking": "solid",
+  "editor.lineNumbers": "relative",
+  "markdown-preview-enhanced.previewTheme": "github-light.css",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  },
+  "editor.acceptSuggestionOnEnter": "smart",
+  "editor.tabCompletion": "on",
+  "editor.parameterHints.enabled": false,
+  "git.openRepositoryInParentFolders": "always",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "workbench.preferredHighContrastLightColorTheme": "Default Dark+",
+  "workbench.startupEditor": "none"
+}
+
