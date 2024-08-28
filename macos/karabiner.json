@@ -682,14 +682,15 @@
             ]
           },
           {
-            "description": "left_command + g to left_command + tab",
+                        "description": "left_command + e to left_command + tab",
             "manipulators": [
               {
                 "from": {
-                  "key_code": "g",
+                                    "key_code": "e",
                   "modifiers": {
-                    "mandatory": ["left_command"],
-                    "optional": ["any"]
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
                   }
                 },
                 "to": [
