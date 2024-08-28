@@ -495,6 +495,31 @@
               }
             ]
           },
+                    {
+                        "description": "left_control + delete_or_backspace to option + delete_or_backspace",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": "left_option"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
           {
             "description": "right_shift + delete_or_backspace to delete_forward",
             "manipulators": [
@@ -677,6 +702,28 @@
               }
             ]
           },
+                    {
+                        "description": "left_command + g to left_command + grave_accent_and_tilde",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": "left_command"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
           {
             "description": "right_shift + g to left_command + tab",
             "manipulators": [
