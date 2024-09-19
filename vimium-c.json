@@ -43,6 +43,7 @@
 		"map e lastTab",
 		"map w moveTabToNewWindow",
 		"map gm LinkHints.activateWithQueue",
+		"map w moveTabToNextWindow",
 		"",
 		"# Initial unmap necessary",
 		"unmap o",
@@ -51,6 +52,8 @@
 		"map i focusInput",
 		"unmap gi",
 		"map gi enterInsertMode",
+		"unmap W",
+		"map W moveTabToNewWindow",
 		""
 	],
 	"linkHintCharacters": "sadjklewcmpghquior",
