@@ -13,6 +13,18 @@
 		{
 			"passKeys": "",
 			"pattern": ":https://foobar.withgoogle.com/"
+		},
+		{
+			"passKeys": "/ ? a c d e g j k m q t w x y z ",
+			"pattern": ":https://calendar.google.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://docs.google.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://track.toggl.com/"
 		}
 	],
 	"grabBackFocus": true,
