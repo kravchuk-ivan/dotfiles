@@ -54,6 +54,8 @@
 		"map gi enterInsertMode",
 		"unmap W",
 		"map W moveTabToNewWindow",
+		"unmap gt",
+		"unmap gT",
 		""
 	],
 	"linkHintCharacters": "sadjklewcmpghquior",
