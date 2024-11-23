@@ -986,31 +986,6 @@
                         ]
                     },
                     {
-                        "description": "right_command + g to left_command + tab",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "g",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_command"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": "left_command"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "right_command + i/j/k/l to Arrows",
                         "manipulators": [
                             {
