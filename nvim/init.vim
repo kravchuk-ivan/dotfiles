@@ -96,8 +96,8 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 "Preferred for dark backgrounds: gruvbox, desert, PaperColor
 "Preferred for light backgrounds: PaperColor
 "Everything else that I tried was 'meh' in terms of readability and contrast
-"Plug 'morhetz/gruvbox' "Colorscheme
-"Plug 'NLKNguyen/papercolor-theme' "Colorscheme
+Plug 'morhetz/gruvbox' "Colorscheme
+Plug 'NLKNguyen/papercolor-theme' "Colorscheme
 
 Plug 'ap/vim-buftabline' " Show buffers in the tab line.
 Plug 'farmergreg/vim-lastplace' " Reopen files at last edit position.
@@ -111,9 +111,7 @@ Plug 'tpope/vim-fugitive' " Vim git porcelain.
 Plug 'tpope/vim-surround' " Adds surrounding text object.
 Plug 'tpope/vim-vinegar' " Improve netrw.
 Plug 'w0rp/ale' " Lint engine and LSP client.
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' } " Highly extendable fuzzy finder over lists
 Plug 'dstein64/vim-startuptime' "Different performance metrics for vim
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "Initialize plugin system
 call plug#end()
@@ -138,4 +136,6 @@ call plug#end()
 
 "It is important to define the colorscheme after the Plugins section
 set background=light
+hi Visual cterm=none ctermbg=LightYellow ctermfg=none
+hi CursorLine cterm=none ctermbg=LightGray ctermfg=none
 
