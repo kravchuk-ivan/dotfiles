@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "19/11/2024, 12:28:16",
-	"time": 1732037296151,
+	"@time": "25/02/2025, 20:03:08",
+	"time": 1740531788752,
 	"environment": {
 		"extension": "2.11.3",
 		"platform": "mac",
-		"chromium": 131
+		"chromium": 133
 	},
 	"allBrowserUrls": true,
 	"autoDarkMode": 0,
@@ -40,11 +40,11 @@
 		"map gd Vomnibar.activateInNewTab keyword=\"define\"",
 		"map gc Vomnibar.activateInNewTab keyword=\"cambridge\"",
 		"map gn Vomnibar.activateInNewTab keyword=\"mdn\"",
-		"map gq Vomnibar.activateInNewTab keyword=\"gmaps\"",
+		"map ga Vomnibar.activateInNewTab keyword=\"gmaps\"",
 		"",
 		"# GoDaddy (mostly job-related)",
 		"map gw Vomnibar.activateInNewTab keyword=\"godaddy-whois\"",
-		"map ga Vomnibar.activateInNewTab keyword=\"godaddy-help\"",
+		"map gq Vomnibar.activateInNewTab keyword=\"godaddy\"",
 		"map gx Vomnibar.activateInNewTab keyword=\"sucuri\"",
 		"",
 		"map g; LinkHints.activateOpenImage auto   ",
@@ -126,10 +126,10 @@
 		"  blank=https://scholar.google.com/ Google Scholar",
 		"github: https://github.com/search?q=$s \\",
 		"  blank=https://github.com/ GitHub Repo",
-		"godaddy-whois: https://ca.godaddy.com/whois/results.aspx?domain=%s",
-		"godaddy-help: https://www.godaddy.com/en-ca/help/search?q=%s&types=Article",
+		"godaddy-whois: https://godaddy.com/whois/results.aspx?domain=%s",
 		"sucuri: https://sitecheck.sucuri.net/results/%s",
-		"mdn: https://developer.mozilla.org/en-US/search?q=%s&sort=best",
+		"mdn: https://www.google.com/search?q=mdn+%s",
+		"godaddy: https://www.google.com/search?q=godaddy+%s",
 		"",
 		"placeholder: https://www.google.com/search?q=%s \\",
 		"  www.google.com re=/^(?:\\.[a-z]{2,4})?\\/search\\b.*?[#&?]q=([^#&]*)/i\\",
@@ -140,4 +140,3 @@
 	"ignoreKeyboardLayout": 2,
 	"mapModifier": 2
 }
-
