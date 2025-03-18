@@ -64,7 +64,7 @@
 		"map ; zoomIn",
 		"",
 		"# Activate vomnibar to open URL, bookmark or history entry",
-		"map gv Vomnibar.activateInNewTab keyword=",
+		"map gv Vomnibar.activateInNewTab",
 		"",
 		"# Placeholders",
 		"map g, Vomnibar.activateInNewTab keyword=\"placeholder\"",
