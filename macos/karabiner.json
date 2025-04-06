@@ -270,7 +270,7 @@
                         ]
                     },
                     {
-                        "description": "right_command + 9 to 'Launch Google Chrome Canary",
+                        "description": "right_command + 9 to 'Launch Toggl Track",
                         "manipulators": [
                             {
                                 "from": {
@@ -283,7 +283,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'Google Chrome Canary'"
+                                        "shell_command": "open -a 'Toggl Track'"
                                     }
                                 ],
                                 "type": "basic"
@@ -1428,6 +1428,16 @@
                 },
                 {
                     "from": {
+                        "key_code": "escape"
+                    },
+                    "to": [
+                        {
+                            "key_code": "grave_accent_and_tilde"
+                        }
+                    ]
+                },
+                {
+                    "from": {
                         "key_code": "grave_accent_and_tilde"
                     },
                     "to": [
@@ -1453,16 +1463,6 @@
                     "to": [
                         {
                             "key_code": "escape"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "escape"
-                    },
-                    "to": [
-                        {
-                            "key_code": "grave_accent_and_tilde"
                         }
                     ]
                 }
