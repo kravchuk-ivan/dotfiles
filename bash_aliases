@@ -59,7 +59,7 @@ case "$OSTYPE" in
         alias jdl="cd /mnt/c/Users/ivankravchuk99/Downloads && ls -Alhtr" ;
         alias jdt="j /mnt/c/Users/ivankravchuk99/Desktop" ;
         alias jpd="j /mnt/c/Users/ivankravchuk99/Google\ Drive/" ;
-        alias cpwd='pwd | clip.exe && echo "COPIED " ; echo $PWD ; echo " to Windows system clipboard!" || echo \"[ERROR]: Could not copy the absolute path!\"' ;
+        alias pwdcp='pwd | clip.exe && echo "COPIED " ; echo $PWD ; echo " to Windows system clipboard!" || echo \"[ERROR]: Could not copy the absolute path!\"' ;
         catcp() {
             test -f "$1" && cat "$1" | clip.exe
         }
@@ -69,7 +69,7 @@ case "$OSTYPE" in
         alias jdl="cd $HOME/Downloads && ls -Alhtr" ;
         alias jdt="j $HOME/Desktop" ;
         alias jpd="j $HOME/Desktop/pdrive" ;
-        alias cpwd='pwd | pbcopy && echo "COPIED " ; echo $PWD ; echo " to macOS clipboard!" || echo \"[ERROR]: Could not copy the absolute path!\"' ;
+        alias pwdcp='pwd | pbcopy && echo "COPIED " ; echo $PWD ; echo " to macOS clipboard!" || echo \"[ERROR]: Could not copy the absolute path!\"' ;
         catcp() {
             test -f "$1" && pbcopy < "$1" && cat "$1"
         }
