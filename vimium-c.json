@@ -1,7 +1,7 @@
 {
 	"name": "Vimium C",
-	"@time": "27/06/2025, 12:30:51",
-	"time": 1751041851635,
+	"@time": "27/06/2025, 12:46:55",
+	"time": 1751042815721,
 	"environment": {
 		"extension": "2.12.2",
 		"platform": "mac",
@@ -38,8 +38,13 @@
 		"map gd Vomnibar.activateInNewTab keyword=\"define\"",
 		"map gn Vomnibar.activateInNewTab keyword=\"mdn\"",
 		"map ga Vomnibar.activateInNewTab keyword=\"gmaps\"",
+		"",
+		"## Marks",
+		"",
 		"map m Marks.activateCreate swap",
 		"map ' Marks.activate swap",
+		"map <a-l> Marks.clearLocal",
+		"map <a-s-l> Marks.clearGlobal",
 		"",
 		"## GoDaddy job-related search shortcuts",
 		"",
