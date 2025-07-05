@@ -1,7 +1,7 @@
 {
 	"name": "Vimium C",
-	"@time": "28/06/2025, 10:35:27",
-	"time": 1751121327183,
+	"@time": "05/07/2025, 10:21:54",
+	"time": 1751725314905,
 	"environment": {
 		"extension": "2.12.2",
 		"platform": "mac",
@@ -60,7 +60,7 @@
 		"",
 		"## Link and image handling",
 		"",
-		"map c LinkHints.activateOpenInNewForegroundTab",
+		"map c lastTab",
 		"map gm LinkHints.activateWithQueue",
 		"map g; LinkHints.activateOpenImage auto   # select and open an image",
 		"map ys LinkHints.activateCopyLinkText",
