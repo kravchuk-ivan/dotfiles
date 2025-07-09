@@ -1,0 +1,5 @@
+eamodio.gitlens
+esbenp.prettier-vscode
+ritwickdey.liveserver
+tinkertrain.theme-panda
+vscodevim.vim
