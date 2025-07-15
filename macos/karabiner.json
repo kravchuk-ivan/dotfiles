@@ -12,6 +12,22 @@
                 },
                 "rules": [
                     {
+                        "description": "right_command + m to return_or_enter",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "mandatory": ["right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "return_or_enter" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "right_command + n to 'Launch Obsidian'",
                         "manipulators": [
                             {
@@ -463,6 +479,7 @@
                     },
                     {
                         "description": "right_command + m to return_or_enter (k1magic Magic Keyboard only)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
