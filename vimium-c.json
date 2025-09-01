@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "05/07/2025, 10:21:54",
-	"time": 1751725314905,
+	"@time": "8/31/2025, 7:00:03 PM",
+	"time": 1756681203679,
 	"environment": {
 		"extension": "2.12.2",
 		"platform": "mac",
-		"chromium": 137
+		"chromium": 139
 	},
 	"allBrowserUrls": true,
 	"autoDarkMode": 0,
@@ -35,9 +35,11 @@
 		"map g. Vomnibar.activateHistoryInNewTab",
 		"map gh Vomnibar.activateInNewTab keyword=\"github\"",
 		"map gy Vomnibar.activateInNewTab keyword=\"youtube\"",
-		"map gd Vomnibar.activateInNewTab keyword=\"define\"",
+		"map gd Vomnibar.activateInNewTab keyword=\"cambridge-dictionary\"",
 		"map gn Vomnibar.activateInNewTab keyword=\"mdn\"",
 		"map ga Vomnibar.activateInNewTab keyword=\"gmaps\"",
+		"map go Vomnibar.activateInNewTab keyword=\"google\"",
+		"",
 		"",
 		"## Marks",
 		"",
@@ -107,7 +109,6 @@
 		"",
 		"## Placeholders",
 		"map g, Vomnibar.activateInNewTab keyword=\"placeholder\"",
-		"map go Vomnibar.activateInNewTab keyword=\"placeholder\"",
 		"map g0 Vomnibar.activateInNewTab keyword=\"placeholder\"",
 		"map gz Vomnibar.activateInNewTab keyword=\"placeholder\"",
 		"map g/ Vomnibar.activateInNewTab keyword=\"placeholder\"",
@@ -130,8 +131,7 @@
 		"google: https://www.google.com/search?q=%s \\",
 		"  www.google.com re=/^(?:\\.[a-z]{2,4})?\\/search\\b.*?[#&?]q=([^#&]*)/i\\",
 		"  blank=https://www.google.com/ Google",
-		"define: https://www.google.com/search?q=define+%s",
-		"cambridge: https://dictionary.cambridge.org/search/direct/?datasetsearch=english&q=%s",
+		"cambridge-dictionary: https://dictionary.cambridge.org/search/direct/?datasetsearch=english&q=%s",
 		"  blank=https://dictionary.cambridge.org/dictionary/english/",
 		"gmaps: https://www.google.com/maps?q=%s \\",
 		"  blank=https://www.google.com/maps Google Maps",
@@ -147,6 +147,9 @@
 		"sucuri: https://sitecheck.sucuri.net/results/%s",
 		"mdn: https://www.google.com/search?q=mdn+%s",
 		"godaddy: https://www.google.com/search?q=godaddy+%s",
+		"google: https://www.google.com/search?q=%s \\",
+		"  www.google.com re=/^(?:\\.[a-z]{2,4})?\\/search\\b.*?[#&?]q=([^#&]*)/i\\",
+		"  blank=https://www.google.com/ Google",
 		"",
 		"placeholder: https://www.google.com/search?q=%s \\",
 		"  www.google.com re=/^(?:\\.[a-z]{2,4})?\\/search\\b.*?[#&?]q=([^#&]*)/i\\",
@@ -157,3 +160,4 @@
 	"ignoreKeyboardLayout": 2,
 	"mapModifier": 2
 }
+
