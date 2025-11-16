@@ -67,19 +67,6 @@
                         ]
                     },
                     {
-                        "description": "right_command + 0 to 'Launch Reminders'",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "0",
-                                    "modifiers": { "mandatory": ["right_command"] }
-                                },
-                                "to": [{ "shell_command": "open -a 'Reminders'" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "right_command + 1 to 'Launch Visual Studio Code",
                         "manipulators": [
                             {
@@ -93,14 +80,14 @@
                         ]
                     },
                     {
-                        "description": "right_command + 2 to 'Launch Microsoft Outlook'",
+                        "description": "right_command + 2 to 'Launch Reminders'",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "2",
                                     "modifiers": { "mandatory": ["right_command"] }
                                 },
-                                "to": [{ "shell_command": "open -a 'Microsoft Outlook'" }],
+                                "to": [{ "shell_command": "open -a 'Reminders'" }],
                                 "type": "basic"
                             }
                         ]
@@ -145,27 +132,27 @@
                         ]
                     },
                     {
-                        "description": "right_command + 6 to 'Launch Notion (placeholder)'",
+                        "description": "right_command + 6 to 'Launch Microsoft Teams'",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "6",
                                     "modifiers": { "mandatory": ["right_command"] }
                                 },
-                                "to": [{ "shell_command": "open -a 'Notion'" }],
+                                "to": [{ "shell_command": "open -a 'Microsoft Teams'" }],
                                 "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "right_command + 7 to 'Launch Notion (placeholder)",
+                        "description": "right_command + 7 to 'Launch Slack",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "7",
                                     "modifiers": { "mandatory": ["right_command"] }
                                 },
-                                "to": [{ "shell_command": "open -a 'Notion'" }],
+                                "to": [{ "shell_command": "open -a 'Slack'" }],
                                 "type": "basic"
                             }
                         ]
@@ -184,14 +171,27 @@
                         ]
                     },
                     {
-                        "description": "right_command + 9 to 'Launch Toggl Track",
+                        "description": "right_command + 9 to 'Launch Google Chrome Canary",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "9",
                                     "modifiers": { "mandatory": ["right_command"] }
                                 },
-                                "to": [{ "shell_command": "open -a 'Toggl Track'" }],
+                                "to": [{ "shell_command": "open -a 'Google Chrome Canary'" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "right_command + 0 to 'Launch zoom.us'",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "0",
+                                    "modifiers": { "mandatory": ["right_command"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'zoom.us'" }],
                                 "type": "basic"
                             }
                         ]
