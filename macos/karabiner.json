@@ -12,6 +12,27 @@
                 },
                 "rules": [
                     {
+                        "description": "'left_ctrl + q' to 'left_ctrl + a'",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "q",
+                                    "modifiers": {
+                                        "mandatory": ["left_control"],
+                                        "optional": ["shift"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "a",
+                                        "modifiers": "left_control"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "'left_option + f'  to 'Launch Firefox'",
                         "manipulators": [
                             {
