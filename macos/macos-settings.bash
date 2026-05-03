@@ -3,3 +3,6 @@ echo "APPLIED SETTING: Disable lock button on magic keyboard (no touch-id) to pr
 
 defaults write com.apple.dock static-only -bool true; killall Dock
 echo "APPLIED SETTING: Show only active apps in dock."
+
+defaults write -g ApplePressAndHoldEnabled -bool false
+echo "GLOBAL: APPLIED SETTING: Enable repeating keys across the applications."
