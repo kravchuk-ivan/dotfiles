@@ -3,6 +3,8 @@ are located in the designated directories.
 
 # OS-agnostic
 
+What can stay default, stays default, custom configuration only in case when the pros outweight the cons.
+
 General colorscheme guide: background is white (255,255,255), foreground
 is black (0,0,0) to ensure the best readability on the fundamental
 level. Various display modes (neutral, warm, truetone, etc) come as the
@@ -104,6 +106,8 @@ wrappers.
 -   Google dictionary (by Google)
 
 -   Eye Dropper (color picker)
+
+- pdf viewer (pdf.js), >1m users, pdfjs.robwu.nl
 
 #### Bookmarks
 
@@ -224,3 +228,8 @@ Apple shortcuts (preferences→shortcuts)
 -   stackline (visualize window stacks).
 
 -   Flycut (multiple clipboard manager).
+
+
+### Essential terminal packages, applications
+
+- vifm (during the first setup of vifm: simply type ":view" and it will set up the tree preview of files. See where you can integrate this command not to forget.)
