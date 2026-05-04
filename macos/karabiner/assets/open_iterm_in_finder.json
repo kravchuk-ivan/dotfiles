@@ -1,0 +1,30 @@
+{
+  "title": "Open iTerm2 in current Finder folder",
+  "rules": [
+    {
+      "description": "Open iTerm2 in current Finder folder (Ctrl+Option+T)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "t",
+            "modifiers": {
+              "mandatory": ["control", "option"]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "osascript -e 'tell application \"Finder\"\nif (count of windows) > 0 then\nset currentFolder to POSIX path of (target of front window as alias)\nelse\nset currentFolder to POSIX path of (path to home folder)\nend if\nend tell\ntell application \"iTerm\"\nactivate\ncreate window with default profile\ntell current session of current window\nwrite text \"cd \" & quoted form of currentFolder\nend tell\nend tell'"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["^com\\.apple\\.finder$"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
