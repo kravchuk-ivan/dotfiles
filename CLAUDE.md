@@ -36,4 +36,6 @@ Follow **atomic commits** and the Angular Conventional Commits guidelines as doc
 
 **macos/macos-settings.bash** — run manually after a fresh macOS install to apply system `defaults` settings.
 
+**macos/iterm/feroot-light.json** — iTerm2 Dynamic Profile. Install by symlinking or copying to `~/Library/Application Support/iTerm2/DynamicProfiles/`. Then set as default via Preferences → Profiles → Feroot Light → Other Actions → Set as Default. Colors: white `#FFFFFF` bg, `#202124` fg, `#1A73E8` Google Blue cursor, Material Design ANSI palette tuned for light background.
+
 **vifmrc** — vifm file manager config. On first setup, run `:view` inside vifm to enable tree preview.
