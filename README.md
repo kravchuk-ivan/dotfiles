@@ -5,10 +5,13 @@ are located in the designated directories.
 
 What can stay default, stays default, custom configuration only in case when the pros outweight the cons.
 
-General colorscheme guide: background is white (255,255,255), foreground
-is black (0,0,0) to ensure the best readability on the fundamental
-level. Various display modes (neutral, warm, truetone, etc) come as the
-wrappers.
+General colorscheme guide: light theme tuned for long reading sessions
+— slightly off-white background `#EEEEEE` (238,238,238) paired with
+slightly off-black foreground `#303030` (48,48,48). Pure (255,255,255)
+on (0,0,0) maximises luminance and contrast, which is fatiguing over
+hours; the small step away from the extremes keeps the page legible
+without burning the eyes. Various display modes (neutral, warm,
+truetone, etc) come as the wrappers.
 
 ## Keyboard remappings
 

@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Personal system configuration ("sf" = system files) for macOS, Windows, Linux, iOS, and cross-platform tools. The guiding principle: **keep everything as default as possible — add custom configuration only when the pros clearly outweigh the cons.**
 
-Color scheme principle: background white `(255,255,255)`, foreground black `(0,0,0)` for maximum readability. Display modes (warm, truetone, etc.) are wrappers on top.
+Color scheme principle: light theme tuned for long reading sessions — slightly off-white background `#EEEEEE` `(238,238,238)` paired with slightly off-black foreground `#303030` `(48,48,48)`. Avoid pure `#FFFFFF` / `#000000` because maximum-luminance backgrounds and maximum-contrast text cause eye fatigue over hours of use. Display modes (warm, truetone, etc.) sit on top as wrappers.
 
 ## Structure
 
