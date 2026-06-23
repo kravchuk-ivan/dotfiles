@@ -66,10 +66,12 @@ case "$OSTYPE" in
         }
     ;;
     darwin*)
-        alias brew-update="brew update && brew upgrade" ;
-        alias jdl="cd $HOME/Downloads && ls -Alhtr" ;
-        alias jdt="j $HOME/Desktop" ;
-        alias jpd="j $HOME/Desktop/pdrive" ;
+        # 'brew cleanup' to remove old versions and cache
+        alias brew-update="brew update && brew upgrade && brew cleanup" ;
+        # Quoting "$HOME" handles spaces in paths safely
+        alias jdl="cd \"$HOME/Downloads\" && ls -Alhtr" ;
+        alias jdt="cd \"$HOME/Desktop\" && ls -Alhtr" ;
+        alias jpd="cd \"$HOME/Desktop/pdrive\" && ls -Alhtr" ;
         alias pwdcp='pwd | pbcopy && echo "COPIED " ; echo $PWD ; echo " to macOS clipboard!" || echo \"[ERROR]: Could not copy the absolute path!\"' ;
         alias cpwd='pwd | pbcopy && echo "COPIED " ; echo $PWD ; echo " to macOS clipboard!" || echo \"[ERROR]: Could not copy the absolute path!\"' ;
         catcp() {
