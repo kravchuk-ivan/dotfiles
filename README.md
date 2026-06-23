@@ -14,6 +14,32 @@ without burning the eyes. Various display modes (neutral, warm,
 truetone, etc) come as the wrappers. Ready-to-import iTerm2 presets
 (light + dark) live in `macos/iterm/`.
 
+### Color palette (apply across apps)
+
+Both modes sit at ~11:1 contrast — above WCAG AAA (7:1) for legibility,
+short of pure black-on-white (21:1) to avoid glare/halation over long
+sessions. Use these codes anywhere (editor themes, terminals, notes apps).
+
+**Light**
+
+| Role            | Hex       | RGB           |
+| --------------- | --------- | ------------- |
+| Background      | `#EEEEEE` | 238, 238, 238 |
+| Foreground      | `#303030` | 48, 48, 48    |
+| Bold / emphasis | `#000000` | 0, 0, 0       |
+
+**Dark**
+
+| Role            | Hex       | RGB           |
+| --------------- | --------- | ------------- |
+| Background      | `#1E1E1E` | 30, 30, 30    |
+| Foreground      | `#D0D0D0` | 208, 208, 208 |
+| Bold / emphasis | `#EEEEEE` | 238, 238, 238 |
+| ANSI black (0)  | `#3A3A3A` | 58, 58, 58    |
+
+Full 16-color ANSI sets for both modes are in the `macos/iterm/*.itermcolors`
+presets.
+
 ## Keyboard remappings
 
 -   *Tab* TO *left\_shift*
