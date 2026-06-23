@@ -11,7 +11,7 @@ Color scheme principle: light theme tuned for long reading sessions — slightly
 ## Structure
 
 - Root — OS-agnostic files (`bash_aliases`, `vifmrc`, `nvim/`, `vs-code/`)
-- `macos/` — Karabiner config (`karabiner/karabiner.json`), macOS system settings script
+- `macos/` — Karabiner config (`karabiner/karabiner.json`), macOS system settings script, iTerm2 color presets (`iterm/`)
 - `windows/` — AutoHotKey remapping script
 - `linux/` — WSL2 Ubuntu package list
 - `ios/` — iOS Shortcuts scripts and automation notes

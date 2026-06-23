@@ -11,7 +11,8 @@ slightly off-black foreground `#303030` (48,48,48). Pure (255,255,255)
 on (0,0,0) maximises luminance and contrast, which is fatiguing over
 hours; the small step away from the extremes keeps the page legible
 without burning the eyes. Various display modes (neutral, warm,
-truetone, etc) come as the wrappers.
+truetone, etc) come as the wrappers. Ready-to-import iTerm2 presets
+(light + dark) live in `macos/iterm/`.
 
 ## Keyboard remappings
 
