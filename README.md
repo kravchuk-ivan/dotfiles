@@ -40,6 +40,13 @@ sessions. Use these codes anywhere (editor themes, terminals, notes apps).
 Full 16-color ANSI sets for both modes are in the `macos/iterm/*.itermcolors`
 presets.
 
+`vifm` uses this same light palette, expressed as xterm-256 indices in its
+inline colorscheme (`vifmrc`): `ctermbg=255` → `#EEEEEE` and `ctermfg=236`
+→ `#303030` map one-to-one to the background/foreground above, and its
+accents line up too (`CurrLine` `ctermbg=27` → `#005FFF` selection,
+`Link` `ctermfg=39` → `#00AFFF`). Note it is hardcoded light-only, so it
+stays light even when the terminal switches to the dark theme.
+
 ## Keyboard remappings
 
 -   *Tab* TO *left\_shift*
