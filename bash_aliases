@@ -74,6 +74,7 @@ case "$OSTYPE" in
         alias jpd="cd \"$HOME/Desktop/pdrive\" && ls -Alhtr" ;
         alias pwdcp='pwd | pbcopy && echo "COPIED " ; echo $PWD ; echo " to macOS clipboard!" || echo \"[ERROR]: Could not copy the absolute path!\"' ;
         alias cpwd='pwd | pbcopy && echo "COPIED " ; echo $PWD ; echo " to macOS clipboard!" || echo \"[ERROR]: Could not copy the absolute path!\"' ;
+        alias jgda="cd $HOME/Library/CloudStorage/GoogleDrive-REDACTED && ls -Alhtr" ;
         catcp() {
             test -f "$1" && pbcopy < "$1" && cat "$1"
         }
