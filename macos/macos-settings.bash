@@ -6,3 +6,6 @@ echo "APPLIED SETTING: Show only active apps in dock."
 
 defaults write -g ApplePressAndHoldEnabled -bool false
 echo "GLOBAL: APPLIED SETTING: Enable repeating keys across the applications."
+
+alias showfiles="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+echo "APPLIED SETTING: Show hidden files in finder."
