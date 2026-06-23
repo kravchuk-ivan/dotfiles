@@ -7,13 +7,13 @@
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>0</real>
+		<real>0.22745098039215686</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>0</real>
+		<real>0.22745098039215686</real>
 		<key>Red Component</key>
-		<real>0</real>
+		<real>0.22745098039215686</real>
 	</dict>
 	<key>Ansi 1 Color</key>
 	<dict>
@@ -215,13 +215,13 @@
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>0</real>
+		<real>0.11764705882352941</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>0</real>
+		<real>0.11764705882352941</real>
 		<key>Red Component</key>
-		<real>0</real>
+		<real>0.11764705882352941</real>
 	</dict>
 	<key>Badge Color</key>
 	<dict>
@@ -241,13 +241,13 @@
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>1</real>
+		<real>0.9333333333333333</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>1</real>
+		<real>0.9333333333333333</real>
 		<key>Red Component</key>
-		<real>1</real>
+		<real>0.9333333333333333</real>
 	</dict>
 	<key>Cursor Color</key>
 	<dict>
@@ -280,26 +280,26 @@
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>1</real>
+		<real>0.11764705882352941</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>1</real>
+		<real>0.11764705882352941</real>
 		<key>Red Component</key>
-		<real>1</real>
+		<real>0.11764705882352941</real>
 	</dict>
 	<key>Foreground Color</key>
 	<dict>
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>0.7333333492279053</real>
+		<real>0.8156862745098039</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>0.7333333492279053</real>
+		<real>0.8156862745098039</real>
 		<key>Red Component</key>
-		<real>0.7333333492279053</real>
+		<real>0.8156862745098039</real>
 	</dict>
 	<key>Link Color</key>
 	<dict>
