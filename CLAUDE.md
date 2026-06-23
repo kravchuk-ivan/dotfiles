@@ -26,6 +26,8 @@ type(scope)?: description
 
 Types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `chore`, `ci`, `build`, `revert`. Use `!` after type for breaking changes.
 
+Follow **atomic commits** and the Angular Conventional Commits guidelines as documented at https://github.com/qoomon/git-conventional-commits — each commit should be a single self-contained logical change (one concern per commit, do not bundle unrelated changes).
+
 ## Key configs
 
 **Karabiner** (`macos/karabiner/karabiner.json`) — the main keyboard remapping layer. Key mappings are documented in `README.md`. The `right_shift` key is the primary modifier layer (arrows via `hjkl`, symbols, app launchers, etc.). `option + letter` keys are a reserved expansion area.
