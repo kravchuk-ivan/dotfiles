@@ -93,6 +93,14 @@ echo "APPLIED SETTING: .DS_Store creation disabled on network volumes."
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 echo "APPLIED SETTING: .DS_Store creation disabled on USB/external volumes."
 
+# Open new Finder windows to the home folder instead of Recents. Recents is a
+# virtual smart folder — it gives no sense of where files actually live on disk
+# and makes navigating to a real location require an extra step. Home folder is
+# a predictable, real starting point. NewWindowTargetPath must match NewWindowTarget.
+defaults write com.apple.finder NewWindowTarget -string "PfHm"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
+echo "APPLIED SETTING: New Finder windows open to home folder (${HOME})."
+
 killall Finder
 echo "APPLIED SETTING: Restarted Finder to apply changes."
 
@@ -173,3 +181,69 @@ echo "APPLIED SETTING: TextEdit reads plain text files as UTF-8."
 # so files round-trip cleanly without encoding mismatches.
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 echo "APPLIED SETTING: TextEdit writes plain text files as UTF-8."
+
+# --- Trackpad ---
+
+# Tap to click: register a light tap (no physical click force) as a left click.
+# Reduces finger fatigue vs. pressing the physical trackpad for every action.
+# Must be written to three domains: the built-in trackpad driver, the Bluetooth
+# trackpad driver, and the global mouse behavior key that apps read to honor it.
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+echo "APPLIED SETTING: Tap-to-click enabled (built-in trackpad driver)."
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+echo "APPLIED SETTING: Tap-to-click enabled (Bluetooth trackpad driver)."
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+echo "APPLIED SETTING: Tap-to-click enabled (global mouse behavior)."
+
+# Three-finger drag: drag windows and select text by sliding three fingers across
+# the trackpad surface — no click-and-hold required. More ergonomic for long
+# movements. Potential overlap with three-finger swipe gestures (Mission Control,
+# app exposé) is resolved by macOS context: a drag only begins when fingers land
+# on a draggable surface, so conflicts are rare in practice.
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+echo "APPLIED SETTING: Three-finger drag enabled (built-in trackpad driver)."
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
+echo "APPLIED SETTING: Three-finger drag enabled (Bluetooth trackpad driver)."
+
+# --- Activity Monitor ---
+
+# Show all processes on open, not just the current user's. Without this, system
+# daemons and background tasks are hidden, making it harder to diagnose CPU spikes
+# or memory pressure from processes you didn't launch yourself.
+defaults write com.apple.ActivityMonitor ShowCategory -int 0
+echo "APPLIED SETTING: Activity Monitor shows all processes."
+
+# Sort by CPU usage descending on open. The most common reason to open Activity
+# Monitor is to find what's pegging the CPU; this surfaces it immediately without
+# having to click the CPU column header.
+defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
+echo "APPLIED SETTING: Activity Monitor sorted by CPU usage."
+defaults write com.apple.ActivityMonitor SortDirection -int 0
+echo "APPLIED SETTING: Activity Monitor sort direction: descending."
+
+# --- Menu Bar Clock ---
+
+# Show the date and day of week in the menu bar (e.g. "Sat Jun 28 14:32:05").
+# Useful when correlating with log timestamps or working across multiple time zones.
+defaults write com.apple.menuextra.clock ShowDate -int 1
+echo "APPLIED SETTING: Menu bar clock shows date."
+defaults write com.apple.menuextra.clock ShowDayOfWeek -bool true
+echo "APPLIED SETTING: Menu bar clock shows day of week."
+
+# Show seconds. Useful when timing operations by eye or matching log output
+# to the exact second without opening a separate clock.
+defaults write com.apple.menuextra.clock ShowSeconds -bool true
+echo "APPLIED SETTING: Menu bar clock shows seconds."
+
+killall SystemUIServer
+echo "APPLIED SETTING: Restarted SystemUIServer to apply menu bar changes."
+
+# --- System ---
+
+# Full keyboard access: Tab cycles through ALL interactive UI controls — buttons,
+# checkboxes, radio buttons, sliders — not just text fields and lists (the default).
+# Without this, confirmation dialogs require a mouse click on a button even when
+# Tab is available. With it, Tab focuses the button and Space activates it,
+# making keyboard-only flows possible in native macOS dialogs.
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+echo "APPLIED SETTING: Full keyboard access enabled (Tab navigates all UI controls)."
