@@ -1,5 +1,16 @@
-defaults write com.apple.loginwindow DisableScreenLockImmediate -bool yes
-echo "APPLIED SETTING: Disable lock button on magic keyboard (no touch-id) to prevent unintended locks."
+#!/usr/bin/env bash
+set -euo pipefail
+
+# --- Login Window ---
+
+# Disable the lock button on Magic Keyboard (the model without Touch ID).
+# On that keyboard the lock key is easy to hit accidentally — a stray keystroke
+# logs you out mid-work. DisableScreenLockImmediate removes it from the lock screen
+# UI without affecting any other security setting.
+defaults write com.apple.loginwindow DisableScreenLockImmediate -bool true
+echo "APPLIED SETTING: Lock button disabled on Magic Keyboard (prevents accidental lock)."
+
+# --- Dock ---
 
 # Hide all pinned/persistent app icons; show only currently running apps.
 # Keeps the Dock minimal — you launch apps via Spotlight, not the Dock.
@@ -18,13 +29,12 @@ echo "APPLIED SETTING: Dock hides the Recent Applications section."
 defaults write com.apple.dock minimize-to-application -bool true
 echo "APPLIED SETTING: Minimized windows collapse into their app's Dock icon."
 
-killall Dock
-echo "APPLIED SETTING: Restarted Dock to apply changes."
+# --- Key Repeat ---
 
 # Disable the press-and-hold popup (accented character picker) and enable key repeat
 # instead. Without this, holding a key shows a picker rather than repeating the character —
 # which makes arrow-key navigation and backspace sluggish in every app.
-defaults write -g ApplePressAndHoldEnabled -bool false
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 echo "APPLIED SETTING: Key repeat enabled (press-and-hold accent picker disabled)."
 
 # How fast a held key fires after the initial delay. The System Settings slider exposes
@@ -37,12 +47,16 @@ echo "APPLIED SETTING: Key repeat rate set to 2 (maximum within System Settings 
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 echo "APPLIED SETTING: Initial key repeat delay set to 15 (minimum within System Settings range)."
 
+# --- Finder ---
+
+# Show hidden files (dot-prefixed: .zshrc, .git, .env, etc.).
+# Essential for developer workflows — most Unix config files are hidden by default.
 defaults write com.apple.finder AppleShowAllFiles -bool true
-echo "APPLIED SETTING: Show hidden files in Finder."
+echo "APPLIED SETTING: Finder shows hidden files."
 
-# --- Finder UI ---
-
-# Column view (clmv). Alternatives: icnv=icon, Nlsv=list, Flwv=gallery.
+# Column view: navigate folders as nested columns, each click drilling into a new
+# column while keeping parent context visible.
+# Alternatives: icnv=icon, Nlsv=list, Flwv=gallery.
 defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 echo "APPLIED SETTING: Finder default view: column."
 
@@ -62,21 +76,27 @@ echo "APPLIED SETTING: Finder status bar visible."
 defaults write com.apple.finder ShowPathbar -bool true
 echo "APPLIED SETTING: Finder path bar visible."
 
-# Always show file extensions.
+# Always show file extensions. Without this, macOS hides known extensions
+# (e.g. "script" instead of "script.sh"), making file types ambiguous.
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 echo "APPLIED SETTING: Always show file extensions."
 
-# Folders on top when sorting by name.
+# Folders on top when sorting by name. Mirrors the convention used in VS Code,
+# GitHub's file browser, and most IDEs. Disable if you prefer pure alphabetical
+# (consistent with ls output).
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
 echo "APPLIED SETTING: Folders on top when sorting by name."
 
-# Search current folder by default, not whole Mac.
+# Search current folder by default, not the whole Mac. When you ⌘F in Finder,
+# this scopes the search to the directory you're already in — far more useful
+# when navigating a project than a global search.
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 echo "APPLIED SETTING: Finder searches current folder by default."
 
-# No warning when changing a file extension.
+# Suppress the confirmation dialog when changing a file's extension.
+# The warning is redundant once you understand what extensions do.
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
-echo "APPLIED SETTING: Disabled file extension change warning."
+echo "APPLIED SETTING: File extension change warning disabled."
 
 # NOTE: toolbar and preview pane have no top-level defaults key — they are stored
 # per-window. Enable once manually: View > Show Toolbar, View > Show Preview (⇧⌘P).
@@ -100,9 +120,6 @@ echo "APPLIED SETTING: .DS_Store creation disabled on USB/external volumes."
 defaults write com.apple.finder NewWindowTarget -string "PfHm"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 echo "APPLIED SETTING: New Finder windows open to home folder (${HOME})."
-
-killall Finder
-echo "APPLIED SETTING: Restarted Finder to apply changes."
 
 # --- Typing ---
 
@@ -235,9 +252,6 @@ echo "APPLIED SETTING: Menu bar clock shows day of week."
 defaults write com.apple.menuextra.clock ShowSeconds -bool true
 echo "APPLIED SETTING: Menu bar clock shows seconds."
 
-killall SystemUIServer
-echo "APPLIED SETTING: Restarted SystemUIServer to apply menu bar changes."
-
 # --- System ---
 
 # Full keyboard access: Tab cycles through ALL interactive UI controls — buttons,
@@ -247,3 +261,14 @@ echo "APPLIED SETTING: Restarted SystemUIServer to apply menu bar changes."
 # making keyboard-only flows possible in native macOS dialogs.
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 echo "APPLIED SETTING: Full keyboard access enabled (Tab navigates all UI controls)."
+
+# --- Apply Changes ---
+
+# Restart processes that hold settings in memory and won't pick them up until relaunched.
+# ControlCenter manages the menu bar in macOS Monterey 12+ (replaced SystemUIServer).
+killall Dock
+echo "APPLIED SETTING: Restarted Dock."
+killall Finder
+echo "APPLIED SETTING: Restarted Finder."
+killall ControlCenter
+echo "APPLIED SETTING: Restarted ControlCenter (applies menu bar clock and other menu extras)."
