@@ -1,15 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# --- Login Window ---
-
-# Disable the lock button on Magic Keyboard (the model without Touch ID).
-# On that keyboard the lock key is easy to hit accidentally — a stray keystroke
-# logs you out mid-work. DisableScreenLockImmediate removes it from the lock screen
-# UI without affecting any other security setting.
-defaults write com.apple.loginwindow DisableScreenLockImmediate -bool true
-echo "APPLIED SETTING: Login window: accidental-lock button disabled."
-
 # --- Input ---
 
 # Disable the press-and-hold popup (accented character picker) and enable key repeat
