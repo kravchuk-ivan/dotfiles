@@ -38,10 +38,13 @@
 #        CONCERN: "Yes" -> MDM can see and do a great deal regardless of any VPN.
 #
 #   6. CUSTOM TRUSTED ROOTS  Admin-installed roots that could decrypt your HTTPS.
-#        GOOD: "no custom trust settings".
-#        CONCERN: a trusted cert named after an employer or a security vendor
-#          (Zscaler, Netskope, Palo Alto, Fortinet, Cisco Umbrella, etc.)
-#          -> HTTPS interception is possible.
+#        GOOD: "no custom trust settings", or all trusted certs are restricted
+#          to non-SSL policies (e.g. EAP, for WiFi 802.1x auth — irrelevant to
+#          web traffic).
+#        CONCERN: a cert trusted for the SSL policy (or with no policy
+#          restriction at all, i.e. unrestricted) and named after an employer
+#          or security vendor (Zscaler, Netskope, Palo Alto, Fortinet, Cisco
+#          Umbrella, etc.) -> HTTPS interception is possible.
 #
 #   7. IPv6              A routable IPv6 address can leak around a v4-only tunnel.
 #        Finish at https://ipleak.net while connected: it should show NO IPv6
@@ -98,7 +101,19 @@ netprivacy() {
     echo "  no custom trust settings (good)"
   else
     echo "$trust" | sed 's/^/  /'
-    echo "  ^ a cert has been explicitly trusted — recognize it? vendor/employer names = red flag"
+    ssl_relevant=$(echo "$trust" | awk '
+      function emit() { if (name != "" && (ssl==1 || oids<settings)) print name }
+      /^Cert [0-9]+:/ { emit(); name=$0; settings=0; oids=0; ssl=0; next }
+      /Trust Setting [0-9]+:/ { settings++; next }
+      /Policy OID/ { oids++; if ($0 ~ /SSL/) ssl=1; next }
+      END { emit() }
+    ')
+    if [ -n "$ssl_relevant" ]; then
+      echo "  ^ trusted for the SSL policy (or unrestricted) — recognize it? vendor/employer names = red flag"
+    else
+      echo "  ^ trusted, but restricted to non-SSL policies (e.g. EAP is WiFi auth, not web"
+      echo "    traffic) — not itself evidence of HTTPS interception"
+    fi
   fi
 
   echo
