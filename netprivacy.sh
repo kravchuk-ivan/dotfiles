@@ -46,7 +46,15 @@
 #          or security vendor (Zscaler, Netskope, Palo Alto, Fortinet, Cisco
 #          Umbrella, etc.) -> HTTPS interception is possible.
 #
-#   7. IPv6              A routable IPv6 address can leak around a v4-only tunnel.
+#   7. LIVE TLS CERT CHAIN  What cert is actually presented on the wire.
+#        GOOD: issuer is a public CA (Google Trust Services, DigiCert,
+#          Let's Encrypt, GTS, etc.).
+#        CONCERN: issuer/subject names an employer or security vendor
+#          -> active HTTPS interception, even if check #6 found no locally
+#          trusted custom root (e.g. the intercepting cert lives elsewhere
+#          in the chain of trust).
+#
+#   8. IPv6              A routable IPv6 address can leak around a v4-only tunnel.
 #        Finish at https://ipleak.net while connected: it should show NO IPv6
 #        and NO DNS tracing back to your ISP.
 # ============================================================================
@@ -117,7 +125,18 @@ netprivacy() {
   fi
 
   echo
-  echo "== 7. IPv6 =============================================================="
+  echo "== 7. LIVE TLS CERT CHAIN (google.com) ===================================="
+  chain=$(curl -sv --max-time 8 https://www.google.com -o /dev/null 2>&1 \
+    | grep -Ei 'subject:|issuer:')
+  if [ -z "$chain" ]; then
+    echo "  (no response — could not fetch cert chain)"
+  else
+    echo "$chain" | sed 's/^/  /'
+    echo "  ^ recognize the issuer? vendor/employer names = red flag"
+  fi
+
+  echo
+  echo "== 8. IPv6 =============================================================="
   echo "  Final visual check: load https://ipleak.net while connected."
   echo "  Expect NO IPv6 address and NO DNS entry tracing to your ISP."
   echo
