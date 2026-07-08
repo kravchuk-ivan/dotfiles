@@ -58,12 +58,12 @@ echo "APPLIED SETTING: Dock: active-apps-only mode enabled (pinned icons hidden)
 defaults write com.apple.dock show-recents -bool false
 echo "APPLIED SETTING: Dock: Recent Applications section hidden."
 
-# When minimizing a window, collapse it into the app's own Dock icon instead of
-# creating a separate thumbnail on the right side of the Dock. Retrieve minimized
-# windows by right-clicking the app icon → Show All Windows, or clicking the icon
-# when no window is currently open.
-defaults write com.apple.dock minimize-to-application -bool true
-echo "APPLIED SETTING: Dock: minimize-to-app-icon enabled."
+# When minimizing a window, keep it as its own separate thumbnail on the right
+# side of the Dock instead of collapsing it into the app's own icon. This keeps
+# multiple minimized windows (e.g. several Chrome windows) individually visible
+# and clickable rather than hidden behind a single app icon.
+defaults write com.apple.dock minimize-to-application -bool false
+echo "APPLIED SETTING: Dock: minimized windows shown as separate thumbnails."
 
 # --- Finder ---
 
