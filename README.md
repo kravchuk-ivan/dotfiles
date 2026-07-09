@@ -249,7 +249,27 @@ Apple shortcuts (preferences→shortcuts)
 
 ## Applications
 
--   Karabiner Elements (keyboard remapping).
+-   Karabiner Elements (keyboard remapping). To make this repo the single
+    source of truth, symlink the live config to the repo copy so a `git pull`
+    is applied instantly:
+
+    ```
+    ln -sf ~/sf/macos/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
+    ```
+
+    Caveat: Karabiner rewrites `karabiner.json` (atomic replace) whenever you
+    change a setting in its **GUI**, which replaces the symlink with a plain
+    file. If that happens, copy the file back into the repo and re-run the
+    `ln -sf` command above.
+
+    The `option + m` binding runs `macos/mouse-speed/toggle-mouse-speed.sh`,
+    which flips mouse tracking speed between fast (UI max) and a demo-stable
+    30%. Build its helper once with:
+
+    ```
+    clang -Wno-deprecated-declarations -framework IOKit -framework CoreFoundation \
+      -o ~/sf/macos/mouse-speed/mousespeed ~/sf/macos/mouse-speed/mousespeed.c
+    ```
 
 -   hammerspoon (macOS automation tool).
 
