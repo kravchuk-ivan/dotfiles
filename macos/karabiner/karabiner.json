@@ -72,6 +72,19 @@
                         ]
                     },
                     {
+                        "description": "'left_option + m'  to 'Toggle mouse tracking speed (demo 30% <-> fast)'",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": { "mandatory": ["left_option"] }
+                                },
+                                "to": [{ "shell_command": "/Users/kravchuk-ivan/sf/macos/mouse-speed/toggle-mouse-speed.sh" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "right_command + m to return_or_enter",
                         "manipulators": [
                             {
