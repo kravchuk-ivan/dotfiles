@@ -264,12 +264,9 @@ Apple shortcuts (preferences→shortcuts)
 
     The `option + m` binding runs `macos/mouse-speed/toggle-mouse-speed.sh`,
     which flips pointer tracking speed (trackpad and mouse) between fast (UI
-    max, 3.0) and a demo-stable 1.0. Build its helper once with:
-
-    ```
-    clang -Wno-deprecated-declarations -framework IOKit -framework CoreFoundation \
-      -o ~/sf/macos/mouse-speed/mousespeed ~/sf/macos/mouse-speed/mousespeed.c
-    ```
+    max, 3.0) and a demo-stable 0.7. The script builds its `mousespeed` IOKit
+    helper automatically on first run (needs the Command Line Tools —
+    `xcode-select --install`), so no manual build step is required.
 
 -   hammerspoon (macOS automation tool).
 
