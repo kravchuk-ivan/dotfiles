@@ -263,8 +263,8 @@ Apple shortcuts (preferences→shortcuts)
     `ln -sf` command above.
 
     The `option + m` binding runs `macos/mouse-speed/toggle-mouse-speed.sh`,
-    which flips mouse tracking speed between fast (UI max) and a demo-stable
-    30%. Build its helper once with:
+    which flips pointer tracking speed (trackpad and mouse) between fast (UI
+    max, 3.0) and a demo-stable 1.0. Build its helper once with:
 
     ```
     clang -Wno-deprecated-declarations -framework IOKit -framework CoreFoundation \
