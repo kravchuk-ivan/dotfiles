@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Instagram Auto Logout",
+  "version": "1.0",
+  "description": "Clears Instagram session cookies every 8 minutes to add friction against compulsive checking.",
+  "permissions": ["cookies", "alarms"],
+  "host_permissions": ["*://*.instagram.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
