@@ -146,6 +146,11 @@ stays light even when the terminal switches to the dark theme.
 
 - pdf viewer (pdf.js), >1m users, pdfjs.robwu.nl
 
+- Instagram Auto Logout (custom, unpacked): clears Instagram session
+    cookies every 8 minutes to add friction against compulsive
+    checking. Load unpacked from `chrome-extensions/instagram-auto-logout/`
+    via `chrome://extensions` → Developer mode → Load unpacked.
+
 #### Bookmarks
 
 softdoc  
