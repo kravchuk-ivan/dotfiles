@@ -1,0 +1,31 @@
+{
+    // --- Appearance ---
+    // Celeste is Sublime Text 4's built-in light color scheme (no package
+    // needed). Command palette -> "UI: Select Color Scheme" to preview others
+    // such as "Solarized (Light)" or "Sixteen".
+    "color_scheme": "Celeste.sublime-color-scheme",
+    // Adaptive keeps the window chrome light to match the color scheme.
+    "theme": "Adaptive.sublime-theme",
+    "font_size": 13,
+
+    // Relative line numbers (matches vs-code-settings-macos.json).
+    "relative_line_numbers": true,
+
+    // --- Editing ---
+    "word_wrap": true,
+    "translate_tabs_to_spaces": true,
+    "tab_size": 4,
+
+    // Non-blinking caret (matches VS Code "editor.cursorBlinking": "solid").
+    "caret_style": "solid",
+
+    // --- Save / focus ---
+    // Auto-save on focus loss (~ VS Code "files.autoSave": "afterDelay").
+    "save_on_focus_lost": true,
+    "trim_trailing_white_space_on_save": "all",
+    "ensure_newline_at_eof_on_save": true,
+
+    // --- Quality of life ---
+    "highlight_line": true,
+    "drag_text": false
+}
