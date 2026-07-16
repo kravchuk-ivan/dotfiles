@@ -166,6 +166,11 @@ administrative, etc.
 
 ### VS Code
 
+### Sublime Text
+
+Near-default light setup — built-in **Celeste** color scheme plus a small
+recommended package set. Config and install steps in `sublime/`.
+
 ### 1Password
 
 ### Office Suite
