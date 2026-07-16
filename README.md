@@ -274,9 +274,19 @@ Apple shortcuts (preferences→shortcuts)
 
     The `option + m` binding runs `macos/mouse-speed/toggle-mouse-speed.sh`,
     which flips pointer tracking speed (trackpad and mouse) between fast (UI
-    max, 3.0) and a demo-stable 0.7. The script builds its `mousespeed` IOKit
-    helper automatically on first run (needs the Command Line Tools —
-    `xcode-select --install`), so no manual build step is required.
+    max, 3.0) and a demo-stable 0.7, and slows scrolling alongside it. Pointer
+    speed is applied live via the `mousespeed` IOKit helper (and mirrored to
+    `defaults`). Scroll is handled by a separate `scrollslow` helper that
+    installs a `CGEventTap` and scales scroll deltas to `0.3` — this is used
+    instead of the HID scroll-acceleration curve because that curve slows the
+    trackpad but is ignored by hi-res mice (e.g. Logitech MX), whereas the tap
+    slows both uniformly. Demo mode launches the tap and fast mode kills it, so
+    nothing runs during normal use. The tap needs a one-time **Accessibility**
+    grant (System Settings → Privacy & Security → Accessibility → enable
+    `scrollslow`); until then the toggle notifies you and scroll stays at full
+    speed. Both helpers build automatically on first run (needs the Command
+    Line Tools — `xcode-select --install`), so no manual build step is
+    required.
 
 -   hammerspoon (macOS automation tool).
 
