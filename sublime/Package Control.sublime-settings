@@ -1,0 +1,15 @@
+{
+    // Recommended package set. Copy this file into Packages/User/ and
+    // Package Control will auto-install everything listed here.
+    // Trim anything you don't want before syncing.
+    "bootstrapped": true,
+    "installed_packages": [
+        "Package Control",
+        "LSP",
+        "GitGutter",
+        "SublimeLinter",
+        "MarkdownEditing",
+        "A File Icon",
+        "NeoVintageous"
+    ]
+}
