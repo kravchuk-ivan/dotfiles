@@ -72,7 +72,7 @@
                         ]
                     },
                     {
-                        "description": "'left_option + m'  to 'Toggle mouse tracking speed (demo 30% <-> fast)'",
+                        "description": "'left_option + m'  to 'Toggle mouse tracking + scroll speed (demo <-> fast)'",
                         "manipulators": [
                             {
                                 "from": {
