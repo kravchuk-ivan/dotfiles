@@ -12,6 +12,8 @@
     "relative_line_numbers": true,
 
     // --- Editing ---
+    // New tabs open as Markdown instead of plain text (built-in Markdown syntax).
+    "default_new_file_syntax": "Packages/Markdown/Markdown.sublime-syntax",
     "word_wrap": true,
     "translate_tabs_to_spaces": true,
     "tab_size": 4,
