@@ -288,6 +288,44 @@ Apple shortcuts (preferences→shortcuts)
     Line Tools — `xcode-select --install`), so no manual build step is
     required.
 
+    The `option + g` (Gmail) and `option + c` (Google Calendar) bindings expect
+    both to be installed as Chrome web apps, so that pressing the key **focuses
+    the existing window instead of opening yet another tab**. One-time setup:
+    open each in Chrome, then ⋮ → **Cast, Save and Share** → **Install page as
+    app**. Chrome creates `~/Applications/Chrome Apps/Gmail.app` and
+    `Google Calendar.app`, and macOS handles focus-or-launch natively — no
+    AppleScript, and no Automation permission to grant. Until they are
+    installed, each binding falls back to
+    `macos/chrome-focus/focus-chrome-tab.sh`, which focuses the page as a tab
+    instead.
+
+    `macos/chrome-focus/focus-chrome-tab.sh <url-prefix> <url>` is the reusable
+    "focus, don't duplicate" helper for any web destination kept as a tab:
+
+    ```
+    focus-chrome-tab.sh "https://app.feroot.com/" "https://app.feroot.com/"
+    ```
+
+    It searches every tab of every normal window, un-minimizes the window if
+    needed, and switches Spaces if the window is elsewhere; it skips incognito
+    windows so a private window is never pulled onto a shared screen. Match on
+    an account-scoped prefix (`.../u/0/`) so a second signed-in account is not
+    treated as the same page.
+
+    It needs a one-time **Automation** grant (System Settings → Privacy &
+    Security → Automation) for whatever presses the key — for Karabiner that
+    entry is `karabiner_console_user_server`, allowed to control Google Chrome.
+    The grant is the reason to prefer an installed web app where one exists: no
+    Apple events, no permission. The helper keeps a tight blast radius in
+    exchange — the AppleScript only reads tab URLs and focuses a window, never
+    creating, closing, or navigating a tab and never running `execute
+    javascript`, with opening always delegated to `open -a`. Both arguments are
+    passed as `on run argv` parameters rather than pasted into the script text,
+    so a URL cannot change what executes. If the grant is missing, or Chrome
+    does not answer within 5 seconds, it posts a notification saying so and
+    still opens the URL — the earlier inline version of this binding silently
+    did nothing instead, which is why it was replaced.
+
 -   hammerspoon (macOS automation tool).
 
 -   amphetamine (keep-awake software).
