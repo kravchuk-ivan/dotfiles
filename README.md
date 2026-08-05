@@ -288,16 +288,18 @@ Apple shortcuts (preferences→shortcuts)
     Line Tools — `xcode-select --install`), so no manual build step is
     required.
 
-    The `option + g` (Gmail) and `option + c` (Google Calendar) bindings expect
-    both to be installed as Chrome web apps, so that pressing the key **focuses
-    the existing window instead of opening yet another tab**. One-time setup:
-    open each in Chrome, then ⋮ → **Cast, Save and Share** → **Install page as
-    app**. Chrome creates `~/Applications/Chrome Apps/Gmail.app` and
-    `Google Calendar.app`, and macOS handles focus-or-launch natively — no
-    AppleScript, and no Automation permission to grant. Until they are
-    installed, each binding falls back to
-    `macos/chrome-focus/focus-chrome-tab.sh`, which focuses the page as a tab
-    instead.
+    The `option + g` (Gmail) and `option + c` (Google Calendar) bindings run
+    `macos/chrome-focus/focus-chrome-tab.sh`, so pressing the key **focuses the
+    existing tab instead of opening yet another one**.
+
+    Installed Chrome web apps (⋮ → **Cast, Save and Share** → **Install page as
+    app**) were tried first, on the theory that `open -a "Google Calendar"`
+    would let LaunchServices do focus-or-launch natively with no Apple events
+    and no permission to grant. That does not work here: the generated bundle
+    opens the page as an ordinary tab, and it exits 0 either way, so a
+    `open -a … || fallback` chain never reaches the fallback and every press
+    still added a tab. Chrome web apps are only worth it if the app genuinely
+    opens in its own window — verify at `chrome://apps` before relying on one.
 
     `macos/chrome-focus/focus-chrome-tab.sh <url-prefix> <url>` is the reusable
     "focus, don't duplicate" helper for any web destination kept as a tab:
@@ -308,16 +310,27 @@ Apple shortcuts (preferences→shortcuts)
 
     It searches every tab of every normal window, un-minimizes the window if
     needed, and switches Spaces if the window is elsewhere; it skips incognito
-    windows so a private window is never pulled onto a shared screen. Match on
-    an account-scoped prefix (`.../u/0/`) so a second signed-in account is not
-    treated as the same page.
+    windows so a private window is never pulled onto a shared screen. The first
+    match in front-to-back window order wins, so with duplicate tabs already
+    open it picks the frontmost one. Prefixes are deliberately broad
+    (`https://mail.google.com/mail/`) rather than account-scoped: Google serves
+    both `/mail/u/0/…` and unscoped URLs depending on how the page was reached,
+    and a prefix that fails to match silently degrades into opening a new tab.
+    Narrow to `.../u/0/` only if a second signed-in account actually gets in the
+    way.
+
+    Timing, measured: ~0.6s when the window is already visible, ~1.3s when it
+    has to come back from the Dock. Un-minimizing is asynchronous and raises the
+    window itself after roughly 1.5s, so the script polls until the raise sticks
+    instead of reporting success mid-animation. `activate` has to happen
+    *before* the raise, since it re-raises whatever macOS considers the key
+    window of Chrome.
 
     It needs a one-time **Automation** grant (System Settings → Privacy &
     Security → Automation) for whatever presses the key — for Karabiner that
     entry is `karabiner_console_user_server`, allowed to control Google Chrome.
-    The grant is the reason to prefer an installed web app where one exists: no
-    Apple events, no permission. The helper keeps a tight blast radius in
-    exchange — the AppleScript only reads tab URLs and focuses a window, never
+    That grant is the one real cost. In exchange the helper keeps a tight blast
+    radius — the AppleScript only reads tab URLs and focuses a window, never
     creating, closing, or navigating a tab and never running `execute
     javascript`, with opening always delegated to `open -a`. Both arguments are
     passed as `on run argv` parameters rather than pasted into the script text,
