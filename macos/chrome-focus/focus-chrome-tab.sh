@@ -63,6 +63,10 @@ if ! pgrep -x "$CHROME_APP" >/dev/null 2>&1; then
     exit 0
 fi
 
+# Keep apostrophes out of the AppleScript below, comments included. The heredoc
+# is quoted, but it sits inside a $( ) command substitution, and bash still
+# tracks quote state while scanning for the closing paren — a lone apostrophe
+# makes the whole file fail to parse.
 set +e
 result="$(osascript - "$PREFIX" 2>&1 <<'APPLESCRIPT'
 on run argv
@@ -97,16 +101,38 @@ on run argv
 			-- Address the window by id rather than by position, so nothing
 			-- here depends on window order: bringing a window to the front
 			-- renumbers the rest.
+			set wasMinimized to false
 			tell window id foundId
 				try
-					if minimized then set minimized to false
+					if minimized then
+						set minimized to false
+						set wasMinimized to true
+					end if
 				end try
 				set active tab index to foundIndex
-				try
-					set index to 1
-				end try
 			end tell
+
+			-- Bring Chrome forward *before* raising the window: activate
+			-- raises whatever macOS considers the key window of Chrome, so
+			-- doing it afterwards puts a different window back on top and
+			-- undoes the raise below.
 			activate
+
+			-- Raise the target window, then confirm it stuck. Un-minimizing
+			-- animates out of the Dock asynchronously (measured ~1.5s) and the
+			-- window reports as buried until that settles, so re-assert rather
+			-- than returning success mid-animation. Polling keeps the common
+			-- already-visible case instant, and 25 x 0.1s stays inside the 5s
+			-- Apple event timeout.
+			repeat 25 times
+				tell window id foundId
+					try
+						set index to 1
+					end try
+				end tell
+				if (index of window id foundId) is 1 then exit repeat
+				delay 0.1
+			end repeat
 		end tell
 	end timeout
 
