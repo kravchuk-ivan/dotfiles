@@ -41,6 +41,7 @@ set -o vi
 
 # General aliases
 alias j-='j -'
+alias jf="j $HOME/feroot" ;
 alias jsd="j $HOME/sd" ;
 alias jsf="j $HOME/sf" ;
 alias jtmp="j $HOME/tmp" ;
