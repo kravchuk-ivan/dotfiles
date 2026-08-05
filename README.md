@@ -260,17 +260,38 @@ Apple shortcuts (preferences→shortcuts)
 ## Applications
 
 -   Karabiner Elements (keyboard remapping). To make this repo the single
-    source of truth, symlink the live config to the repo copy so a `git pull`
-    is applied instantly:
+    source of truth, symlink the live config to the repo copy:
 
     ```
     ln -sf ~/sf/macos/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
     ```
 
-    Caveat: Karabiner rewrites `karabiner.json` (atomic replace) whenever you
-    change a setting in its **GUI**, which replaces the symlink with a plain
-    file. If that happens, copy the file back into the repo and re-run the
-    `ln -sf` command above.
+    **A `git pull` or an edit to the repo copy is not applied instantly.**
+    Karabiner watches `~/.config/karabiner/` for filesystem events, and writes
+    that land on the symlink *target* in `~/sf/` generate no event in the
+    watched directory, so nothing reloads — it keeps running the config it read
+    at startup, silently, with no error anywhere. Force a reload after every
+    change:
+
+    ```
+    launchctl kickstart -k gui/$(id -u)/org.pqrs.service.agent.karabiner_console_user_server
+    ```
+
+    Confirm it took by checking for a fresh `Load .../karabiner.json` line:
+
+    ```
+    tail -5 ~/.local/share/karabiner/log/console_user_server.log
+    ```
+
+    That log is the place to look whenever a binding behaves like an older
+    version of itself: if the newest `Load` line predates your edit, the edit is
+    not live and the key is running old code.
+
+    Second caveat: Karabiner rewrites `karabiner.json` (atomic replace) whenever
+    you change a setting in its **GUI**, which replaces the symlink with a plain
+    file and forks the repo and live copies. Prefer editing the repo file and
+    reloading with the command above; if you do use the GUI, copy the file back
+    into the repo and re-run the `ln -sf` command.
 
     The `option + m` binding runs `macos/mouse-speed/toggle-mouse-speed.sh`,
     which flips pointer tracking speed (trackpad and mouse) between fast (UI
