@@ -3,10 +3,12 @@
 Portable color presets for the "sf" reading-optimized scheme. See the
 color-scheme rationale in the repo root `CLAUDE.md` / `README.md`.
 
-- `sf-off-white-light.itermcolors` — light theme. Background `#EEEEEE`
-  (238,238,238), foreground `#303030` (48,48,48). ~11:1 contrast: above
-  WCAG AAA (7:1) for legibility, but short of pure black-on-white (21:1)
-  to avoid the glare/halation that fatigues the eyes over long sessions.
+- `sf-charcoal-light.itermcolors` — light theme, mid contrast. Background
+  `#FFFFFF` (255,255,255), foreground `#1A1A1A` (26,26,26). ~17.4:1
+  contrast, above WCAG AAA (7:1).
+- `sf-black-light.itermcolors` — light theme, max contrast. Background
+  `#FFFFFF` (255,255,255), foreground `#000000` (0,0,0). ~21:1 contrast,
+  maximum — sharpest text.
 - `sf-off-black-dark.itermcolors` — dark counterpart, for low-light use.
   Background `#1E1E1E` (30,30,30), foreground `#D0D0D0` (208,208,208),
   ~11:1 contrast to match the light theme. Deliberately avoids pure black:
@@ -19,8 +21,9 @@ color-scheme rationale in the repo root `CLAUDE.md` / `README.md`.
 1. iTerm2 → Settings → Profiles → Colors.
 2. Color Presets… (bottom-right) → Import… → select the `.itermcolors`
    file(s) from this folder.
-3. Color Presets… → choose `sf-off-white-light` (and `sf-off-black-dark`).
-   To auto-switch with macOS appearance, enable "Use different colors for
+3. Color Presets… → choose whichever light variant you want
+   (`sf-charcoal-light` or `sf-black-light`) and `sf-off-black-dark`. To
+   auto-switch with macOS appearance, enable "Use different colors for
    light/dark mode" and pick a preset for each.
 
 ## Re-export after tweaking colors in the GUI

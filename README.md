@@ -6,27 +6,26 @@ are located in the designated directories.
 What can stay default, stays default, custom configuration only in case when the pros outweight the cons.
 
 General colorscheme guide: light theme tuned for long reading sessions
-— slightly off-white background `#EEEEEE` (238,238,238) paired with
-slightly off-black foreground `#303030` (48,48,48). Pure (255,255,255)
-on (0,0,0) maximises luminance and contrast, which is fatiguing over
-hours; the small step away from the extremes keeps the page legible
-without burning the eyes. Various display modes (neutral, warm,
-truetone, etc) come as the wrappers. Ready-to-import iTerm2 presets
-(light + dark) live in `macos/iterm/`.
+— pure white background `#FFFFFF` (255,255,255) paired with pure black
+foreground `#000000` (0,0,0), maximum contrast for sharpest legibility.
+A mid-contrast alternative (`#1A1A1A` foreground, ~17.4:1) is available
+for less glare on very long sessions — see the iTerm2 presets below.
+Various display modes (neutral, warm, truetone, etc) come as the
+wrappers. Ready-to-import iTerm2 presets (light + dark) live in
+`macos/iterm/`.
 
 ### Color palette (apply across apps)
 
-Both modes sit at ~11:1 contrast — above WCAG AAA (7:1) for legibility,
-short of pure black-on-white (21:1) to avoid glare/halation over long
-sessions. Use these codes anywhere (editor themes, terminals, notes apps).
+Light sits at ~21:1 contrast (maximum), dark at ~11:1 — both above
+WCAG AAA (7:1) for legibility. Use these codes anywhere (editor
+themes, terminals, notes apps).
 
 **Light**
 
 | Role            | Hex       | RGB           |
 | --------------- | --------- | ------------- |
-| Background      | `#EEEEEE` | 238, 238, 238 |
-| Foreground      | `#303030` | 48, 48, 48    |
-| Bold / emphasis | `#000000` | 0, 0, 0       |
+| Background      | `#FFFFFF` | 255, 255, 255 |
+| Foreground      | `#000000` | 0, 0, 0       |
 
 **Dark**
 
@@ -41,11 +40,16 @@ Full 16-color ANSI sets for both modes are in the `macos/iterm/*.itermcolors`
 presets.
 
 `vifm` uses this same light palette, expressed as xterm-256 indices in its
-inline colorscheme (`vifmrc`): `ctermbg=255` → `#EEEEEE` and `ctermfg=236`
-→ `#303030` map one-to-one to the background/foreground above, and its
+inline colorscheme (`vifmrc`): `ctermbg=231` → `#FFFFFF` and `ctermfg=16`
+→ `#000000` map one-to-one to the background/foreground above, and its
 accents line up too (`CurrLine` `ctermbg=27` → `#005FFF` selection,
-`Link` `ctermfg=39` → `#00AFFF`). Note it is hardcoded light-only, so it
-stays light even when the terminal switches to the dark theme.
+`Link` `ctermfg=39` → `#00AFFF`). Both use 6×6×6 color-cube corners (231,
+16) rather than the 256-color grayscale ramp (which tops out at
+`#EEEEEE` on one end) or the standard ANSI black/white slots (which are
+terminal-customizable and not guaranteed to render as true black/white).
+Note it is hardcoded
+light-only, so it stays light even when the terminal switches to the
+dark theme.
 
 ## Keyboard remappings
 
