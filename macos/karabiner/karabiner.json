@@ -100,6 +100,27 @@
                         ]
                     },
                     {
+                        "description": "'left_option + d'  to 'Launch Griply'",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'Griply'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "'left_option + m'  to 'Toggle mouse tracking + scroll speed (demo <-> fast)'",
                         "manipulators": [
                             {
