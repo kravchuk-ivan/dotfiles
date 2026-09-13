@@ -71,7 +71,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a \"Gmail\" || /Users/kravchuk-ivan/sf/macos/chrome-focus/focus-chrome-tab.sh \"https://mail.google.com/mail/\" \"https://mail.google.com/mail/u/0/#inbox\""
+                                        "shell_command": "open -a \"Gmail\" || /Users/kravchuk-ivan/dotfiles/macos/chrome-focus/focus-chrome-tab.sh \"https://mail.google.com/mail/\" \"https://mail.google.com/mail/u/0/#inbox\""
                                     }
                                 ],
                                 "type": "basic"
@@ -92,7 +92,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a \"Google Calendar\" || /Users/kravchuk-ivan/sf/macos/chrome-focus/focus-chrome-tab.sh \"https://calendar.google.com/calendar/\" \"https://calendar.google.com/calendar/u/0/r\""
+                                        "shell_command": "open -a \"Google Calendar\" || /Users/kravchuk-ivan/dotfiles/macos/chrome-focus/focus-chrome-tab.sh \"https://calendar.google.com/calendar/\" \"https://calendar.google.com/calendar/u/0/r\""
                                     }
                                 ],
                                 "type": "basic"
@@ -134,7 +134,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/Users/kravchuk-ivan/sf/macos/mouse-speed/toggle-mouse-speed.sh"
+                                        "shell_command": "/Users/kravchuk-ivan/dotfiles/macos/mouse-speed/toggle-mouse-speed.sh"
                                     }
                                 ],
                                 "type": "basic"
