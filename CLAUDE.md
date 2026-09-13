@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Personal system configuration ("sf" = system files) for macOS, Windows, Linux, iOS, and cross-platform tools. The guiding principle: **keep everything as default as possible — add custom configuration only when the pros clearly outweigh the cons.**
 
-Color scheme principle: light theme tuned for long reading sessions — slightly off-white background `#EEEEEE` `(238,238,238)` paired with slightly off-black foreground `#303030` `(48,48,48)`. Avoid pure `#FFFFFF` / `#000000` because maximum-luminance backgrounds and maximum-contrast text cause eye fatigue over hours of use. Display modes (warm, truetone, etc.) sit on top as wrappers.
+Color scheme principle: light theme tuned for long reading sessions — pure white background `#FFFFFF` `(255,255,255)` paired with pure black foreground `#000000` `(0,0,0)`, ~21:1 contrast, maximum legibility. iTerm2 also ships a mid-contrast variant (`#1A1A1A` foreground, ~17.4:1, see `macos/iterm/README.md`) for less glare over very long sessions. Display modes (warm, truetone, etc.) sit on top as wrappers.
 
 ## Structure
 
@@ -35,7 +35,5 @@ Follow **atomic commits** and the Angular Conventional Commits guidelines as doc
 **bash_aliases** — sourced from `~/.zshrc`/`~/.bashrc`. Contains `j()` navigation functions, fzf alias (`s`), vifm alias (`d`), nvim alias (`k`), and a full oh-my-zsh-compatible git alias set (only loaded when oh-my-zsh is not present).
 
 **macos/macos-settings.bash** — run manually after a fresh macOS install to apply system `defaults` settings.
-
-**macos/iterm/feroot-light.json** — iTerm2 Dynamic Profile. Install by symlinking or copying to `~/Library/Application Support/iTerm2/DynamicProfiles/`. Then set as default via Preferences → Profiles → Feroot Light → Other Actions → Set as Default. Colors: white `#FFFFFF` bg, `#202124` fg, `#1A73E8` Google Blue cursor, Material Design ANSI palette tuned for light background.
 
 **vifmrc** — vifm file manager config. On first setup, run `:view` inside vifm to enable tree preview.
