@@ -93,10 +93,6 @@ Plug 'preservim/nerdtree'
 "On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-" My selected color themes
-Plug 'morhetz/gruvbox' "Colorscheme
-"Plug 'NLKNguyen/papercolor-theme' "Colorscheme
-
 Plug 'ap/vim-buftabline' " Show buffers in the tab line.
 Plug 'farmergreg/vim-lastplace' " Reopen files at last edit position.
 Plug 'junegunn/fzf.vim' " Fuzzy finder commands using fzf.
@@ -135,5 +131,8 @@ call plug#end()
 "endif
 
 "It is important to define the colorscheme after the Plugins section
-set background=dark
+"No standalone colorscheme plugin: inherit the terminal's ANSI palette
+"(the max-contrast "dotfiles-black-light" iTerm preset, pure #FFFFFF/#000000)
+"so nvim always matches whatever profile the terminal is running.
+set background=light
 
