@@ -267,12 +267,12 @@ Apple shortcuts (preferences→shortcuts)
     source of truth, symlink the live config to the repo copy:
 
     ```
-    ln -sf ~/sf/macos/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
+    ln -sf ~/dotfiles/macos/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
     ```
 
     **A `git pull` or an edit to the repo copy is not applied instantly.**
     Karabiner watches `~/.config/karabiner/` for filesystem events, and writes
-    that land on the symlink *target* in `~/sf/` generate no event in the
+    that land on the symlink *target* in `~/dotfiles/` generate no event in the
     watched directory, so nothing reloads — it keeps running the config it read
     at startup, silently, with no error anywhere. Force a reload after every
     change:

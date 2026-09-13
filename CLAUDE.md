@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repo is
 
-Personal system configuration ("sf" = system files) for macOS, Windows, Linux, iOS, and cross-platform tools. The guiding principle: **keep everything as default as possible — add custom configuration only when the pros clearly outweigh the cons.**
+Personal dotfiles for macOS, Windows, Linux, iOS, and cross-platform tools. The guiding principle: **keep everything as default as possible — add custom configuration only when the pros clearly outweigh the cons.**
 
 Color scheme principle: light theme tuned for long reading sessions — pure white background `#FFFFFF` `(255,255,255)` paired with pure black foreground `#000000` `(0,0,0)`, ~21:1 contrast, maximum legibility. iTerm2 also ships a mid-contrast variant (`#1A1A1A` foreground, ~17.4:1, see `macos/iterm/README.md`) for less glare over very long sessions. Display modes (warm, truetone, etc.) sit on top as wrappers.
 
