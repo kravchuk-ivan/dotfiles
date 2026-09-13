@@ -309,7 +309,7 @@ Apple shortcuts (preferences→shortcuts)
     Line Tools — `xcode-select --install`), so no manual build step is
     required.
 
-    `option + g` (Gmail) and `option + c` (Google Calendar) **focus the existing
+    `option + e` (Gmail) and `option + c` (Google Calendar) **focus the existing
     page instead of opening yet another copy**. Each key tries an installed
     Chrome web app first and falls back to a tab-focusing helper:
 
