@@ -4,11 +4,11 @@
 # Put the following snippet into your shell configuration file ('.bashrc', '.zshrc', etc)
 
 # Use $HOME instead of '~' sign (cross-platform)
-# if [[ -f $HOME/sf/bash_aliases ]]
+# if [[ -f $HOME/dotfiles/bash_aliases ]]
 # then
-#     source $HOME/sf/bash_aliases
+#     source $HOME/dotfiles/bash_aliases
 # else
-#     echo "[ERROR]:'$HOME/sf/bash_aliases' was not found."
+#     echo "[ERROR]:'$HOME/dotfiles/bash_aliases' was not found."
 # fi
 ###
 
