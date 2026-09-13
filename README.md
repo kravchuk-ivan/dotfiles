@@ -120,7 +120,7 @@ dark theme.
 
 -   Vimium C Chrome:
 
-    -   Import the configuration file *sf/vimium-c.json* to the
+    -   Import the configuration file *vimium-c.json* to the
         extension.
 
     -   In the Vimium C Options in the section "Optional permissions"

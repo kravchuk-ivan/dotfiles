@@ -43,7 +43,7 @@ set -o vi
 alias j-='j -'
 alias jf="j $HOME/feroot" ;
 alias jsd="j $HOME/sd" ;
-alias jsf="j $HOME/sf" ;
+alias jd="j $HOME/dotfiles" ;
 alias jtmp="j $HOME/tmp" ;
 alias k='nvim'
 alias l='ls -Alh'
