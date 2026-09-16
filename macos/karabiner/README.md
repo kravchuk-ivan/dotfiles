@@ -82,6 +82,6 @@ only an import *source* for the GUI — the config it actually loads is
 `karabiner.json` alone. This repo deliberately leaves it unused.
 
 A rule parked there looks tracked while being inactive, which is how the
-`⌃⌥T` "open iTerm2 in the current Finder folder" rule sat dormant for four
-months before being inlined. Add new rules to `karabiner.json` itself,
+"open iTerm2 in the current Finder folder" rule sat dormant for four months
+before being inlined. Add new rules to `karabiner.json` itself,
 through the GUI or by hand, and there stays exactly one source of truth.
