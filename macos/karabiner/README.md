@@ -24,8 +24,8 @@ ln -sfn "$PWD/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
 `-n` keeps `ln` from following an existing link and nesting a new one
 inside it, so re-running the command replaces the link in place.
 
-No restart is needed — Karabiner watches the file and reloads within
-milliseconds. Verify both the link and the reload:
+No restart is needed: replacing the symlink is itself a change to the path
+Karabiner watches, so it reloads immediately. Verify the link and the reload:
 
 ```sh
 ls -la ~/.config/karabiner/karabiner.json
@@ -49,21 +49,32 @@ test -e ~/.config/karabiner/karabiner.json && echo OK || echo BROKEN
 
 ## Editing
 
-Changes made in the Karabiner GUI are written back to
-`karabiner.json`, so they land in this repo as a normal diff:
+Karabiner watches the *path* `~/.config/karabiner/karabiner.json`, not the
+file the symlink resolves to. Two consequences, both verified on 15.5.0:
+
+**Hand-editing this repo's `karabiner.json` reloads nothing.** Karabiner
+keeps running whatever it loaded last, so the change looks applied but
+isn't. Re-run the `ln -sfn` command from Install to pick it up — replacing
+the symlink registers as a change to the watched path. A `touch` through
+the link does not work.
+
+**Karabiner's own writes replace the symlink with a regular file.** A GUI
+edit, a profile switch, or `karabiner_cli --select-profile` all write a
+fresh file to that path, so the link is gone and the change stays in
+`~/.config/`, never reaching this repo. To recover, copy the live file back
+and relink:
 
 ```sh
-git -C ~/dotfiles status --short
+cp ~/.config/karabiner/karabiner.json ~/dotfiles/macos/karabiner/karabiner.json
+ln -sfn ~/dotfiles/macos/karabiner/karabiner.json \
+        ~/.config/karabiner/karabiner.json
 ```
 
-If a Karabiner update ever replaces the symlink with a regular file
-instead of writing through it, that diff will be missing. Copy the live
-file back over `macos/karabiner/karabiner.json`, then re-run the `ln`
-command to restore the link.
-
-Hand-editing the JSON while Karabiner is running is fine — it reloads on
-save and ignores a malformed file rather than wiping the config, but it
-will keep using the last valid version until the syntax error is fixed.
+Expect a large whitespace diff if you do: Karabiner's writer collapses short
+arrays onto one line (`"mandatory": ["left_option"]`) where the tracked file
+is fully expanded — 1062 lines against 1483 for byte-different but
+semantically identical data. Hand-editing the repo file keeps diffs
+readable, so prefer it for anything you can express directly.
 
 ## Profiles
 
