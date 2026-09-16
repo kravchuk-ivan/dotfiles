@@ -1,4 +1,18 @@
 # This is Git's per-user configuration file.
 [user]
 	name = kravchuk-ivan
+	# GitHub noreply address, not a real mailbox. The commit email is public in
+	# every clone, so this keeps the personal address out of published history.
+	# It cannot simply be omitted: git requires user.email and stamps it into
+	# every commit object.
+	#
+	# A bare username is not a substitute. GitHub matches commits to accounts by
+	# email, so an unmatched value drops profile attribution, the contribution
+	# graph, and signature verification. The numeric-ID prefix also survives a
+	# username change, which the bare <user>@users.noreply.github.com form does
+	# not.
+	#
+	# Enforce it server-side too, since a local config can drift back to a real
+	# address unnoticed: GitHub Settings > Emails > "Keep my email addresses
+	# private" + "Block command line pushes that expose my email".
 	email = 67902420+kravchuk-ivan@users.noreply.github.com
