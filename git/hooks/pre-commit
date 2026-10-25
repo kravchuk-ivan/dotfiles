@@ -1,0 +1,17 @@
+#!/bin/sh
+# Block commits whose staged changes look like they contain a secret. This is
+# a public repo and the shell configs are where API keys tend to end up.
+# Enabled by install.sh (git config core.hooksPath git/hooks). For a false
+# positive, commit with --no-verify.
+
+# Provider key formats (Anthropic, OpenAI, GitHub, AWS, Slack), private key
+# blocks, and long literal values assigned to *KEY/*TOKEN/*SECRET/*PASSWORD.
+pattern='sk-ant-[A-Za-z0-9_-]{20,}|sk-(proj-)?[A-Za-z0-9_-]{32,}|gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{40,}|AKIA[0-9A-Z]{16}|xox[abprs]-[A-Za-z0-9-]{10,}|-----BEGIN [A-Z ]*PRIVATE KEY-----|(KEY|TOKEN|SECRET|PASSWORD)[A-Z_]*=["'"'"']?[A-Za-z0-9/+=_-]{16,}'
+
+files=$(git diff --cached --name-only --diff-filter=ACMR -G"$pattern")
+[ -z "$files" ] && exit 0
+
+echo "pre-commit: these staged files look like they contain a secret:" >&2
+printf '%s\n' "$files" | sed 's/^/    /' >&2
+echo "Move the value to ~/.zshrc (machine-local) or the Keychain, or use --no-verify for a false positive." >&2
+exit 1

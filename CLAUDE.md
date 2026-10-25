@@ -13,7 +13,8 @@ Color scheme principle: light theme tuned for long reading sessions — pure whi
 All commits must follow **Conventional Commits** format, enforced by
 `git/hooks/commit-msg`. `install.sh` enables the repo's hooks with
 `git config core.hooksPath git/hooks`; run that once by hand in a clone that
-didn't go through `install.sh`.
+didn't go through `install.sh`. `git/hooks/pre-commit` also blocks commits
+that look like they contain an API key, token, or private key.
 
 ```
 type(scope)?: description
