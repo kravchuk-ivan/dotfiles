@@ -193,6 +193,17 @@ command! reload :write | restart
 " You can also add %CLEAR if you want to clear screen before running FUSE
 " program.
 
+" macOS: open documents and media in their default app. Defined first, so
+" it's what Enter does; the Linux viewers below remain as :file choices.
+if has('mac')
+    filextype *.pdf,*.ps,*.eps,*.djvu,*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.webp,
+             \*.heic,*.svg,*.avi,*.mp4,*.mkv,*.mov,*.webm,*.m4v,*.wav,*.mp3,
+             \*.flac,*.m4a,*.html,*.htm,*.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,
+             \*.ppt,*.pptx
+            \ {Open in the default app}
+            \ open %c,
+endif
+
 " Pdf
 filextype *.pdf zathura %c %i &, apvlv %c, xpdf %c
 fileviewer *.pdf pdftotext -nopgbrk %c -
@@ -442,6 +453,11 @@ if has('win')
     nnoremap yp :!echo %"d:gs!\!/! %i | clip<cr>
     " Yank path to current file to Windows clipboard with forward slashes
     nnoremap yf :!echo %"c:gs!\!/! %i | clip<cr>
+elseif has('mac')
+    " Yank current directory path into the clipboard
+    nnoremap yd :!echo -n %d | pbcopy %i<cr>
+    " Yank current file path into the clipboard
+    nnoremap yf :!echo -n %c:p | pbcopy %i<cr>
 elseif executable('xclip')
     " Yank current directory path into the clipboard
     nnoremap yd :!echo %d | xclip %i<cr>
