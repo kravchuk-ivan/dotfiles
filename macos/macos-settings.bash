@@ -221,7 +221,8 @@ echo "APPLIED SETTING: TextEdit: plain text write encoding set to UTF-8."
 # Show all processes on open, not just the current user's. Without this, system
 # daemons and background tasks are hidden, making it harder to diagnose CPU spikes
 # or memory pressure from processes you didn't launch yourself.
-defaults write com.apple.ActivityMonitor ShowCategory -int 0
+# 100 = "All Processes" in current Activity Monitor (0 was the old value).
+defaults write com.apple.ActivityMonitor ShowCategory -int 100
 echo "APPLIED SETTING: Activity Monitor: all processes shown."
 
 # Sort by CPU usage descending on open. The most common reason to open Activity
@@ -250,9 +251,10 @@ echo "APPLIED SETTING: Menu bar clock: seconds shown."
 
 # Restart processes that hold settings in memory and won't pick them up until relaunched.
 # ControlCenter manages the menu bar in macOS Monterey 12+ (replaced SystemUIServer).
-killall Dock
+# `|| true`: under set -e, killall of a process that isn't running would abort.
+killall Dock 2>/dev/null || true
 echo "APPLIED SETTING: Dock restarted."
-killall Finder
+killall Finder 2>/dev/null || true
 echo "APPLIED SETTING: Finder restarted."
-killall ControlCenter
+killall ControlCenter 2>/dev/null || true
 echo "APPLIED SETTING: ControlCenter restarted (menu bar clock and extras applied)."
