@@ -1,0 +1,29 @@
+#!/bin/sh
+# Reject commit messages that don't follow Conventional Commits:
+#   type(scope)!: description      (scope and ! optional)
+# Enabled for this repo by install.sh: git config core.hooksPath git/hooks
+
+# First line that is neither blank nor a comment: git strips those later.
+subject=$(sed -n '/^#/d; /^[[:space:]]*$/d; p; q' "$1")
+
+case "$subject" in
+    # Messages git writes itself (merge, revert, commit --fixup/--squash).
+    'Merge '* | 'Revert "'* | 'fixup! '* | 'squash! '* | 'amend! '*) exit 0 ;;
+esac
+
+types='build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test'
+printf '%s\n' "$subject" | grep -Eq "^($types)(\([^()]+\))?!?: [^ ]" && exit 0
+
+cat >&2 <<EOF
+Commit message does not follow Conventional Commits:
+
+    $subject
+
+Expected: type(scope)?: description    (add ! before the colon for a breaking change)
+Types: build chore ci docs feat fix perf refactor revert style test
+Examples:
+    feat(karabiner): add a left_option + d launcher
+    fix: quote paths with spaces
+See https://www.conventionalcommits.org
+EOF
+exit 1
