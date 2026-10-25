@@ -12,7 +12,8 @@ Settings files live in the Sublime user directory:
 - Linux: `~/.config/sublime-text/Packages/User/`
 - Windows: `%APPDATA%\Sublime Text\Packages\User\`
 
-Symlink (recommended, keeps them tracked) or copy:
+`install.sh` links both files and installs Package Control. By hand,
+symlink (keeps them tracked) or copy:
 
 ```sh
 SUBLIME="$HOME/Library/Application Support/Sublime Text/Packages/User"

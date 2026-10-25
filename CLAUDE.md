@@ -26,10 +26,16 @@ Follow **atomic commits** and the Angular Conventional Commits guidelines as doc
 
 ## Key configs
 
-**Karabiner** (`macos/karabiner/karabiner.json`) — the main keyboard remapping layer. The `right_shift` key is the primary modifier layer (arrows via `hjkl`, symbols, app launchers, etc.). `option + letter` keys are a reserved expansion area.
+**install.sh** — sets up a Mac: Homebrew + `Brewfile`, symlinks configs into place, runs `macos/macos-settings.bash` and `macos/security-check.sh`. Idempotent; `--dry-run` previews. Must stay compatible with macOS's stock bash 3.2. When adding a config, add its `link` line there.
 
-**bash_aliases** — sourced from `~/.zshrc`/`~/.bashrc`. Contains `j()` navigation functions, fzf alias (`s`), vifm alias (`d`), nvim alias (`k`), and a full oh-my-zsh-compatible git alias set (only loaded when oh-my-zsh is not present).
+**Karabiner** (`macos/karabiner/karabiner.json`) — the main keyboard remapping layer. The `right_shift` key is the primary modifier layer (arrows via `hjkl`, symbols, app launchers, etc.). `option + letter` keys are a reserved expansion area. `~/.config/karabiner` is a symlink to `macos/karabiner/`, so GUI edits land in the repo.
 
-**macos/macos-settings.bash** — run manually after a fresh macOS install to apply system `defaults` settings.
+**zsh/zshrc** — sourced from a machine-local `~/.zshrc`, which keeps secrets. Loads oh-my-zsh, `bash_aliases`, powerlevel10k (`zsh/p10k.zsh`) and nvm.
+
+**bash_aliases** — sourced from `zsh/zshrc` (or `~/.bashrc` on WSL). Contains `j()` navigation functions, fzf alias (`s`), vifm alias (`d`), nvim alias (`k`), and a full oh-my-zsh-compatible git alias set (only loaded when oh-my-zsh's git plugin isn't).
+
+**git/** — `config` (included from `~/.gitconfig`), the global `ignore`, and this repo's hooks.
+
+**macos/macos-settings.bash** — system `defaults` settings; run by `install.sh`, or by hand.
 
 **vifmrc** — vifm file manager config. On first setup, run `:view` inside vifm to enable tree preview.
