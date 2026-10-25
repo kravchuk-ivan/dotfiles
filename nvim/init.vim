@@ -1,15 +1,10 @@
-set nocompatible
+"Neovim config, linked to ~/.config/nvim/init.vim by install.sh.
+"Only settings that differ from Neovim's defaults (:help nvim-defaults).
 set cursorline
-"Use Unicode
-set encoding=utf-8
 "Line numbers and distances
 set number relativenumber
 "Number of lines offset when jumping
 set scrolloff=5
-"Indent new line the same as the preceding line
-set autoindent
-"Statusline indicates insert or normal mode
-set showmode showcmd
 "Highlight matching parentheses, braces, brackets, etc
 set showmatch
 "Case sensitive if it contains an uppercase
@@ -24,23 +19,11 @@ set expandtab
 set smartindent
 "Width for autoindents
 set shiftwidth=4
-"Highlight search
-set hlsearch
 "Working directory is always the same as the file you are editing
 set autochdir
 "Get bash-like tab completions
-set wildmenu wildmode=list:longest,full
-"Allow auto-indenting depending on file type
-filetype plugin indent on
-"Syntax highlighting
-syntax on
-"Enable mouse click
-set mouse=a
-filetype plugin on
-"Speed up scrolling in Vim
-set ttyfast
-set laststatus=2 statusline=%F
-set history=500
+set wildmode=list:longest,full
+set statusline=%F
 "Show the file title
 set title
 "Set clipboard=unnamedplus,unnamed
@@ -54,9 +37,6 @@ set title
 "If you prefer one tab for one buffer, you can map the :tabn and :tabp commands (tab next, and tab previous).
 nnoremap <Space> :tabn<CR>
 
-"Important to make backspace work in a typical manner
-set backspace=indent,eol,start
-
 "Remap backspace to Esc (use <C-h> and <C-w> instead (standard))
 "nnoremap <BS> <Esc>
 "vnoremap <BS> <Esc>gV
@@ -64,75 +44,45 @@ set backspace=indent,eol,start
 "cnoremap <BS> <C-C><Esc>
 inoremap jj <Esc>
 
-"In normal mode, you can press prefix keys before a command (for example, 12 for a count). The nnoremap causes Tab to
-"cancel any prefix keys.
-"The vnoremap causes Tab to cancel any selection (gV is required to prevent automatic reselection).
-"The onoremap causes Tab to cancel any operator-pending command (for example, y).
-"The cnoremap causes Tab to cancel any command that was entered.
-"The first inoremap causes Tab to exit insert mode, and the `^ restores the cursor position so exiting insert does not move the cursor left.
-
 "Copy the current buffer's path to the clipboard
 "nnoremap cp :let @+ = expand("%")<CR>
 
 "Plugins
-call plug#begin(stdpath('data') . '/plugged')
-"The default plugin directory will be as follows:
-"  - Vim (Linux/macOS): '~/.vim/plugged'
-"  - Vim (Windows): '~/vimfiles/plugged'
-"  - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
-"You can specify a custom plugin directory by passing it as the argument
-"  - e.g. `call plug#begin('~/.vim/plugged')`
-"  - Avoid using standard Vim directory names like 'plugin'
-"Make sure you use single quotes
+"Install vim-plug (pinned to a release) on first start, then the plugins below.
+let s:plug = stdpath('data') . '/site/autoload/plug.vim'
+if empty(glob(s:plug))
+  silent execute '!curl -fsSLo ' . shellescape(s:plug) . ' --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/0.14.0/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
+"coc.nvim is the LSP client; keep ALE to linting so both don't start language servers.
+let g:ale_disable_lsp = 1
+
+call plug#begin(stdpath('data') . '/plugged')
 Plug 'junegunn/vim-easy-align'
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter' "Don't use 'vim-signify' if you are using 'vim-gitgutter'
-"Any valid git URL is allowed
-Plug 'preservim/nerdtree'
-"On-demand loading
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'ap/vim-buftabline' " Show buffers in the tab line.
 Plug 'farmergreg/vim-lastplace' " Reopen files at last edit position.
+Plug 'junegunn/fzf' " The fzf Vim plugin that fzf.vim builds on; uses the fzf binary from Homebrew.
 Plug 'junegunn/fzf.vim' " Fuzzy finder commands using fzf.
 Plug 'liuchengxu/vim-which-key' " Show possible leader completions.
-Plug 'majutsushi/tagbar' " Sidebar ctag browser.
+Plug 'preservim/tagbar' " Sidebar ctag browser.
 Plug 'mbbill/undotree' " Sidebar undo branch browser.
 Plug 'mhinz/vim-startify' " Extendable start screen.
 Plug 'ntpeters/vim-better-whitespace' " Highlight trailing white space.
 Plug 'tpope/vim-fugitive' " Vim git porcelain.
 Plug 'tpope/vim-surround' " Adds surrounding text object.
 Plug 'tpope/vim-vinegar' " Improve netrw.
-Plug 'w0rp/ale' " Lint engine and LSP client.
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' } " Highly extendable fuzzy finder over lists
+Plug 'dense-analysis/ale' " Lint engine.
+Plug 'nvim-lua/plenary.nvim' " Required by telescope.
+Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' } " Highly extendable fuzzy finder over lists
 Plug 'dstein64/vim-startuptime' "Different performance metrics for vim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-"Initialize plugin system
 call plug#end()
 
-"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux
-"Uncommend the code below if you are not satisfied with the default rendering
-"of your terminal
-"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
-"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
-"if (empty($TMUX))
-"  if (has("nvim"))
-"    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-"    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-"  endif
-"  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-"  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-"  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-"  if (has("termguicolors"))
-"    set termguicolors
-"  endif
-"endif
-
-"It is important to define the colorscheme after the Plugins section
 "No standalone colorscheme plugin: inherit the terminal's ANSI palette
-"(the max-contrast "dotfiles-black-light" iTerm preset, pure #FFFFFF/#000000)
+"(the max-contrast "dotfiles" iTerm presets, pure #FFFFFF/#000000)
 "so nvim always matches whatever profile the terminal is running.
 set background=light
-
