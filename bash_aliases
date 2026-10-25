@@ -1,16 +1,8 @@
 #!/bin/bash
 
-###
-# Put the following snippet into your shell configuration file ('.bashrc', '.zshrc', etc)
-
-# Use $HOME instead of '~' sign (cross-platform)
-# if [[ -f $HOME/dotfiles/bash_aliases ]]
-# then
-#     source $HOME/dotfiles/bash_aliases
-# else
-#     echo "[ERROR]:'$HOME/dotfiles/bash_aliases' was not found."
-# fi
-###
+# Aliases and functions for zsh and bash. On macOS, zsh/zshrc sources this
+# file. Elsewhere (WSL, Git Bash), add to ~/.bashrc:
+#   source "$HOME/dotfiles/bash_aliases"
 
 # Functions
 j() {
@@ -34,17 +26,17 @@ jjjjjj() {
 
 # Make a directory and cd to it
 mcd() {
-    test -d "$1" || mkdir "$1" && cd "$1"
+    mkdir -p "$1" && cd "$1"
 }
 
 set -o vi
 
 # General aliases
 alias j-='j -'
-alias jf="j $HOME/feroot" ;
-alias jsd="j $HOME/sd" ;
-alias jdf="j $HOME/dotfiles" ;
-alias jtmp="j $HOME/tmp" ;
+alias jf='j "$HOME/feroot"'
+alias jsd='j "$HOME/sd"'
+alias jdf='j "$HOME/dotfiles"'
+alias jtmp='j "$HOME/tmp"'
 alias k='nvim'
 alias l='ls -Alh'
 alias s='fzf'
@@ -60,8 +52,10 @@ case "$OSTYPE" in
         alias jdl="cd /mnt/c/Users/ivankravchuk99/Downloads && ls -Alhtr" ;
         alias jdt="j /mnt/c/Users/ivankravchuk99/Desktop" ;
         alias jpd="j /mnt/c/Users/ivankravchuk99/Google\ Drive/" ;
-        alias pwdcp='pwd | clip.exe && echo "COPIED " ; echo $PWD ; echo " to Windows system clipboard!" || echo \"[ERROR]: Could not copy the absolute path!\"' ;
-        alias cpwd='pwd | pbcopy && echo "COPIED " ; echo $PWD ; echo " to macOS clipboard!" || echo \"[ERROR]: Could not copy the absolute path!\"' ;
+        pwdcp() {
+            printf '%s' "$PWD" | clip.exe && echo "Copied $PWD to the Windows clipboard."
+        }
+        alias cpwd=pwdcp
         catcp() {
             test -f "$1" && cat "$1" | clip.exe
         }
@@ -73,8 +67,10 @@ case "$OSTYPE" in
         alias jdl="cd \"$HOME/Downloads\" && ls -Alhtr" ;
         alias jdt="cd \"$HOME/Desktop\" && ls -Alhtr" ;
         alias jpd="cd \"$HOME/Desktop/pdrive\" && ls -Alhtr" ;
-        alias pwdcp='pwd | pbcopy && echo "COPIED " ; echo $PWD ; echo " to macOS clipboard!" || echo \"[ERROR]: Could not copy the absolute path!\"' ;
-        alias cpwd='pwd | pbcopy && echo "COPIED " ; echo $PWD ; echo " to macOS clipboard!" || echo \"[ERROR]: Could not copy the absolute path!\"' ;
+        pwdcp() {
+            printf '%s' "$PWD" | pbcopy && echo "Copied $PWD to the clipboard."
+        }
+        alias cpwd=pwdcp
         catcp() {
             test -f "$1" && pbcopy < "$1" && cat "$1"
         }
@@ -93,9 +89,29 @@ case "$OSTYPE" in
     ;;
 esac
 
-## git aliases (you can also [include] path in $HOME/.gitconfig)
-if [[ ! -d "$HOME/.oh-my-zsh" ]]
+## git aliases: a copy of oh-my-zsh's git plugin, for shells that don't load it
+if ! alias gst >/dev/null 2>&1
 then
+    # Helpers the aliases below expect; oh-my-zsh defines them in lib/git.zsh.
+    git_current_branch() {
+        git symbolic-ref --quiet --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null
+    }
+    git_main_branch() {
+        local ref
+        for ref in refs/heads/main refs/heads/trunk refs/heads/master \
+                   refs/remotes/origin/main refs/remotes/origin/master; do
+            git show-ref -q --verify "$ref" && { echo "${ref##*/}"; return 0; }
+        done
+        echo master
+    }
+    git_develop_branch() {
+        local branch
+        for branch in dev devel develop development; do
+            git show-ref -q --verify "refs/heads/$branch" && { echo "$branch"; return 0; }
+        done
+        echo develop
+    }
+
     alias g=git
     alias ga='git add'
     alias gaa='git add --all'
@@ -159,14 +175,13 @@ then
     alias gg='git gui citool'
     alias gga='git gui citool --amend'
     alias ggpull='git pull origin "$(git_current_branch)"'
-    alias ggpur=ggu
     alias ggpush='git push origin "$(git_current_branch)"'
     alias ggsup='git branch --set-upstream-to=origin/$(git_current_branch)'
     alias ghh='git help'
     alias gignore='git update-index --assume-unchanged'
     alias gignored='git ls-files -v | grep "^[[:lower:]]"'
-    alias gk='\gitk --all --branches &!'
-    alias gke='\gitk --all $(git log -g --pretty=%h) &!'
+    alias gk='\gitk --all --branches &'
+    alias gke='\gitk --all $(git log -g --pretty=%h) &'
     alias gl='git pull'
     alias glg='git log --stat'
     alias glgg='git log --graph'
@@ -174,7 +189,6 @@ then
     alias glgm='git log --graph --max-count=10'
     alias glgp='git log --stat -p'
     alias glo='git log --oneline --decorate'
-    alias globurl='noglob urlglobber '
     alias glod='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'\'
     alias glods='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'\'' --date=short'
     alias glog='git log --oneline --decorate --graph'
