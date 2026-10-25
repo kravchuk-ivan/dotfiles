@@ -6,7 +6,7 @@
     "color_scheme": "Celeste.sublime-color-scheme",
     // Adaptive keeps the window chrome light to match the color scheme.
     "theme": "Adaptive.sublime-theme",
-    "font_size": 13,
+    "font_size": 15,
 
     // Relative line numbers (matches vs-code-settings-macos.json).
     "relative_line_numbers": true,
@@ -28,6 +28,9 @@
     "ensure_newline_at_eof_on_save": true,
 
     // --- Quality of life ---
+    // Full path of the current file in the title bar. Sublime defaults this
+    // to true everywhere except macOS.
+    "show_full_path": true,
     "highlight_line": true,
     "drag_text": false
 }
