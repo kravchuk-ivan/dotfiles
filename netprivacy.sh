@@ -60,12 +60,16 @@
 # ============================================================================
 
 netprivacy() {
+  local identity proxy trust ssl_relevant chain mdm
   echo
   echo "== 1. PUBLIC IDENTITY (who the internet sees) ============================"
-  curl -s --max-time 8 https://ipinfo.io/json \
-    | grep -E '"(ip|city|region|country|org)"' \
-    | sed 's/^/  /' \
-    || echo "  (no response — if your kill switch is ON and the VPN is down, this SHOULD fail)"
+  identity=$(curl -s --max-time 8 https://ipinfo.io/json \
+    | grep -E '"(ip|city|region|country|org)"')
+  if [ -n "$identity" ]; then
+    echo "$identity" | sed 's/^/  /'
+  else
+    echo "  (no response — if your kill switch is ON and the VPN is down, this SHOULD fail)"
+  fi
 
   echo
   echo "== 2. DNS (which resolver actually answers) =============================="
@@ -97,8 +101,12 @@ netprivacy() {
 
   echo
   echo "== 5. DEVICE MANAGEMENT (MDM) ==========================================="
-  profiles status -type enrollment 2>/dev/null | sed 's/^/  /' \
-    || echo "  unable to read enrollment status"
+  mdm=$(profiles status -type enrollment 2>/dev/null)
+  if [ -n "$mdm" ]; then
+    echo "$mdm" | sed 's/^/  /'
+  else
+    echo "  unable to read enrollment status"
+  fi
 
   echo
   echo "== 6. CUSTOM TRUSTED ROOTS (HTTPS interception) ========================="
