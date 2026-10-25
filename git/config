@@ -1,4 +1,8 @@
-# This is Git's per-user configuration file.
+# Shared git settings. install.sh includes this file from ~/.gitconfig:
+#   [include]
+#   	path = ~/dotfiles/git/config
+# Keep machine-local settings in ~/.gitconfig itself, outside this public
+# repo: work identities (includeIf "gitdir:~/work/"), credential helpers.
 [user]
 	name = kravchuk-ivan
 	# GitHub noreply address, not a real mailbox. The commit email is public in
@@ -16,3 +20,8 @@
 	# address unnoticed: GitHub Settings > Emails > "Keep my email addresses
 	# private" + "Block command line pushes that expose my email".
 	email = 67902420+kravchuk-ivan@users.noreply.github.com
+[github]
+	user = kravchuk-ivan
+[core]
+	autocrlf = input
+	editor = vim
