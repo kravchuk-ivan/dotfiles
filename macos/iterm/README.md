@@ -23,7 +23,24 @@ stays legible against the dark background instead of disappearing into it
 — a background-color problem that light themes don't have, since black
 text renders fine against a white background.
 
-## Apply on a new machine
+## Default profile
+
+`dotfiles-profile.json` is an iTerm2 [Dynamic
+Profile](https://iterm2.com/documentation-dynamic-profiles.html) holding only
+what differs from a stock profile: SF Mono 15, new tabs opening in the
+previous session's directory, and separate light/dark colors. The light colors
+are `dotfiles-light-max-contrast`; the dark ones are iTerm2's own. `install.sh`
+links it into `~/Library/Application Support/iTerm2/DynamicProfiles/` and makes
+it the default profile. iTerm2 reloads the file whenever it changes, but edits
+made in iTerm2's Settings window are not saved back to it: change the JSON
+instead.
+
+`install.sh` also sets two global preferences: automatic update checks on
+(iTerm2 ships security fixes as point releases) and "Save copy/paste and
+command history to disk" off (it writes the last copied and pasted values,
+including any secrets, to disk).
+
+## Import the presets by hand
 
 1. iTerm2 → Settings → Profiles → Colors.
 2. Color Presets… (bottom-right) → Import… → select the `.itermcolors`
