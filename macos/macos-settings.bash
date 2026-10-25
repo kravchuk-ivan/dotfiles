@@ -46,7 +46,34 @@ echo "APPLIED SETTING: Trackpad: three-finger drag enabled (built-in driver)."
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
 echo "APPLIED SETTING: Trackpad: three-finger drag enabled (Bluetooth driver)."
 
+# Pointer tracking speed at the System Settings maximum (3.0) for mouse and
+# trackpad. macOS applies it at login; macos/mouse-speed/ toggles it live
+# between this and a slower demo speed.
+defaults write NSGlobalDomain com.apple.mouse.scaling -float 3
+defaults write NSGlobalDomain com.apple.trackpad.scaling -float 3
+echo "APPLIED SETTING: Pointer: tracking speed set to 3 (maximum) for mouse and trackpad."
+
+# Click pressure "Light" (0) instead of "Medium" (1) for the Force Touch trackpad.
+defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
+echo "APPLIED SETTING: Trackpad: click pressure set to light."
+
+# Show scroll bars only while scrolling, regardless of the input device.
+defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
+echo "APPLIED SETTING: Scroll bars: shown only while scrolling."
+
 # --- Dock ---
+
+# Auto-hide the Dock on the right edge: the screen's full height stays free
+# for windows, and wide displays have width to spare.
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock orientation -string "right"
+echo "APPLIED SETTING: Dock: auto-hidden on the right edge."
+
+# Turn off the bottom-right hot corner (macOS assigns Quick Note to it).
+# Value 1 means no action.
+defaults write com.apple.dock wvous-br-corner -int 1
+defaults write com.apple.dock wvous-br-modifier -int 0
+echo "APPLIED SETTING: Dock: bottom-right hot corner (Quick Note) disabled."
 
 # Hide all pinned/persistent app icons; show only currently running apps.
 # Keeps the Dock minimal — you launch apps via Spotlight, not the Dock.
