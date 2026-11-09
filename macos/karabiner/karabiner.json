@@ -121,6 +121,27 @@
                         ]
                     },
                     {
+                        "description": "'left_option + a'  to 'Launch Claude'",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'Claude'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "'left_option + m'  to 'Toggle mouse tracking + scroll speed (demo <-> fast)'",
                         "manipulators": [
                             {
