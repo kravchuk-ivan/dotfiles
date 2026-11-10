@@ -230,6 +230,8 @@ step "Left to do by hand"
 cat <<'EOF'
     - Karabiner-Elements: open it, allow its driver and Input Monitoring in
       System Settings, then quit and reopen it so it loads the linked config.
+    - Rectangle: open it once and allow it under Accessibility in System
+      Settings; it imports the shortcuts from the repo at that launch.
     - Secrets (API keys): add them to ~/.zshrc below the source line, or keep
       them in the Keychain:
         security add-generic-password -a "$USER" -s anthropic-api-key -w
