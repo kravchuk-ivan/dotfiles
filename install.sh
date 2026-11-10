@@ -235,9 +235,7 @@ cat <<'EOF'
         security add-generic-password -a "$USER" -s anthropic-api-key -w
         export ANTHROPIC_API_KEY="$(security find-generic-password -s anthropic-api-key -w)"
     - Work git identity: add an includeIf block to ~/.gitconfig.
-    - Chrome: sign in to sync bookmarks, extensions and Vimium C settings; load
-      chrome-extensions/instagram-auto-logout via chrome://extensions >
-      Developer mode > Load unpacked.
+    - Chrome: sign in to sync bookmarks, extensions and Vimium C settings.
     - Not in the Brewfile: Griply (no cask), Claude Code
       (curl -fsSL https://claude.ai/install.sh | bash).
     - System Settings: Accessibility > Display > Reduce motion; screenshot
