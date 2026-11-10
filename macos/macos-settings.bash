@@ -53,8 +53,15 @@ defaults write NSGlobalDomain com.apple.mouse.scaling -float 3
 defaults write NSGlobalDomain com.apple.trackpad.scaling -float 3
 echo "APPLIED SETTING: Pointer: tracking speed set to 3 (maximum) for mouse and trackpad."
 
+# Mouse scroll speed, copied from the live Mac (System Settings > Mouse >
+# Scrolling speed). Default is lower.
+defaults write NSGlobalDomain com.apple.scrollwheel.scaling -float 0.4412
+echo "APPLIED SETTING: Mouse: scroll speed set to 0.4412."
+
 # Click pressure "Light" (0) instead of "Medium" (1) for the Force Touch trackpad.
+# System Settings writes both thresholds: the normal click and the force click.
 defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
+defaults write com.apple.AppleMultitouchTrackpad SecondClickThreshold -int 0
 echo "APPLIED SETTING: Trackpad: click pressure set to light."
 
 # Show scroll bars only while scrolling, regardless of the input device.
