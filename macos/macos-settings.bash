@@ -164,6 +164,22 @@ echo "APPLIED SETTING: Animations: focus ring animation disabled."
 defaults write com.apple.finder DisableAllAnimations -bool true
 echo "APPLIED SETTING: Animations: Finder animations disabled."
 
+# --- Desktop and Windows ---
+
+# Hide files and folders on the desktop (Desktop & Dock > Show Items > On
+# Desktop). They stay in ~/Desktop and show up in Finder.
+defaults write com.apple.WindowManager HideDesktop -bool true
+echo "APPLIED SETTING: Desktop: items hidden."
+
+# No gaps between windows tiled by dragging them to the screen edge.
+defaults write com.apple.WindowManager EnableTiledWindowMargins -bool false
+echo "APPLIED SETTING: Windows: tiled window margins disabled."
+
+# Solid menu bar background (Menu Bar > Show menu bar background) instead of
+# a transparent one. Takes effect after logging out and in.
+defaults write NSGlobalDomain SLSMenuBarUseBlurredAppearance -bool true
+echo "APPLIED SETTING: Menu bar: background shown."
+
 # --- Finder ---
 
 # Show hidden files (dot-prefixed: .zshrc, .git, .env, etc.).
