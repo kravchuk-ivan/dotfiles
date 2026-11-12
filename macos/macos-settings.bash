@@ -406,6 +406,13 @@ echo "APPLIED SETTING: Sound: interface sound effects disabled."
 defaults write NSGlobalDomain com.apple.sound.beep.feedback -int 1
 echo "APPLIED SETTING: Sound: volume change feedback enabled."
 
+# --- Spotlight ---
+
+# Spotlight keeps clipboard history, for 7 days (604800 seconds).
+defaults write com.apple.Spotlight PasteboardHistoryEnabled -bool true
+defaults write com.apple.Spotlight PasteboardHistoryTimeout -int 604800
+echo "APPLIED SETTING: Spotlight: clipboard history kept for 7 days."
+
 # --- TextEdit ---
 
 # Open new documents in plain text mode instead of Rich Text (RTF). RTF embeds invisible
