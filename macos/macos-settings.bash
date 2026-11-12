@@ -343,6 +343,19 @@ defaults write NSGlobalDomain NSAllowContinuousSpellChecking -bool false
 defaults write NSGlobalDomain WebAutomaticSpellingCorrectionEnabled -bool false
 echo "APPLIED SETTING: Typing: spell checking as you type disabled, including web fields."
 
+# Add the Russian keyboard layout next to U.S. Takes effect after logging out
+# and in. Skipped when it's already there, so the list isn't duplicated.
+if ! defaults read com.apple.HIToolbox AppleEnabledInputSources 2>/dev/null |
+    grep -q '"KeyboardLayout Name" = Russian'; then
+    defaults write com.apple.HIToolbox AppleEnabledInputSources -array-add \
+        '<dict>
+            <key>InputSourceKind</key><string>Keyboard Layout</string>
+            <key>KeyboardLayout ID</key><integer>19456</integer>
+            <key>KeyboardLayout Name</key><string>Russian</string>
+        </dict>'
+fi
+echo "APPLIED SETTING: Input sources: Russian layout enabled."
+
 # --- Save / Print Dialogs ---
 
 # Expand the save dialog by default. macOS shows a compact sheet with only a filename
