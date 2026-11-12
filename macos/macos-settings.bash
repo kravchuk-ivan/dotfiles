@@ -396,6 +396,16 @@ else
     echo "SKIPPED: Screenshots: $screenshots not found; sign in to Google Drive and run again."
 fi
 
+# --- Sound ---
+
+# No interface sound effects (Trash emptying, screenshots, and so on).
+defaults write NSGlobalDomain com.apple.sound.uiaudio.enabled -int 0
+echo "APPLIED SETTING: Sound: interface sound effects disabled."
+
+# Play a sound when the volume changes, to hear the new level.
+defaults write NSGlobalDomain com.apple.sound.beep.feedback -int 1
+echo "APPLIED SETTING: Sound: volume change feedback enabled."
+
 # --- TextEdit ---
 
 # Open new documents in plain text mode instead of Rich Text (RTF). RTF embeds invisible
