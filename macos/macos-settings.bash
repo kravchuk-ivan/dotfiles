@@ -286,6 +286,24 @@ defaults write com.apple.finder NewWindowTarget -string "PfHm"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 echo "APPLIED SETTING: Finder: new windows open to home folder (${HOME})."
 
+# Get Info (⌘I) opens with these sections expanded: Name & Extension, More
+# Info, Open With, and Sharing & Permissions. General is expanded by default.
+defaults write com.apple.finder FXInfoPanesExpanded -dict \
+    Name -bool true \
+    MetaData -bool true \
+    OpenWith -bool true \
+    Privileges -bool true
+echo "APPLIED SETTING: Finder: Get Info sections expanded."
+
+# Delete items from the Trash after 30 days.
+defaults write com.apple.finder FXRemoveOldTrashItems -bool true
+echo "APPLIED SETTING: Finder: Trash emptied after 30 days."
+
+# Spring-loaded folders open with no delay when you hover a dragged item
+# over them (default 0.5 s).
+defaults write NSGlobalDomain com.apple.springing.delay -float 0
+echo "APPLIED SETTING: Finder: spring-loading delay set to 0."
+
 # --- Typing ---
 
 # Disable autocorrect. It silently rewrites words as you type — tolerable in prose,
