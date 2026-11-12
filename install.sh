@@ -241,8 +241,10 @@ cat <<'EOF'
     - Not in the Brewfile: Griply (no cask), Claude Code
       (curl -fsSL https://claude.ai/install.sh | bash).
     - System Settings, which macOS doesn't let a script change:
+      - Accessibility > Display > Reduce motion: turn on. Spaces switch with
+        a fade instead of a slide, and most system animations get shorter.
       - Accessibility > Display: turn on Increase contrast, Reduce
-        transparency, Reduce motion, and Differentiate without color.
+        transparency, and Differentiate without color.
       - Lock Screen: Require password after screen saver begins or display
         is turned off > After 5 minutes.
       - Keyboard > Dictation: turn on; turn Auto-punctuation off.
