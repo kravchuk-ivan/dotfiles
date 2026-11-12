@@ -64,6 +64,19 @@ defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
 defaults write com.apple.AppleMultitouchTrackpad SecondClickThreshold -int 0
 echo "APPLIED SETTING: Trackpad: click pressure set to light."
 
+# Force Click and haptic feedback off: a deep press is an ordinary click.
+# System Settings writes the global key and two trackpad driver keys.
+defaults write NSGlobalDomain com.apple.trackpad.forceClick -bool false
+defaults write com.apple.AppleMultitouchTrackpad ForceSuppressed -bool true
+defaults write com.apple.AppleMultitouchTrackpad ActuateDetents -bool false
+echo "APPLIED SETTING: Trackpad: Force Click and haptic feedback disabled."
+
+# Look up & data detectors on a three-finger tap (2) instead of a Force Click,
+# which is off above.
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -int 2
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerTapGesture -int 2
+echo "APPLIED SETTING: Trackpad: look up with a three-finger tap."
+
 # Show scroll bars only while scrolling, regardless of the input device.
 defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 echo "APPLIED SETTING: Scroll bars: shown only while scrolling."
