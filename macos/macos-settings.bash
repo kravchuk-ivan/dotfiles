@@ -386,6 +386,16 @@ echo "APPLIED SETTING: Screenshots: drop shadow disabled."
 defaults write com.apple.screencapture type -string "png"
 echo "APPLIED SETTING: Screenshots: format set to PNG (lossless)."
 
+# Save screenshots to Google Drive. The folder only exists once Google Drive
+# is signed in, so skip it until then; macOS would fall back to the Desktop.
+screenshots="$HOME/My Drive/screenshots-drive"
+if [ -d "$screenshots" ]; then
+    defaults write com.apple.screencapture location -string "$screenshots"
+    echo "APPLIED SETTING: Screenshots: saved to $screenshots."
+else
+    echo "SKIPPED: Screenshots: $screenshots not found; sign in to Google Drive and run again."
+fi
+
 # --- TextEdit ---
 
 # Open new documents in plain text mode instead of Rich Text (RTF). RTF embeds invisible
