@@ -296,6 +296,14 @@ osascript -e 'tell application "System Events" to tell every desktop to set pict
 defaults -currentHost write com.apple.screensaver idleTime -int 0
 echo "APPLIED SETTING: Screen saver: never starts."
 
+# Turn the display off and sleep after 5 minutes idle, on battery and on power
+# (macOS defaults are shorter on battery and longer on power). pmset needs
+# sudo, so it only runs, and asks for a password, when a value differs.
+if pmset -g custom | awk '$1 == "displaysleep" || $1 == "sleep" { print $2 }' | grep -qvx 5; then
+    sudo pmset -a displaysleep 5 sleep 5
+fi
+echo "APPLIED SETTING: Power: display off and sleep after 5 minutes."
+
 # --- Apply Changes ---
 
 # Restart processes that hold settings in memory and won't pick them up until relaunched.
