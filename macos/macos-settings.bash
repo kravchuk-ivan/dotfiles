@@ -333,6 +333,16 @@ echo "APPLIED SETTING: Typing: smart dash substitution disabled (literal hyphens
 defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 echo "APPLIED SETTING: Typing: double-space period substitution disabled."
 
+# No inline predictive text (the grey completion shown ahead of the cursor).
+defaults write NSGlobalDomain NSAutomaticTextCompletionEnabled -bool false
+echo "APPLIED SETTING: Typing: inline predictive text disabled."
+
+# No spell checking as you type (red underlines), and no autocorrect in web
+# page text fields either.
+defaults write NSGlobalDomain NSAllowContinuousSpellChecking -bool false
+defaults write NSGlobalDomain WebAutomaticSpellingCorrectionEnabled -bool false
+echo "APPLIED SETTING: Typing: spell checking as you type disabled, including web fields."
+
 # --- Save / Print Dialogs ---
 
 # Expand the save dialog by default. macOS shows a compact sheet with only a filename
