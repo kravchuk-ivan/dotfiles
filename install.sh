@@ -240,7 +240,20 @@ cat <<'EOF'
     - Chrome: sign in to sync bookmarks, extensions and Vimium C settings.
     - Not in the Brewfile: Griply (no cask), Claude Code
       (curl -fsSL https://claude.ai/install.sh | bash).
-    - System Settings: Accessibility > Display > Reduce motion; screenshot
-      location (Cmd-Shift-5 > Options); keyboard shortcuts you turned off.
+    - System Settings, which macOS doesn't let a script change:
+      - Accessibility > Display: turn on Increase contrast, Reduce
+        transparency, Reduce motion, and Differentiate without color.
+      - Lock Screen: Require password after screen saver begins or display
+        is turned off > After 5 minutes.
+      - Keyboard > Dictation: turn on; turn Auto-punctuation off.
+      - Menu Bar: show Bluetooth and Screen Mirroring.
+      - Keyboard > Keyboard Shortcuts: turn off any you had turned off.
+    - Wallpaper: if the macOS settings step printed SKIPPED for it (System
+      Events access denied), pick Black in System Settings > Wallpaper.
+    - Google Drive: sign in, then run install.sh again so screenshots save
+      to ~/My Drive/screenshots-drive.
+    - Optional: folders whose Finder view was changed by hand ignore the
+      column view default. Reset a folder tree with:
+        find ~/some/dir -name .DS_Store -delete && killall Finder
     - Restart, or log out and in, so every preference takes effect.
 EOF
