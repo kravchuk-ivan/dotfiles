@@ -112,6 +112,16 @@ echo "APPLIED SETTING: Dock: Recent Applications section hidden."
 defaults write com.apple.dock minimize-to-application -bool false
 echo "APPLIED SETTING: Dock: minimized windows shown as separate thumbnails."
 
+# Minimize with the Scale effect instead of Genie, and don't bounce app icons
+# while apps open.
+defaults write com.apple.dock mineffect -string "scale"
+defaults write com.apple.dock launchanim -bool false
+echo "APPLIED SETTING: Dock: scale minimize effect, no launch animation."
+
+# Icon size, copied from the live Mac (default 48).
+defaults write com.apple.dock tilesize -int 49
+echo "APPLIED SETTING: Dock: icon size set to 49."
+
 # --- Finder ---
 
 # Show hidden files (dot-prefixed: .zshrc, .git, .env, etc.).
