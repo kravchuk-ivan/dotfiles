@@ -193,6 +193,39 @@ echo "APPLIED SETTING: Finder: hidden files shown."
 defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 echo "APPLIED SETTING: Finder: default view set to column."
 
+# Recents in column view too; it has its own view setting.
+defaults write com.apple.finder SearchRecentsSavedViewStyle -string "clmv"
+echo "APPLIED SETTING: Finder: Recents shown in column view."
+
+# Column view options (View > Show View Options). Sort by Date Modified (modd)
+# instead of Name. The rest are the macOS defaults, written out because this
+# key holds the whole set: icons and thumbnails, folder arrows, and the preview
+# column with its file info expanded.
+defaults write com.apple.finder StandardViewOptions '
+<dict>
+    <key>ColumnViewOptions</key>
+    <dict>
+        <key>ArrangeBy</key><string>modd</string>
+        <key>SharedArrangeBy</key><string>kipl</string>
+        <key>ColumnShowFolderArrow</key><true/>
+        <key>ColumnShowIcons</key><true/>
+        <key>ShowIconThumbnails</key><true/>
+        <key>ShowPreview</key><true/>
+        <key>PreviewDisclosureState</key><true/>
+        <key>ColumnWidth</key><integer>245</integer>
+        <key>FontSize</key><integer>13</integer>
+    </dict>
+</dict>'
+echo "APPLIED SETTING: Finder: column view sorted by Date Modified, preview column shown."
+
+# Size columns to fit the file names they show.
+defaults write com.apple.finder _FXEnableColumnAutoSizing -bool true
+echo "APPLIED SETTING: Finder: column auto-sizing enabled."
+
+# NOTE: a folder whose view was changed by hand keeps that view in its
+# .DS_Store file and ignores the defaults above. To reset a tree to column view:
+#   find ~/some/dir -name .DS_Store -delete && killall Finder
+
 # No grouping; sort by Date Modified. FXPreferredGroupBy controls group-by;
 # FXArrangeGroupViewBy controls sort-by. "Date Modified" grouping adds date buckets
 # (Today/Yesterday/Last 7 Days) — useful in icon/list view but noisy in column view.
