@@ -432,6 +432,25 @@ echo "APPLIED SETTING: TextEdit: plain text read encoding set to UTF-8."
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 echo "APPLIED SETTING: TextEdit: plain text write encoding set to UTF-8."
 
+# JetBrains Mono NL 13 for both rich and plain text (font-jetbrains-mono in
+# the Brewfile). TextEdit falls back to its default font if it's missing.
+defaults write com.apple.TextEdit NSFont -string "JetBrainsMonoNL-Regular"
+defaults write com.apple.TextEdit NSFontSize -int 13
+defaults write com.apple.TextEdit NSFixedPitchFont -string "JetBrainsMonoNL-Regular"
+defaults write com.apple.TextEdit NSFixedPitchFontSize -int 13
+echo "APPLIED SETTING: TextEdit: font set to JetBrains Mono NL 13."
+
+# Save a plain text file under the exact name typed, without adding .txt.
+defaults write com.apple.TextEdit AddExtensionToNewPlainTextFiles -bool false
+echo "APPLIED SETTING: TextEdit: .txt not added to new file names."
+
+# Settings > New Document options: check grammar with spelling, turn URLs into
+# links, and detect dates, addresses and phone numbers.
+defaults write com.apple.TextEdit CheckGrammarWithSpelling -bool true
+defaults write com.apple.TextEdit SmartLinks -bool true
+defaults write com.apple.TextEdit DataDetectors -bool true
+echo "APPLIED SETTING: TextEdit: grammar check, smart links and data detectors enabled."
+
 # --- Activity Monitor ---
 
 # Show all processes on open, not just the current user's. Without this, system
