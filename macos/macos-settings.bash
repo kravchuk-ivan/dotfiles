@@ -122,6 +122,48 @@ echo "APPLIED SETTING: Dock: scale minimize effect, no launch animation."
 defaults write com.apple.dock tilesize -int 49
 echo "APPLIED SETTING: Dock: icon size set to 49."
 
+# --- Animations ---
+
+# Turn off or shorten the animations that have a setting. The biggest one,
+# Accessibility > Display > Reduce motion (Spaces switch with a fade instead
+# of a slide), can't be scripted; it's in install.sh's by-hand list.
+# A key that a macOS version ignores does nothing.
+
+# The Dock appears and hides with no slide. The 0.5 s hover delay before it
+# appears is kept, so it doesn't pop up every time the pointer touches the edge.
+defaults write com.apple.dock autohide-time-modifier -float 0
+echo "APPLIED SETTING: Animations: Dock shows and hides instantly."
+
+# Mission Control opens and closes faster (default about 0.5 s; 0 can
+# leave it stuck mid-transition, so use 0.1).
+defaults write com.apple.dock expose-animation-duration -float 0.1
+echo "APPLIED SETTING: Animations: Mission Control sped up."
+
+# New windows appear without zooming in.
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+echo "APPLIED SETTING: Animations: window open animation disabled."
+
+# Sheets (save dialogs and the like) and window resizes are near-instant.
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+echo "APPLIED SETTING: Animations: sheets and resizes near-instant."
+
+# Page Up/Down, Space and Home/End jump instead of scrolling smoothly.
+# Trackpad and mouse wheel scrolling are unaffected.
+defaults write NSGlobalDomain NSScrollAnimationEnabled -bool false
+echo "APPLIED SETTING: Animations: smooth scrolling disabled."
+
+# Quick Look (Space in Finder) opens without zooming.
+defaults write NSGlobalDomain QLPanelAnimationDuration -float 0
+echo "APPLIED SETTING: Animations: Quick Look opens instantly."
+
+# The keyboard focus ring appears without its shrinking animation.
+defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false
+echo "APPLIED SETTING: Animations: focus ring animation disabled."
+
+# Finder windows and Get Info open without animations.
+defaults write com.apple.finder DisableAllAnimations -bool true
+echo "APPLIED SETTING: Animations: Finder animations disabled."
+
 # --- Finder ---
 
 # Show hidden files (dot-prefixed: .zshrc, .git, .env, etc.).
