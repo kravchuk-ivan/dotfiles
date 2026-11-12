@@ -281,6 +281,21 @@ echo "APPLIED SETTING: Menu bar clock: day of week shown."
 defaults write com.apple.menuextra.clock ShowSeconds -bool true
 echo "APPLIED SETTING: Menu bar clock: seconds shown."
 
+# --- Wallpaper and Lock Screen ---
+
+# Black wallpaper, using the stock solid color that ships with macOS. The lock
+# screen shows the same wallpaper. System Events sets the current Space on each
+# display and makes it the default for new ones. First run asks to allow the
+# terminal to control System Events.
+osascript -e 'tell application "System Events" to tell every desktop to set picture to "/System/Library/Desktop Pictures/Solid Colors/Black.png"' &&
+    echo "APPLIED SETTING: Wallpaper: stock black." ||
+    echo "SKIPPED: Wallpaper: System Events access denied; pick Black in System Settings > Wallpaper."
+
+# Never start the screen saver, so the lock screen stays black instead of
+# switching to a slideshow. Stored per machine, hence -currentHost.
+defaults -currentHost write com.apple.screensaver idleTime -int 0
+echo "APPLIED SETTING: Screen saver: never starts."
+
 # --- Apply Changes ---
 
 # Restart processes that hold settings in memory and won't pick them up until relaunched.
