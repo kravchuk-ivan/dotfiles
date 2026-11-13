@@ -29,16 +29,26 @@ text renders fine against a white background.
 Profile](https://iterm2.com/documentation-dynamic-profiles.html) holding only
 what differs from a stock profile: SF Mono 15, new tabs opening in the
 previous session's directory, and separate light/dark colors. The light colors
-are `dotfiles-light-max-contrast`; the dark ones are iTerm2's own. `install.sh`
-links it into `~/Library/Application Support/iTerm2/DynamicProfiles/` and makes
-it the default profile. iTerm2 reloads the file whenever it changes, but edits
-made in iTerm2's Settings window are not saved back to it: change the JSON
-instead.
+are `dotfiles-light-max-contrast`; the dark ones are iTerm2's own. iTerm2
+reloads the file whenever it changes, but edits made in iTerm2's Settings
+window are not saved back to it: change the JSON instead.
 
-`install.sh` also sets two global preferences: automatic update checks on
-(iTerm2 ships security fixes as point releases) and "Save copy/paste and
-command history to disk" off (it writes the last copied and pasted values,
-including any secrets, to disk).
+`setup.sh` (run by `install.sh`, or on its own; `--dry-run` previews) links
+the profile into `~/Library/Application Support/iTerm2/DynamicProfiles/` and
+makes it the default. It also sets two global preferences: automatic update
+checks on (iTerm2 ships security fixes as point releases) and "Save
+copy/paste and command history to disk" off (it writes the last copied and
+pasted values, including any secrets, to disk). It changes nothing else.
+
+iTerm2 overwrites its preferences when it quits, so `setup.sh` only writes
+them while iTerm2 is closed. When iTerm2 is open, the profile still shows up
+within seconds. To make it the default, either select it and choose Settings >
+Profiles > Other Actions… > Set as Default, or quit iTerm2 and run `setup.sh`
+from Terminal.app.
+
+Don't import `dotfiles-profile.json` through Settings > Profiles > Import
+JSON Profiles. That creates a regular profile with the same Guid, and iTerm2
+then ignores the dynamic one. `setup.sh` warns if it finds one.
 
 ## Import the presets by hand
 

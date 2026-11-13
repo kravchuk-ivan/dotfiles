@@ -139,7 +139,6 @@ link sublime/Preferences.sublime-settings   "$APP_SUPPORT/Sublime Text/Packages/
 link "sublime/Package Control.sublime-settings" "$APP_SUPPORT/Sublime Text/Packages/User/Package Control.sublime-settings"
 link vs-code/settings.json                  "$APP_SUPPORT/Code/User/settings.json"
 link vs-code/keybindings.json               "$APP_SUPPORT/Code/User/keybindings.json"
-link macos/iterm/dotfiles-profile.json      "$APP_SUPPORT/iTerm2/DynamicProfiles/dotfiles-profile.json"
 
 # ~/.gitconfig stays machine-local (work identities, credential helpers) and
 # includes the shared settings.
@@ -154,17 +153,11 @@ run git -C "$DOTFILES" config core.hooksPath git/hooks
 append_line "$HOME/.npmrc" "min-release-age=7"
 
 step "App preferences"
-# iTerm2 rewrites its preferences on quit, so only write them while it's closed.
-if running iTerm2; then
-    note "iTerm2 is running: quit it and run install.sh again to apply its settings"
+# The dotfiles profile, set as the default, plus a few iTerm2 preferences.
+if [ "$DRY_RUN" = 1 ]; then
+    bash "$DOTFILES/macos/iterm/setup.sh" --dry-run
 else
-    guid=$(sed -n 's/.*"Guid": "\(.*\)".*/\1/p' "$DOTFILES/macos/iterm/dotfiles-profile.json")
-    run defaults write com.googlecode.iterm2 "Default Bookmark Guid" -string "$guid"
-    # Security fixes ship as iTerm2 point releases.
-    run defaults write com.googlecode.iterm2 SUEnableAutomaticChecks -bool true
-    # Otherwise the last copied/pasted values, secrets included, are saved to disk.
-    run defaults write com.googlecode.iterm2 SavePasteHistory -bool false
-    did "iTerm2: dotfiles profile is the default; update checks on; paste history off"
+    bash "$DOTFILES/macos/iterm/setup.sh"
 fi
 
 # Rectangle imports this file once at launch and then renames it, so only
