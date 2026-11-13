@@ -30,6 +30,9 @@ These stay out of the repo, which is public:
   machine-specific below that line (or in the Keychain).
 - `~/.gitconfig` includes `git/config`. Work identities (`includeIf`) and
   credential helpers go there.
+- Claude Code: only `claude/settings.json` and `claude/CLAUDE.md` are
+  linked into `~/.claude/`. API keys never go in the settings file's `env`
+  block. See `claude/README.md`.
 
 The repo's `pre-commit` hook rejects commits that look like they contain a key
 or token.

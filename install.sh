@@ -235,7 +235,8 @@ cat <<'EOF'
     - Rectangle: open it once and allow it under Accessibility in System
       Settings; it imports the shortcuts from the repo at that launch.
     - Secrets (API keys): add them to ~/.zshrc below the source line, or keep
-      them in the Keychain:
+      them in the Keychain. Never put them in claude/settings.json ("env"),
+      which is in the public repo:
         security add-generic-password -a "$USER" -s anthropic-api-key -w
         export ANTHROPIC_API_KEY="$(security find-generic-password -s anthropic-api-key -w)"
     - Work git identity: add an includeIf block to ~/.gitconfig.
