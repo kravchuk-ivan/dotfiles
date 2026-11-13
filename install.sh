@@ -62,7 +62,9 @@ append_line() {
     did "added to $1: $2"
 }
 
-running() { pgrep -xq "$1"; }
+# -a: pgrep skips its own ancestors by default, so without it the terminal
+# running this script (often iTerm2) never counts as running.
+running() { pgrep -axq "$1"; }
 
 [ "$(uname -s)" = Darwin ] || { echo "install.sh is for macOS" >&2; exit 1; }
 [ "$(id -u)" != 0 ] || { echo "run install.sh as your user, not root" >&2; exit 1; }
