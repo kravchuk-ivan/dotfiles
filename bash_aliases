@@ -41,6 +41,7 @@ alias k='nvim'
 alias l='ls -Alh'
 alias s='fzf'
 alias d='vifm . .'
+alias sublime='subl'
 
 # OS-specific aliases
 case "$OSTYPE" in
