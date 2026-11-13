@@ -139,6 +139,8 @@ link sublime/Preferences.sublime-settings   "$APP_SUPPORT/Sublime Text/Packages/
 link "sublime/Package Control.sublime-settings" "$APP_SUPPORT/Sublime Text/Packages/User/Package Control.sublime-settings"
 link vs-code/settings.json                  "$APP_SUPPORT/Code/User/settings.json"
 link vs-code/keybindings.json               "$APP_SUPPORT/Code/User/keybindings.json"
+link claude/settings.json                   "$HOME/.claude/settings.json"
+link claude/CLAUDE.md                       "$HOME/.claude/CLAUDE.md"
 
 # ~/.gitconfig stays machine-local (work identities, credential helpers) and
 # includes the shared settings.

@@ -1,0 +1,25 @@
+{
+  "attribution": {
+    "commit": ""
+  },
+  "permissions": {
+    "defaultMode": "auto"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "printf '\\033[1m%s\\033[0m' \"$(jq -r .workspace.current_dir)\""
+  },
+  "enabledPlugins": {
+    "clangd-lsp@claude-plugins-official": false,
+    "cc-plugin-you-should-know@builtin": true
+  },
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    }
+  },
+  "tui": "fullscreen",
+  "skipWorkflowUsageWarning": true,
+  "theme": "light",
+  "agentPushNotifEnabled": true
+}
