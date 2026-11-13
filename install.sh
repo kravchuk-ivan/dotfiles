@@ -198,7 +198,12 @@ local_state="$APP_SUPPORT/Google/Chrome/Local State"
 if running "Google Chrome"; then
     note "Chrome is running: quit it and run install.sh again to set its flags"
 elif [ -f "$local_state" ]; then
-    if [ "$DRY_RUN" = 1 ]; then
+    # macOS privacy protection can block the terminal from reading other apps'
+    # data (EPERM); skip with a hint instead of aborting the whole install.
+    if ! head -c 1 "$local_state" >/dev/null 2>&1; then
+        note "Chrome: can't read Local State; give your terminal Full Disk Access"
+        note "  (System Settings > Privacy & Security), then run install.sh again"
+    elif [ "$DRY_RUN" = 1 ]; then
         note "would set chrome://flags in $local_state"
     else
         python3 - "$local_state" <<'EOF'
