@@ -38,6 +38,6 @@ Follow **atomic commits** and the Angular Conventional Commits guidelines as doc
 
 **macos/macos-settings.bash** — system `defaults` settings; run by `install.sh`, or by hand.
 
-**claude/** — Claude Code user settings and global `CLAUDE.md`, linked into `~/.claude/`. Public: no secrets in `settings.json`; see `claude/README.md`.
+**claude/** — Claude Code global `CLAUDE.md` (linked) and `settings.json` (merged by `install.sh` into a local `~/.claude/settings.json`, never linked: Claude Code writes account details there). No secrets in `settings.json`; see `claude/README.md`.
 
 **vifmrc** — vifm file manager config. On first setup, run `:view` inside vifm to enable tree preview.
