@@ -139,8 +139,40 @@ link sublime/Preferences.sublime-settings   "$APP_SUPPORT/Sublime Text/Packages/
 link "sublime/Package Control.sublime-settings" "$APP_SUPPORT/Sublime Text/Packages/User/Package Control.sublime-settings"
 link vs-code/settings.json                  "$APP_SUPPORT/Code/User/settings.json"
 link vs-code/keybindings.json               "$APP_SUPPORT/Code/User/keybindings.json"
-link claude/settings.json                   "$HOME/.claude/settings.json"
 link claude/CLAUDE.md                       "$HOME/.claude/CLAUDE.md"
+
+# Claude Code writes its own state into ~/.claude/settings.json (auto mode
+# stores a description of the account and its other repos there), so that
+# file is a machine-local copy, not a link into this public repo. The repo's
+# keys are merged in and win; keys only in the local file are kept.
+claude_settings="$HOME/.claude/settings.json"
+if [ -L "$claude_settings" ]; then
+    # An earlier install.sh linked it: turn the link into a local copy.
+    if [ "$DRY_RUN" = 1 ]; then
+        note "would replace the $claude_settings link with a copy"
+    else
+        cp "$claude_settings" "$claude_settings.tmp"
+        mv "$claude_settings.tmp" "$claude_settings"
+        note "replaced the $claude_settings link with a copy"
+    fi
+fi
+if ! command -v jq >/dev/null 2>&1; then
+    note "skipped Claude Code settings: jq not found (macOS 15+ ships it)"
+elif [ ! -e "$claude_settings" ]; then
+    run mkdir -p "$HOME/.claude"
+    run cp "$DOTFILES/claude/settings.json" "$claude_settings"
+    did "wrote $claude_settings"
+elif ! merged="$(jq -s '.[0] * .[1]' "$claude_settings" "$DOTFILES/claude/settings.json")"; then
+    note "skipped Claude Code settings: $claude_settings is not valid JSON"
+elif [ "$(printf '%s' "$merged" | jq -S .)" != "$(jq -S . "$claude_settings")" ]; then
+    if [ "$DRY_RUN" = 1 ]; then
+        note "would merge claude/settings.json into $claude_settings"
+    else
+        cp "$claude_settings" "$claude_settings.backup-$STAMP"
+        printf '%s\n' "$merged" > "$claude_settings"
+        note "merged claude/settings.json into $claude_settings (old copy: $claude_settings.backup-$STAMP)"
+    fi
+fi
 
 # ~/.gitconfig stays machine-local (work identities, credential helpers) and
 # includes the shared settings.
