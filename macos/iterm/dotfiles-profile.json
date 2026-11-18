@@ -3,7 +3,7 @@
     {
       "Name": "dotfiles",
       "Guid": "DA72C485-C07A-4C2A-B7A8-A167238F88DF",
-      "Normal Font": "SFMono-Regular 15",
+      "Normal Font": "JetBrainsMono-Regular 15",
       "Custom Directory": "Recycle",
       "Use Separate Colors for Light and Dark Mode": true,
       "Ansi 0 Color (Dark)": {

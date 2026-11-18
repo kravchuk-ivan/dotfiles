@@ -16,7 +16,7 @@ brew "vifm"
 brew "wget"
 brew "whois"
 
-# Fonts: SF Mono for iTerm2 and VS Code
+# Fonts: JetBrains Mono for iTerm2 and TextEdit, SF Mono for VS Code
 cask "font-jetbrains-mono"
 cask "font-sf-mono"
 

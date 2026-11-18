@@ -27,7 +27,7 @@ text renders fine against a white background.
 
 `dotfiles-profile.json` is an iTerm2 [Dynamic
 Profile](https://iterm2.com/documentation-dynamic-profiles.html) holding only
-what differs from a stock profile: SF Mono 15, new tabs opening in the
+what differs from a stock profile: JetBrains Mono 15, new tabs opening in the
 previous session's directory, and separate light/dark colors. The light colors
 are `dotfiles-light-max-contrast`; the dark ones are iTerm2's own. iTerm2
 reloads the file whenever it changes, but edits made in iTerm2's Settings
