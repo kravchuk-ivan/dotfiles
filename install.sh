@@ -112,20 +112,12 @@ if [ ! -d "$HOME/.nvm/versions/node" ]; then
     fi
 fi
 
-# ~/.zshrc stays machine-local: installers append to it and secrets go there.
-# It only sources the shared config.
-if ! grep -qs 'dotfiles/zsh/zshrc' "$HOME/.zshrc"; then
-    backup "$HOME/.zshrc"
-    if [ "$DRY_RUN" = 1 ]; then
-        note "would write $HOME/.zshrc"
-    else
-        cat > "$HOME/.zshrc" <<'EOF'
-# Machine-local zsh config. The shared part is in ~/dotfiles/zsh/zshrc; keep
-# secrets and machine-specific lines below, not in the public repo.
-source "$HOME/dotfiles/zsh/zshrc"
-EOF
-        did "wrote $HOME/.zshrc"
-    fi
+# ~/.zshrc stays machine-local (secrets, lines installers append); setup.sh
+# keeps a managed block at its top that loads the shared config.
+if [ "$DRY_RUN" = 1 ]; then
+    bash "$DOTFILES/zsh/setup.sh" --dry-run
+else
+    bash "$DOTFILES/zsh/setup.sh"
 fi
 link zsh/p10k.zsh "$HOME/.p10k.zsh"
 
@@ -232,7 +224,7 @@ cat <<'EOF'
       System Settings, then quit and reopen it so it loads the linked config.
     - Rectangle: open it once and allow it under Accessibility in System
       Settings; it imports the shortcuts from the repo at that launch.
-    - Secrets (API keys): add them to ~/.zshrc below the source line, or keep
+    - Secrets (API keys): add them to ~/.zshrc below the dotfiles block, or keep
       them in the Keychain:
         security add-generic-password -a "$USER" -s anthropic-api-key -w
         export ANTHROPIC_API_KEY="$(security find-generic-password -s anthropic-api-key -w)"

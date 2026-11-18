@@ -26,8 +26,9 @@ that path.
 
 These stay out of the repo, which is public:
 
-- `~/.zshrc` only sources `zsh/zshrc`. Put API keys and anything
-  machine-specific below that line (or in the Keychain).
+- `~/.zshrc` starts with a block, kept up to date by `zsh/setup.sh`, that
+  loads `zsh/zshrc` and the prompt. Put API keys and anything
+  machine-specific below the block (or in the Keychain).
 - `~/.gitconfig` includes `git/config`. Work identities (`includeIf`) and
   credential helpers go there.
 

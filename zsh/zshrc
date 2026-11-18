@@ -1,12 +1,7 @@
-# Shared zsh config. ~/.zshrc sources this file and stays machine-local:
-# installers append their PATH lines there, and secrets (API keys) belong
-# there too, below the source line, never in this public repo.
-
-# Powerlevel10k instant prompt. Keep it first: anything that prints or reads
-# input has to come before it.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# Shared zsh config. ~/.zshrc stays machine-local: installers append their
+# PATH lines there, and secrets (API keys) belong there too, never in this
+# public repo. zsh/setup.sh keeps a block at its top that sources this file
+# between the powerlevel10k instant prompt and ~/.p10k.zsh.
 
 # Homebrew's script installer doesn't add itself to PATH (its .pkg installer
 # writes /etc/paths.d/homebrew instead).
@@ -20,9 +15,8 @@ source "$ZSH/oh-my-zsh.sh"
 
 source "$HOME/dotfiles/bash_aliases"
 
+# Configured by ~/.p10k.zsh: run `p10k configure` or edit zsh/p10k.zsh.
 source "$HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme"
-# To customize the prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
