@@ -32,5 +32,13 @@
     // to true everywhere except macOS.
     "show_full_path": true,
     "highlight_line": true,
-    "drag_text": false
+    "drag_text": false,
+    "neovintageous_build_version": 13200,
+    "file_icon_theme":
+    [
+    ],
+    "ignored_packages":
+    [
+		"Vintage",
+    ],
 }

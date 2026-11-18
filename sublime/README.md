@@ -36,8 +36,7 @@ the `Package Control.sublime-settings` list auto-installs these:
 | **SublimeLinter** | Linting framework (add `SublimeLinter-eslint`, `-flake8`, etc. per language). |
 | **MarkdownEditing** | Much better Markdown syntax + editing. |
 | **A File Icon** | File-type icons in sidebar/tabs. |
-| **NeoVintageous** | Modern Vim emulation — consistent with your nvim / vifm / VS Code Vim setup. |
 
 Worth knowing but left out of the auto-install list: **Terminus** (integrated
 terminal), **BracketHighlighter**, **SideBarEnhancements**, **Origami** (pane
-splitting).
+splitting), **NeoVintageous** (Vim emulation).

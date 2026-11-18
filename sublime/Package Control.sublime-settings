@@ -9,7 +9,9 @@
         "GitGutter",
         "SublimeLinter",
         "MarkdownEditing",
-        "A File Icon",
-        "NeoVintageous"
-    ]
+        "A File Icon"
+    ],
+    "in_process_packages":
+    [
+    ],
 }
